@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+import {
+    flexCenterAll as flexCenterAllMixin,
+    flexCenterInline as flexCenterInlineMixin,
+} from '../../styles';
 import { TSpacing } from '../../utils/spacing';
 
 export type TBoxElem =
@@ -31,6 +35,8 @@ export type TBox = {
 export interface IBox extends TBox {
     children: React.ReactNode | React.ReactNode[];
     tag?: TBoxElem;
+    flexCenterAll?: boolean;
+    flexCenterInline?: boolean;
 }
 
 export const BoxRoot = styled.div<IBox>`
@@ -49,6 +55,8 @@ export const BoxRoot = styled.div<IBox>`
         my || (mb && theme.spacing[my || mb])};
     margin-left: ${({ theme, ml, mx }) =>
         mx || (ml && theme.spacing[mx || ml])};
+    ${({ flexCenterInline }) => flexCenterInline && flexCenterInlineMixin};
+    ${({ flexCenterAll }) => flexCenterAll && flexCenterAllMixin}
 `;
 
 const Box = ({ tag, children, ...props }: IBox) => (

@@ -6,5 +6,8 @@ export const SBList = styled.ul`
     padding: 0;
     li {
         margin-bottom: 12px;
+        button:not(:last-child) {
+            margin-right: 8px;
+        }
     }
 `;

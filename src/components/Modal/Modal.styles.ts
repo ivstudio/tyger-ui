@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { breakpoint, TBreakpointKey } from '../../utils/mediaQueries';
+import { breakpoint, TBreakpointKey } from '../../styles/mediaQueries';
 
 export const framerProps = {
     initial: { opacity: 0, scale: 0 },

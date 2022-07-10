@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-import { flexCenterAll } from '../../styles';
-import { device } from '../../utils/mediaQueries';
+import { device, flexCenterAll } from '../../styles';
 
 const shadow = 'rgba(0, 0, 0, 0.1) 0px 20px 40px 0px';
 

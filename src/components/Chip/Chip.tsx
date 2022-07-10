@@ -4,7 +4,7 @@ import { buttonBase, flexCenterInline } from '../../styles';
 
 export type TSize = 'sm' | 'md';
 
-type TChipVariant = 'filled' | 'outlined';
+type TChipVariant = 'contained' | 'outlined';
 
 type TChipTags = 'span' | 'div' | 'button';
 
@@ -16,6 +16,7 @@ interface IChip {
     onClick?: () => void;
     variant?: TChipVariant;
     className?: string;
+    disabled?: boolean;
 }
 
 const sizes = {
@@ -33,7 +34,11 @@ const sizes = {
     },
 } as const;
 
-export const ChipRoot = styled.div<{ size: TSize; variant: TChipVariant }>`
+export const ChipRoot = styled.div<{
+    size: TSize;
+    variant: TChipVariant;
+    disabled: boolean;
+}>`
     outline: 0;
     line-height: 1;
     white-space: nowrap;
@@ -42,13 +47,36 @@ export const ChipRoot = styled.div<{ size: TSize; variant: TChipVariant }>`
     box-sizing: border-box;
     ${flexCenterInline};
     ${({ size }) => sizes[size]};
-    border: ${({ theme: { palette }, variant }) => {
-        return variant === 'outlined' && `1px solid ${palette.border}`;
-    }};
-    background: ${({ theme: { palette }, variant }) => {
-        return variant === 'filled' && palette.ui.primary;
-    }};
-    color: ${({ theme: { palette } }) => palette.text.primary};
+
+    ${({ theme, variant, disabled }) => {
+        if (!theme || !variant) return null;
+        const { chip } = theme.palette;
+        switch (variant) {
+            case 'outlined':
+                return disabled
+                    ? {
+                          color: chip.outlined.disabled.color,
+                          background: chip.outlined.disabled.backgroundColor,
+                          border: `1px solid ${chip.outlined.disabled.border}`,
+                      }
+                    : {
+                          color: chip.outlined.color,
+                          background: chip.outlined.backgroundColor,
+                          border: `1px solid ${chip.outlined.border}`,
+                      };
+            case 'contained':
+            default:
+                return disabled
+                    ? {
+                          color: chip.contained.disabled.color,
+                          background: chip.contained.disabled.backgroundColor,
+                      }
+                    : {
+                          color: chip.contained.color,
+                          background: chip.contained.backgroundColor,
+                      };
+        }
+    }}
 `;
 
 export const ChipButton = styled(ChipRoot)`
@@ -65,8 +93,9 @@ const Chip = ({
     size = 'md',
     tag = 'span',
     onClick,
-    variant = 'filled',
+    variant = 'contained',
     className,
+    disabled = false,
 }: IChip) => {
     if (tag === 'button') {
         return (
@@ -78,6 +107,7 @@ const Chip = ({
                 onClick={onClick}
                 variant={variant}
                 className={className}
+                disabled={disabled}
             >
                 {label}
             </ChipButton>
@@ -91,6 +121,7 @@ const Chip = ({
             size={size}
             variant={variant}
             className={className}
+            disabled={disabled}
         >
             {label}
         </ChipRoot>

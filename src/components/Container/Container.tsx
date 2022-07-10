@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { breakpoint, device, TBreakpointKey } from '../../utils/mediaQueries';
+import { breakpoint, device, TBreakpointKey } from '../../styles/mediaQueries';
 import { BoxRoot, IBox } from '../Box';
 
 interface IContainer extends IBox {

@@ -1,7 +1,14 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export type TButtonVariant = 'primary' | 'outlined' | 'text';
+import {
+    backgroundTransition,
+    buttonBase,
+    flexCenterInline,
+} from '../../styles';
+import Box from '../Box';
+
+export type TButtonVariant = 'contained' | 'outlined' | 'text';
 export type TSize = 'sm' | 'md' | 'lg';
 
 export interface IButton {
@@ -11,26 +18,52 @@ export interface IButton {
     disabled?: boolean;
     size?: TSize;
     fullWidth?: boolean;
-    children: React.ReactNode | React.ReactNode[];
+    children?: React.ReactNode;
     variant?: TButtonVariant;
     rounded?: boolean;
+    startIcon?: React.ReactNode;
+    endIcon?: React.ReactNode;
     onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-const sizes = {
+const fontSizes = {
     sm: {
         fontSize: '0.8125rem',
-        padding: `3px 9px`,
+        '& svg': {
+            fontSize: '16px',
+        },
     },
 
     md: {
         fontSize: '0.875rem',
-        padding: `5px 15px`,
+        '& svg': {
+            fontSize: '20px',
+        },
     },
 
     lg: {
         fontSize: '0.9375rem',
-        padding: `8px 22px`,
+        '& svg': {
+            fontSize: '24px',
+        },
+    },
+} as const;
+
+const buttonSpacing = {
+    text: {
+        sm: `4px 5px`,
+        md: `6px 8px`,
+        lg: `8px 11px`,
+    },
+    outline: {
+        sm: `3px 9px`,
+        md: `5px 15px`,
+        lg: `7px 21px`,
+    },
+    contained: {
+        sm: `4px 10px`,
+        md: `6px 16px`,
+        lg: `8px 22px`,
     },
 } as const;
 
@@ -40,32 +73,11 @@ const roundedCorners = {
     lg: '22px',
 } as const;
 
-const buttonBase = css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    appearance: none;
-    cursor: pointer;
-    vertical-align: middle;
-    text-decoration: none;
-    text-align: center;
-    outline: 0;
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-    white-space: nowrap;
-    -webkit-box-pack: center;
-    -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.25s ease, color 0.25s ease;
-    min-width: 64px;
-    font-weight: 500;
-    letter-spacing: 0.02857em;
-
-    &:disabled {
-        pointer-events: none;
-    }
-`;
+const iconSpacing = {
+    sm: '4',
+    md: '8',
+    lg: '12',
+} as const;
 
 const ButtonRoot = styled.button<{
     size: TSize;
@@ -73,14 +85,19 @@ const ButtonRoot = styled.button<{
     variant: TButtonVariant;
     rounded: boolean;
 }>`
+    ${flexCenterInline};
     ${buttonBase};
-    ${({ size }) => sizes[size]};
+    ${backgroundTransition};
+    min-width: 64px;
+    font-weight: 500;
+    letter-spacing: 0.02857em;
+    ${({ size }) => fontSizes[size]};
     line-height: ${({ theme }) => theme.lineHeight.xl};
     width: ${({ fullWidth }) => fullWidth && '100%'};
     border-radius: ${({ rounded, size }) => {
         return rounded ? roundedCorners[size] : '4px';
     }};
-    ${({ theme, variant }) => {
+    ${({ theme, variant, size }) => {
         if (!theme || !variant) return null;
         const { button } = theme.palette;
         switch (variant) {
@@ -88,6 +105,7 @@ const ButtonRoot = styled.button<{
                 return {
                     color: button.text.color,
                     background: button.text.backgroundColor,
+                    padding: buttonSpacing.text[size],
                     '&:hover': {
                         background: button.text.hover.backgroundColor,
                     },
@@ -100,6 +118,7 @@ const ButtonRoot = styled.button<{
                 return {
                     color: button.outlined.color,
                     background: button.outlined.backgroundColor,
+                    padding: buttonSpacing.outline[size],
                     border: `1px solid ${button.outlined.border}`,
                     '&:hover': {
                         background: button.outlined.hover.backgroundColor,
@@ -111,17 +130,18 @@ const ButtonRoot = styled.button<{
                         border: `1px solid ${button.outlined.disabled.border}`,
                     },
                 };
-            case 'primary':
+            case 'contained':
             default:
                 return {
-                    color: button.primary.color,
-                    background: button.primary.backgroundColor,
+                    color: button.contained.color,
+                    background: button.contained.backgroundColor,
+                    padding: buttonSpacing.contained[size],
                     '&:hover': {
-                        background: button.primary.hover.backgroundColor,
+                        background: button.contained.hover.backgroundColor,
                     },
                     '&:disabled': {
-                        color: button.primary.disabled.color,
-                        background: button.primary.disabled.backgroundColor,
+                        color: button.contained.disabled.color,
+                        background: button.contained.disabled.backgroundColor,
                     },
                 };
         }
@@ -137,7 +157,9 @@ const Button = ({
     className,
     fullWidth = false,
     rounded = true,
-    variant = 'primary',
+    variant = 'contained',
+    startIcon = null,
+    endIcon = null,
     ...baseProps
 }: IButton) => (
     <ButtonRoot
@@ -151,7 +173,25 @@ const Button = ({
         variant={variant}
         rounded={rounded}
     >
-        {children}
+        {startIcon && (
+            <Box
+                mr={children ? iconSpacing[size] : '0'}
+                tag="span"
+                flexCenterInline
+            >
+                {startIcon}
+            </Box>
+        )}
+        {children && children}
+        {endIcon && (
+            <Box
+                ml={children ? iconSpacing[size] : '0'}
+                tag="span"
+                flexCenterInline
+            >
+                {endIcon}
+            </Box>
+        )}
     </ButtonRoot>
 );
 

@@ -71,7 +71,7 @@ export const lightPalette = {
         primary: color.blue[5],
         border: color.grey[2],
         button: {
-            primary: {
+            contained: {
                 color: color.grey[0],
                 backgroundColor: color.blue[5],
                 hover: { backgroundColor: color.blue[6] },
@@ -102,6 +102,26 @@ export const lightPalette = {
                 disabled: {
                     backgroundColor: 'transparent',
                     color: color.grey[5],
+                },
+            },
+        },
+        chip: {
+            contained: {
+                color: color.grey[7],
+                backgroundColor: color.grey[3],
+                disabled: {
+                    backgroundColor: color.grey[2],
+                    color: color.grey[5],
+                },
+            },
+            outlined: {
+                color: color.grey[7],
+                border: color.grey[7],
+                backgroundColor: 'transparent',
+                disabled: {
+                    backgroundColor: 'transparent',
+                    color: color.grey[5],
+                    border: color.grey[5],
                 },
             },
         },
@@ -140,7 +160,7 @@ export const darkPalette = {
         primary: color.blue[5],
         border: color.grey[2],
         button: {
-            primary: {
+            contained: {
                 color: color.grey[9],
                 backgroundColor: color.blue[3],
                 hover: { backgroundColor: color.blue[4] },
@@ -169,6 +189,26 @@ export const darkPalette = {
                 hover: { color: color.blue[3], backgroundColor: color.grey[8] },
                 disabled: {
                     color: color.grey[7],
+                },
+            },
+        },
+        chip: {
+            contained: {
+                color: color.grey[0],
+                backgroundColor: color.grey[7],
+                disabled: {
+                    backgroundColor: color.grey[7],
+                    color: color.grey[8],
+                },
+            },
+            outlined: {
+                color: color.grey[0],
+                border: color.grey[0],
+                backgroundColor: 'transparent',
+                disabled: {
+                    backgroundColor: 'transparent',
+                    color: color.grey[5],
+                    border: color.grey[5],
                 },
             },
         },

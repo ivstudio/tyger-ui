@@ -25,6 +25,17 @@ type TButtonTheme = {
     };
 };
 
+type TChipTheme = {
+    color: string;
+    backgroundColor: string;
+    border?: string;
+    disabled: {
+        color?: string;
+        backgroundColor?: string;
+        border?: string;
+    };
+};
+
 declare module 'styled-components' {
     export interface DefaultTheme {
         name: TThemeNames;
@@ -42,9 +53,13 @@ declare module 'styled-components' {
             error: string;
             success: string;
             button: {
-                primary: TButtonTheme;
+                contained: TButtonTheme;
                 outlined: TButtonTheme;
                 text: TButtonTheme;
+            };
+            chip: {
+                contained: TChipTheme;
+                outlined: TChipTheme;
             };
             text: {
                 primary: string;

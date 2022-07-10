@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import Button, { TSize } from '../components/Button';
+import Button, { TButtonVariant, TSize } from '../components/Button';
+import { MdDelete as DeleteIcon, MdSend as SendIcon } from 'react-icons/md';
 import { SBList } from './sb.styles';
 
 export default {
@@ -40,9 +41,9 @@ export default {
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-    variant: 'primary',
+export const Contained = Template.bind({});
+Contained.args = {
+    variant: 'contained',
 };
 
 export const Outlined = Template.bind({});
@@ -57,20 +58,65 @@ Text.args = {
 
 export const AllButtonsSizes = () => (
     <SBList>
-        {['sm', 'md', 'lg'].map(item => (
+        <li>
+            <h3>Buttons</h3>
+            <p>
+                The button contains three variants contained (default), text,
+                and outlined.
+            </p>
+        </li>
+        {['text', 'outlined', 'contained'].map(item => (
             <li key={item}>
                 <Button
-                    size={item as TSize}
+                    variant={item as TButtonVariant}
+                    size="sm"
+                    onClick={() => console.log('click')}
+                >
+                    Button
+                </Button>
+                <Button
+                    variant={item as TButtonVariant}
+                    size="md"
+                    onClick={() => console.log('click')}
+                >
+                    Button
+                </Button>
+                <Button
+                    variant={item as TButtonVariant}
+                    size="lg"
                     onClick={() => console.log('click')}
                 >
                     Button
                 </Button>
             </li>
         ))}
+
         <li>
             <Button fullWidth size="lg" onClick={() => console.log('click')}>
                 Button
             </Button>
+        </li>
+        <li>
+            {['sm', 'md', 'lg'].map(size => (
+                <Button
+                    startIcon={<DeleteIcon />}
+                    size={size as TSize}
+                    onClick={() => console.log('click')}
+                >
+                    Button
+                </Button>
+            ))}
+        </li>
+        <li>
+            {['sm', 'md', 'lg'].map(size => (
+                <Button
+                    endIcon={<SendIcon />}
+                    size={size as TSize}
+                    onClick={() => console.log('click')}
+                >
+                    Button
+                </Button>
+            ))}
         </li>
     </SBList>
 );

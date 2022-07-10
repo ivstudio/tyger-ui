@@ -28,6 +28,7 @@ export default {
             control: { type: 'select', options: ['span', 'div', 'button'] },
             defaultValue: 'span',
         },
+        disabled: { control: 'boolean', defaultValue: false },
         className: { control: false },
     },
 } as ComponentMeta<typeof Chip>;

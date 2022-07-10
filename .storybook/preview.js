@@ -1,7 +1,7 @@
 import { addDecorator } from '@storybook/react';
 import { withThemesProvider } from 'themeprovider-storybook';
 import { darkTheme, lightTheme } from '../src/theme/theme';
-import GlobalStyles from '../src/utils/globalStyles';
+import GlobalStyles from '../src/styles/globalStyles';
 
 addDecorator(withThemesProvider([darkTheme, lightTheme]));
 addDecorator(style => (
