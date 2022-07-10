@@ -16,6 +16,7 @@
     ],
     "plugins": ["simple-import-sort"],
     "rules": {
+        "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-var-requires": 0,
         "@typescript-eslint/no-unused-vars": "error",
         "simple-import-sort/imports": "error",
@@ -24,5 +25,5 @@
         "import/newline-after-import": "error",
         "import/no-duplicates": "error"
     },
-    "ignorePatterns": ["src/test/*", "dist", "*config.js"]
+    "ignorePatterns": ["src/test/*", "dist", "*config.js", "src/stories/*"]
 }

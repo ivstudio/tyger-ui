@@ -1,7 +1,21 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-import { IButton, TButtonVariant, TSize } from './Button.types';
+export type TButtonVariant = 'primary' | 'outlined' | 'text';
+export type TSize = 'sm' | 'md' | 'lg';
+
+export interface IButton {
+    id?: string;
+    className?: string;
+    type?: 'submit' | 'button' | 'reset';
+    disabled?: boolean;
+    size?: TSize;
+    fullWidth?: boolean;
+    children: React.ReactNode | React.ReactNode[];
+    variant?: TButtonVariant;
+    rounded?: boolean;
+    onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+}
 
 const sizes = {
     sm: {
