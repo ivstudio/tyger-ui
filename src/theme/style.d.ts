@@ -77,13 +77,13 @@ declare module 'styled-components' {
             error: string;
             success: string;
             button: {
-                contained: TButtonTheme;
+                filled: TButtonTheme;
                 outlined: TButtonTheme;
                 text: TButtonTheme;
             };
             iconButton: TIconButtonTheme;
             chip: {
-                contained: TChipTheme;
+                filled: TChipTheme;
                 outlined: TChipTheme;
             };
             switch: TSwitchTheme;

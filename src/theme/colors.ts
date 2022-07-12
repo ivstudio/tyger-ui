@@ -71,7 +71,7 @@ export const lightPalette = {
         primary: color.blue[5],
         border: color.grey[2],
         button: {
-            contained: {
+            filled: {
                 color: color.grey[0],
                 backgroundColor: color.blue[5],
                 hover: { backgroundColor: color.blue[6] },
@@ -114,7 +114,7 @@ export const lightPalette = {
             },
         },
         chip: {
-            contained: {
+            filled: {
                 color: color.grey[7],
                 backgroundColor: color.grey[3],
                 disabled: {
@@ -173,7 +173,7 @@ export const darkPalette = {
         primary: color.blue[5],
         border: color.grey[2],
         button: {
-            contained: {
+            filled: {
                 color: color.grey[9],
                 backgroundColor: color.blue[3],
                 hover: { backgroundColor: color.blue[4] },
@@ -214,7 +214,7 @@ export const darkPalette = {
             },
         },
         chip: {
-            contained: {
+            filled: {
                 color: color.grey[0],
                 backgroundColor: color.grey[7],
                 disabled: {

@@ -41,9 +41,9 @@ export default {
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
-export const Contained = Template.bind({});
-Contained.args = {
-    variant: 'contained',
+export const Filled = Template.bind({});
+Filled.args = {
+    variant: 'filled',
 };
 
 export const Outlined = Template.bind({});
@@ -61,11 +61,11 @@ export const AllButtonsSizes = () => (
         <li>
             <h3>Buttons</h3>
             <p>
-                The button contains three variants contained (default), text,
-                and outlined.
+                The button contains three variants filled (default), text, and
+                outlined.
             </p>
         </li>
-        {['text', 'outlined', 'contained'].map(item => (
+        {['text', 'outlined', 'filled'].map(item => (
             <li key={item}>
                 <Button
                     variant={item as TButtonVariant}

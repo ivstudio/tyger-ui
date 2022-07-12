@@ -4,7 +4,7 @@ import { buttonBase, flexCenterInline } from '../../styles';
 
 export type TSize = 'sm' | 'md';
 
-type TChipVariant = 'contained' | 'outlined';
+type TChipVariant = 'filled' | 'outlined';
 
 type TChipTags = 'span' | 'div' | 'button';
 
@@ -62,16 +62,16 @@ export const ChipRoot = styled.div<{
                           background: chip.outlined.backgroundColor,
                           border: `1px solid ${chip.outlined.border}`,
                       };
-            case 'contained':
+            case 'filled':
             default:
                 return disabled
                     ? {
-                          color: chip.contained.disabled.color,
-                          background: chip.contained.disabled.backgroundColor,
+                          color: chip.filled.disabled.color,
+                          background: chip.filled.disabled.backgroundColor,
                       }
                     : {
-                          color: chip.contained.color,
-                          background: chip.contained.backgroundColor,
+                          color: chip.filled.color,
+                          background: chip.filled.backgroundColor,
                       };
         }
     }}
@@ -91,7 +91,7 @@ const Chip = ({
     size = 'md',
     tag = 'span',
     onClick,
-    variant = 'contained',
+    variant = 'filled',
     className,
     disabled = false,
 }: IChip) => {

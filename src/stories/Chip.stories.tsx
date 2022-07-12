@@ -12,8 +12,8 @@ export default {
     },
     argTypes: {
         variant: {
-            control: { type: 'select', options: ['contained', 'outlined'] },
-            defaultValue: 'contained',
+            control: { type: 'select', options: ['filled', 'outlined'] },
+            defaultValue: 'filled',
         },
         size: {
             control: { type: 'select', options: ['sm', 'md'] },
@@ -37,8 +37,8 @@ const Template: ComponentStory<typeof Chip> = args => (
     <Chip {...args} label={`Chip ${args.variant}`} />
 );
 
-export const Contained = Template.bind({});
-Contained.args = {};
+export const Filled = Template.bind({});
+Filled.args = {};
 
 export const Outlined = Template.bind({});
 Outlined.args = {

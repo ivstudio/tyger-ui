@@ -8,7 +8,7 @@ import {
 } from '../../styles';
 import Box from '../Box';
 
-export type TButtonVariant = 'contained' | 'outlined' | 'text';
+export type TButtonVariant = 'filled' | 'outlined' | 'text';
 export type TSize = 'sm' | 'md' | 'lg';
 
 export interface IButton {
@@ -60,7 +60,7 @@ const buttonSpacing = {
         md: `5px 15px`,
         lg: `7px 21px`,
     },
-    contained: {
+    filled: {
         sm: `4px 10px`,
         md: `6px 16px`,
         lg: `8px 22px`,
@@ -75,8 +75,8 @@ const roundedCorners = {
 
 const iconSpacing = {
     sm: '4',
-    md: '8',
-    lg: '12',
+    md: '4',
+    lg: '8',
 } as const;
 
 const ButtonRoot = styled.button<{
@@ -130,18 +130,18 @@ const ButtonRoot = styled.button<{
                         border: `1px solid ${button.outlined.disabled.border}`,
                     },
                 };
-            case 'contained':
+            case 'filled':
             default:
                 return {
-                    color: button.contained.color,
-                    background: button.contained.backgroundColor,
-                    padding: buttonSpacing.contained[size],
+                    color: button.filled.color,
+                    background: button.filled.backgroundColor,
+                    padding: buttonSpacing.filled[size],
                     '&:hover': {
-                        background: button.contained.hover.backgroundColor,
+                        background: button.filled.hover.backgroundColor,
                     },
                     '&:disabled': {
-                        color: button.contained.disabled.color,
-                        background: button.contained.disabled.backgroundColor,
+                        color: button.filled.disabled.color,
+                        background: button.filled.disabled.backgroundColor,
                     },
                 };
         }
@@ -157,7 +157,7 @@ const Button = ({
     className,
     fullWidth = false,
     rounded = true,
-    variant = 'contained',
+    variant = 'filled',
     startIcon = null,
     endIcon = null,
     ...baseProps
@@ -175,8 +175,8 @@ const Button = ({
     >
         {startIcon && (
             <Box
-                mr={children ? iconSpacing[size] : '0'}
                 tag="span"
+                mr={children ? iconSpacing[size] : '0'}
                 flexCenterInline
             >
                 {startIcon}
@@ -185,8 +185,8 @@ const Button = ({
         {children && children}
         {endIcon && (
             <Box
-                ml={children ? iconSpacing[size] : '0'}
                 tag="span"
+                ml={children ? iconSpacing[size] : '0'}
                 flexCenterInline
             >
                 {endIcon}
