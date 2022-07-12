@@ -37,6 +37,7 @@ export interface IBox extends TBox {
     tag?: TBoxElem;
     flexCenterAll?: boolean;
     flexCenterInline?: boolean;
+    styles?: React.CSSProperties;
 }
 
 export const BoxRoot = styled.div<IBox>`
@@ -59,8 +60,8 @@ export const BoxRoot = styled.div<IBox>`
     ${({ flexCenterAll }) => flexCenterAll && flexCenterAllMixin}
 `;
 
-const Box = ({ tag, children, ...props }: IBox) => (
-    <BoxRoot tag={tag} {...props}>
+const Box = ({ tag, children, styles, ...props }: IBox) => (
+    <BoxRoot tag={tag} style={styles} {...props}>
         {children}
     </BoxRoot>
 );

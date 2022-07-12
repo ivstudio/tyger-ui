@@ -26,6 +26,69 @@ export interface IButton {
     onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
+type TButtonRoot = {
+    size: TSize;
+    fullWidth: boolean;
+    variant: TButtonVariant;
+    rounded: boolean;
+    hasStartIcon?: boolean;
+    hasEndIcon?: boolean;
+};
+
+const buttonSpacing = {
+    text: {
+        base: {
+            sm: `4px 5px`,
+            md: `6px 8px`,
+            lg: `8px 11px`,
+        },
+        startIcon: {
+            sm: `4px 5px 4px 2px`,
+            md: `6px 8px 6px 5px`,
+            lg: `8px 11px 8px 6px`,
+        },
+        endIcon: {
+            sm: `4px 2px 4px 5px`,
+            md: `6px 5px 6px 8px`,
+            lg: `8px 6px 8px 11px`,
+        },
+    },
+    outline: {
+        base: {
+            sm: `3px 9px`,
+            md: `5px 15px`,
+            lg: `7px 21px`,
+        },
+        startIcon: {
+            sm: `3px 9px 3px 6px`,
+            md: `5px 15px 5px 12px`,
+            lg: `7px 21px 7px 16px`,
+        },
+        endIcon: {
+            sm: `3px 6px 3px 9px`,
+            md: `5px 12px 5px 15px`,
+            lg: `7px 16px 7px 21px`,
+        },
+    },
+    filled: {
+        base: {
+            sm: `4px 10px`,
+            md: `6px 16px`,
+            lg: `8px 22px`,
+        },
+        startIcon: {
+            sm: `4px 10px 4px 6px`,
+            md: `6px 16px 6px 12px`,
+            lg: `8px 22px 8px 16px`,
+        },
+        endIcon: {
+            sm: `4px 6px 4px 10px`,
+            md: `6px 12px 6px 16px`,
+            lg: `8px 16px 8px 22px`,
+        },
+    },
+} as const;
+
 const fontSizes = {
     sm: {
         fontSize: '0.8125rem',
@@ -49,24 +112,6 @@ const fontSizes = {
     },
 } as const;
 
-const buttonSpacing = {
-    text: {
-        sm: `4px 5px`,
-        md: `6px 8px`,
-        lg: `8px 11px`,
-    },
-    outline: {
-        sm: `3px 9px`,
-        md: `5px 15px`,
-        lg: `7px 21px`,
-    },
-    filled: {
-        sm: `4px 10px`,
-        md: `6px 16px`,
-        lg: `8px 22px`,
-    },
-} as const;
-
 const roundedCorners = {
     sm: '14px',
     md: '18px',
@@ -74,17 +119,12 @@ const roundedCorners = {
 } as const;
 
 const iconSpacing = {
-    sm: '4',
-    md: '4',
-    lg: '8',
+    sm: '4px',
+    md: '4px',
+    lg: '6px',
 } as const;
 
-const ButtonRoot = styled.button<{
-    size: TSize;
-    fullWidth: boolean;
-    variant: TButtonVariant;
-    rounded: boolean;
-}>`
+const ButtonRoot = styled.button<TButtonRoot>`
     ${flexCenterInline};
     ${buttonBase};
     ${backgroundTransition};
@@ -97,15 +137,21 @@ const ButtonRoot = styled.button<{
     border-radius: ${({ rounded, size }) => {
         return rounded ? roundedCorners[size] : '4px';
     }};
-    ${({ theme, variant, size }) => {
+    ${({ theme, variant, size, hasStartIcon, hasEndIcon }) => {
         if (!theme || !variant) return null;
         const { button } = theme.palette;
+        const spacingType = hasStartIcon
+            ? 'startIcon'
+            : hasEndIcon
+            ? 'endIcon'
+            : 'base';
+
         switch (variant) {
             case 'text':
                 return {
                     color: button.text.color,
                     background: button.text.backgroundColor,
-                    padding: buttonSpacing.text[size],
+                    padding: buttonSpacing.text[spacingType][size],
                     '&:hover': {
                         background: button.text.hover.backgroundColor,
                     },
@@ -118,7 +164,7 @@ const ButtonRoot = styled.button<{
                 return {
                     color: button.outlined.color,
                     background: button.outlined.backgroundColor,
-                    padding: buttonSpacing.outline[size],
+                    padding: buttonSpacing.outline[spacingType][size],
                     border: `1px solid ${button.outlined.border}`,
                     '&:hover': {
                         background: button.outlined.hover.backgroundColor,
@@ -135,7 +181,7 @@ const ButtonRoot = styled.button<{
                 return {
                     color: button.filled.color,
                     background: button.filled.backgroundColor,
-                    padding: buttonSpacing.filled[size],
+                    padding: buttonSpacing.filled[spacingType][size],
                     '&:hover': {
                         background: button.filled.hover.backgroundColor,
                     },
@@ -172,21 +218,23 @@ const Button = ({
         fullWidth={fullWidth}
         variant={variant}
         rounded={rounded}
+        hasStartIcon={startIcon !== null}
+        hasEndIcon={endIcon !== null}
     >
-        {startIcon && (
+        {startIcon && !endIcon && (
             <Box
                 tag="span"
-                mr={children ? iconSpacing[size] : '0'}
+                styles={{ marginRight: children ? iconSpacing[size] : '0' }}
                 flexCenterInline
             >
                 {startIcon}
             </Box>
         )}
         {children && children}
-        {endIcon && (
+        {endIcon && !startIcon && (
             <Box
                 tag="span"
-                ml={children ? iconSpacing[size] : '0'}
+                styles={{ marginLeft: children ? iconSpacing[size] : '0' }}
                 flexCenterInline
             >
                 {endIcon}
