@@ -15,7 +15,7 @@ interface IIconRoot {
     filled?: boolean;
 }
 interface IIconButton extends IIconRoot {
-    children: React.ReactNode | React.ReactNode[];
+    children: React.ReactNode;
     onClick?: () => void;
     disabled?: boolean;
     className?: string;
@@ -54,6 +54,10 @@ export const IconButtonRoot = styled.button<IIconRoot>`
     &:hover {
         background-color: ${({ background }) => background};
     }
+
+    &:disabled {
+        color: ${({ theme: { palette } }) => palette.iconButton.disabled.color};
+    }
 `;
 
 const IconButton = ({
@@ -76,8 +80,8 @@ const IconButton = ({
             onClick={onClick}
             size={size}
             disabled={disabled}
-            background={background || palette.ui.primary}
-            color={color || palette.text.secondary}
+            background={background || palette.iconButton.hover.backgroundColor}
+            color={color || palette.iconButton.color}
             filled={filled}
         >
             {children}

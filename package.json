@@ -13,9 +13,12 @@
     "build": "npm run clean && rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest",
+    "chromatic": "npx chromatic --project-token=959dad63a24e"
   },
-  "author": "Tyger",
+  "author": {
+    "name": "Tyger"
+  },
   "contributors": [
     {
       "name": "Ignacio Villamar",
@@ -59,6 +62,7 @@
     "@typescript-eslint/eslint-plugin": "^5.30.3",
     "@typescript-eslint/parser": "^5.30.3",
     "babel-loader": "^8.2.5",
+    "chromatic": "^6.7.0",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.1.5",
@@ -88,5 +92,7 @@
     "react-dom": ">= 17.0.2",
     "react-icons": "^4.4.0",
     "styled-components": "^5.3.5"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "tyger-design-system@1.0.0"
 }

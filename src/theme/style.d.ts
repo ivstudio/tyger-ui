@@ -36,6 +36,30 @@ type TChipTheme = {
     };
 };
 
+type TIconButtonTheme = {
+    color: string;
+    backgroundColor: string;
+    hover: {
+        color?: string;
+        backgroundColor: string;
+    };
+    disabled: {
+        color?: string;
+    };
+};
+
+type TSwitchTheme = {
+    on: {
+        backgroundColor: string;
+    };
+    off: {
+        backgroundColor: string;
+    };
+    disabled: {
+        backgroundColor: string;
+    };
+};
+
 declare module 'styled-components' {
     export interface DefaultTheme {
         name: TThemeNames;
@@ -57,10 +81,12 @@ declare module 'styled-components' {
                 outlined: TButtonTheme;
                 text: TButtonTheme;
             };
+            iconButton: TIconButtonTheme;
             chip: {
                 contained: TChipTheme;
                 outlined: TChipTheme;
             };
+            switch: TSwitchTheme;
             text: {
                 primary: string;
                 secondary: string;

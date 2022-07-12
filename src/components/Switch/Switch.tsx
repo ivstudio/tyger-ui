@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 export type TSize = 'sm' | 'md' | 'lg';
 
-interface ISwitch {
-    id?: string;
+interface TSwitchRoot {
     checked: boolean;
     size?: TSize;
+}
+interface ISwitch extends TSwitchRoot {
+    id?: string;
+    disabled?: boolean;
     onChange: (val: boolean) => void;
 }
 
@@ -30,16 +33,21 @@ const getSize = (size: TSize) => {
     };
 };
 
-export const Container = styled.div`
+const Container = styled.div<{ disabled: boolean }>`
+    ${({ disabled }) =>
+        disabled && {
+            pointerEvents: 'none',
+            opacity: 0.2,
+        }};
     position: relative;
     user-select: none;
 `;
 
-export const Checkbox = styled.input`
+const Checkbox = styled.input`
     display: none;
 `;
 
-export const Thumb = styled.label<{ checked: boolean; size: TSize }>`
+const Thumb = styled.label<TSwitchRoot>`
     cursor: pointer;
     margin: 0;
     padding: 0;
@@ -49,10 +57,11 @@ export const Thumb = styled.label<{ checked: boolean; size: TSize }>`
     position: relative;
     box-sizing: border-box;
     transition: background-color 0.1s ease;
-    background-color: ${({ checked, theme: { color } }) =>
-        checked ? color.grey[6] : color.grey[2]};
-    ${({ size }) => getSize(size)};
-
+    background-color: ${({ checked, theme }) => {
+        const { on, off } = theme.palette.switch;
+        return checked ? on.backgroundColor : off.backgroundColor;
+    }};
+    ${({ size }) => size && getSize(size)};
     &:before {
         content: '';
         margin: 0px;
@@ -67,15 +76,24 @@ export const Thumb = styled.label<{ checked: boolean; size: TSize }>`
     }
 `;
 
-const Switch = ({ id, onChange, checked = false, size = 'md' }: ISwitch) => (
-    <Container>
-        <Checkbox
-            id={id}
-            type="checkbox"
-            checked={checked}
-            onChange={() => onChange(!checked)}
-        />
-        <Thumb htmlFor={id} checked={checked} size={size} />
-    </Container>
-);
+const Switch = ({
+    id,
+    onChange,
+    checked = false,
+    size = 'md',
+    disabled = false,
+}: ISwitch) => {
+    return (
+        <Container disabled={disabled}>
+            <Checkbox
+                id={id}
+                type="checkbox"
+                checked={checked}
+                disabled={disabled}
+                onChange={() => onChange(!checked)}
+            />
+            <Thumb htmlFor={id} checked={checked} size={size} />
+        </Container>
+    );
+};
 export default Switch;

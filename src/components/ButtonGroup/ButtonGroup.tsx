@@ -11,7 +11,7 @@ export const ButtonGroupRoot = styled.div<IButtonRoot>`
 
     ${({ orientation, theme }) => {
         const borderColor =
-            theme.name === 'lightTheme'
+            theme.name === 'darkTheme'
                 ? 'rgba(0, 0, 0, 0.23)'
                 : 'rgba(255, 255, 255, 0.23)';
 

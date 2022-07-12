@@ -105,6 +105,14 @@ export const lightPalette = {
                 },
             },
         },
+        iconButton: {
+            color: color.grey[5],
+            backgroundColor: 'transparent',
+            hover: { backgroundColor: color.grey[3] },
+            disabled: {
+                color: color.grey[3],
+            },
+        },
         chip: {
             contained: {
                 color: color.grey[7],
@@ -125,11 +133,16 @@ export const lightPalette = {
                 },
             },
         },
+        switch: {
+            on: {
+                backgroundColor: color.blue[5],
+            },
+            off: {
+                backgroundColor: color.grey[5],
+            },
+        },
         surface: {
             primary: color.grey[1],
-        },
-        ui: {
-            primary: color.grey[9],
         },
         text: {
             primary: color.grey[9],
@@ -192,6 +205,14 @@ export const darkPalette = {
                 },
             },
         },
+        iconButton: {
+            color: color.grey[5],
+            backgroundColor: 'transparent',
+            hover: { backgroundColor: color.grey[7] },
+            disabled: {
+                color: color.grey[7],
+            },
+        },
         chip: {
             contained: {
                 color: color.grey[0],
@@ -212,11 +233,16 @@ export const darkPalette = {
                 },
             },
         },
+        switch: {
+            on: {
+                backgroundColor: color.blue[3],
+            },
+            off: {
+                backgroundColor: color.grey[7],
+            },
+        },
         surface: {
             primary: color.grey[11],
-        },
-        ui: {
-            primary: color.grey[1],
         },
         text: {
             primary: color.grey[9],

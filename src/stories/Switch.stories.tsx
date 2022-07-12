@@ -26,6 +26,7 @@ export default {
             control: { type: 'boolean', defaultValue: true },
             description: 'If true, the component is checked.',
         },
+        disabled: { control: 'boolean', defaultValue: false },
     },
 } as ComponentMeta<typeof Switch>;
 
