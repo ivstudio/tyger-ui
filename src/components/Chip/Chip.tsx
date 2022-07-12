@@ -22,15 +22,11 @@ interface IChip {
 const sizes = {
     sm: {
         height: 24,
-        borderRadius: 16,
         padding: `0 8px`,
-        fontSize: 12,
     },
     md: {
         height: 32,
-        borderRadius: 16,
         padding: `0 12px`,
-        fontSize: 14,
     },
 } as const;
 
@@ -45,6 +41,8 @@ export const ChipRoot = styled.div<{
     text-decoration: none;
     vertical-align: middle;
     box-sizing: border-box;
+    font-size: 0.8125rem;
+    border-radius: 16px;
     ${flexCenterInline};
     ${({ size }) => sizes[size]};
 
@@ -79,7 +77,7 @@ export const ChipRoot = styled.div<{
     }}
 `;
 
-export const ChipButton = styled(ChipRoot)`
+export const ChipButtonRoot = styled(ChipRoot)`
     ${buttonBase};
     text-transform: none;
     &:hover {
@@ -99,7 +97,7 @@ const Chip = ({
 }: IChip) => {
     if (tag === 'button') {
         return (
-            <ChipButton
+            <ChipButtonRoot
                 id={id}
                 as="button"
                 type="button"
@@ -110,7 +108,7 @@ const Chip = ({
                 disabled={disabled}
             >
                 {label}
-            </ChipButton>
+            </ChipButtonRoot>
         );
     }
 
