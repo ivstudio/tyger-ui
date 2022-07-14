@@ -58,7 +58,7 @@ const Thumb = styled.label<TSwitchRoot>`
     box-sizing: border-box;
     transition: background-color 0.1s ease;
     background-color: ${({ checked, theme }) => {
-        const { on, off } = theme.palette.switch;
+        const { on, off } = theme.switch;
         return checked ? on.backgroundColor : off.backgroundColor;
     }};
     ${({ size }) => size && getSize(size)};

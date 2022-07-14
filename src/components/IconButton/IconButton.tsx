@@ -56,7 +56,7 @@ export const IconButtonRoot = styled.button<IIconRoot>`
     }
 
     &:disabled {
-        color: ${({ theme: { palette } }) => palette.iconButton.disabled.color};
+        color: ${({ theme: { iconButton } }) => iconButton.disabled.color};
     }
 `;
 
@@ -71,7 +71,7 @@ const IconButton = ({
     className,
     ...baseProps
 }: IIconButton) => {
-    const { palette } = useTheme();
+    const { iconButton } = useTheme();
 
     return (
         <IconButtonRoot
@@ -80,8 +80,8 @@ const IconButton = ({
             onClick={onClick}
             size={size}
             disabled={disabled}
-            background={background || palette.iconButton.hover.backgroundColor}
-            color={color || palette.iconButton.color}
+            background={background || iconButton.hover.backgroundColor}
+            color={color || iconButton.color}
             filled={filled}
         >
             {children}

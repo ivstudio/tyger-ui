@@ -70,48 +70,42 @@ declare module 'styled-components' {
         zindex: typeof zindexScale;
         body: string;
         backgroundColor: string;
-        palette: {
-            primary: string;
-            border: string;
-            warning: string;
-            error: string;
-            success: string;
-            button: {
-                filled: TButtonTheme;
-                outlined: TButtonTheme;
-                text: TButtonTheme;
-            };
-            iconButton: TIconButtonTheme;
-            chip: {
-                filled: TChipTheme;
-                outlined: TChipTheme;
-            };
-            switch: TSwitchTheme;
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-            };
-            ui: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-            };
+
+        primary: string;
+        border: string;
+        warning: string;
+        error: string;
+        success: string;
+        button: {
+            filled: TButtonTheme;
+            outlined: TButtonTheme;
+            text: TButtonTheme;
         };
-        bg: {
-            primary: string;
-            secondary: string;
-            inset: string;
-            input: string;
-            appBar: string;
+        iconButton: TIconButtonTheme;
+        chip: {
+            filled: TChipTheme;
+            outlined: TChipTheme;
         };
+        switch: TSwitchTheme;
         text: {
             primary: string;
             secondary: string;
             tertiary: string;
             quarternary: string;
             placeholder: string;
-            onPrimary: string;
+        };
+        ui: {
+            primary: string;
+            secondary: string;
+            tertiary: string;
+        };
+
+        bg: {
+            primary: string;
+            secondary: string;
+            inset: string;
+            input: string;
+            appBar: string;
         };
     }
 }

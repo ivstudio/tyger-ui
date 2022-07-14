@@ -139,7 +139,7 @@ const ButtonRoot = styled.button<TButtonRoot>`
     }};
     ${({ theme, variant, size, hasStartIcon, hasEndIcon }) => {
         if (!theme || !variant) return null;
-        const { button } = theme.palette;
+        const { button } = theme;
         const spacingType = hasStartIcon
             ? 'startIcon'
             : hasEndIcon

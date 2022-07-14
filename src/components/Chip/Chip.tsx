@@ -48,7 +48,7 @@ export const ChipRoot = styled.div<{
 
     ${({ theme, variant, disabled }) => {
         if (!theme || !variant) return null;
-        const { chip } = theme.palette;
+        const { chip } = theme;
         switch (variant) {
             case 'outlined':
                 return disabled

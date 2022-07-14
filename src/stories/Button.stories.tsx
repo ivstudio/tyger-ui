@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Button, { TButtonVariant, TSize } from '../components/Button';
+import Typography from '../components/Typography';
 import { MdDelete as DeleteIcon, MdSend as SendIcon } from 'react-icons/md';
 import { SBList } from './sb.styles';
 
@@ -59,11 +60,11 @@ Text.args = {
 export const AllButtonsSizes = () => (
     <SBList>
         <li>
-            <h3>Buttons</h3>
-            <p>
+            <Typography tag="h3">Buttons</Typography>
+            <Typography tag="p">
                 The button contains three variants filled (default), text, and
                 outlined.
-            </p>
+            </Typography>
         </li>
         {['text', 'outlined', 'filled'].map(item => (
             <li key={item}>
