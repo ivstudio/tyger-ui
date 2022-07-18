@@ -113,7 +113,7 @@ const fontSizes = {
 } as const;
 
 const roundedCorners = {
-    sm: '14px',
+    sm: '18px',
     md: '18px',
     lg: '22px',
 } as const;

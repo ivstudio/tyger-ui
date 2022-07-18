@@ -4,15 +4,15 @@
     Formula by: Carbon Design System
 */
 const scale = {
-    '15': '5.75',
-    '14': '5.25',
-    '13': '4.75',
-    '12': '4.25',
-    '11': '3.75',
-    '10': '3.375',
-    '9': '3',
-    '8': '2.625',
-    '7': '2.25',
+    '15': '5.75em',
+    '14': '5.25em',
+    '13': '4.75em',
+    '12': '4.25em',
+    '11': '3.75em',
+    '10': '3.375em',
+    '9': '3em',
+    '8': '2.625em',
+    '7': '2.25em',
     '6': '2em',
     '5': '1.75em',
     '4': '1.5em',
@@ -65,16 +65,26 @@ export const textStyles = {
         fontWeight: 'normal',
     },
     lead: {
+        fontSize: scale['11'],
+        fontWeight: '600',
+    },
+    lead1: {
+        fontSize: scale['7'],
+        fontWeight: '300',
+    },
+    subheading: {
+        fontSize: scale['4'],
+        fontWeight: '300',
+    },
+    subheading1: {
         fontSize: scale['3'],
         fontWeight: '300',
     },
     title: {
-        fontSize: scale['5'],
+        fontSize: scale['6'],
         fontWeight: '700',
     },
-    subheading: {
-        fontSize: scale['4'],
-    },
+
     label: {
         fontSize: scale['1'],
     },

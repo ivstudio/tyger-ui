@@ -43,6 +43,7 @@ export interface ITypographyRoot {
     mb?: TSpacing;
     tag?: TTypography;
     color?: string;
+    maxWidth?: number;
 }
 interface ITypography extends ITypographyRoot {
     variant?: TVariant;
@@ -58,6 +59,7 @@ const RootTypography = styled.div<ITypography>`
     line-height: 1.3;
     display: block;
     color: ${({ color, theme }) => (color ? color : theme.text.primary)};
+    max-width: ${({ maxWidth }) => maxWidth && `${maxWidth}px`};
 `;
 
 const Typography = ({
@@ -70,6 +72,7 @@ const Typography = ({
     variant,
     tag = 'p',
     color,
+    maxWidth,
 }: ITypography) => {
     return (
         <RootTypography
@@ -81,6 +84,7 @@ const Typography = ({
             mt={mt}
             mb={mb}
             color={color}
+            maxWidth={maxWidth}
         >
             {children}
         </RootTypography>
