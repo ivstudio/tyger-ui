@@ -48,7 +48,7 @@ export const ModalContainer = styled.div<{
     ${({ maxWidth, fullWidth }) => getWidth(fullWidth, maxWidth)};
 `;
 
-export const ModalContent = styled.div`
+export const ModalBody = styled.div`
     flex: 1;
     overflow-y: auto;
     padding: ${({ theme }) => theme.spacing['16']};
@@ -60,12 +60,15 @@ export const ModalFooter = styled.div`
     justify-content: flex-end;
     flex: 0 0 auto;
     border-top: 1px solid ${({ theme }) => theme.color.grey[2]};
-    padding: ${({ theme }) => theme.spacing['8']};
+    column-gap: ${({ theme }) => theme.spacing['8']};
+    padding: ${({ theme }) => theme.spacing['16']};
 `;
 
-export const ModalHeader = styled.h2`
-    flex: 0 0 auto;
+export const ModalHeaderRoot = styled.header`
     margin: 0px;
     padding: ${({ theme }) => theme.spacing['16']};
     border-bottom: 1px solid ${({ theme }) => theme.color.grey[2]};
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    align-items: center;
 `;

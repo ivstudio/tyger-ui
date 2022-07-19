@@ -1,20 +1,22 @@
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { MdClose as CloseIcon } from 'react-icons/md';
 
-import { TBreakpointKey } from '../../styles/mediaQueries';
+import { TBreakpointKey } from '../../styles';
 import Backdrop from '../Backdrop';
+import IconButton from '../IconButton';
+import Typography from '../Typography';
 import {
     framerProps,
+    ModalBody,
     ModalContainer,
-    ModalContent,
     ModalFooter,
-    ModalHeader,
+    ModalHeaderRoot,
     ModalPaper,
 } from './Modal.styles';
 
 interface IModal {
-    title?: string;
     description?: string;
     children?: React.ReactNode | React.ReactNode[];
     parent?: HTMLElement;
@@ -26,8 +28,23 @@ interface IModal {
     disableBackdropClick?: boolean;
 }
 
+interface IModalHeader {
+    title?: string;
+    onClose?: () => void;
+}
+
+const ModalHeader = ({ title, onClose }: IModalHeader) => (
+    <ModalHeaderRoot aria-labelled={title}>
+        <Typography tag="h2" variant="subheading" mb="0">
+            {title}
+        </Typography>
+        <IconButton onClick={onClose}>
+            <CloseIcon />
+        </IconButton>
+    </ModalHeaderRoot>
+);
+
 const Modal = ({
-    title,
     description,
     children,
     open,
@@ -57,8 +74,7 @@ const Modal = ({
             <AnimatePresence>
                 {open && (
                     <ModalContainer
-                        aria-labelledby={title}
-                        aria-describedby={description}
+                        aria-described={description}
                         maxWidth={maxWidth}
                         fullWidth={fullWidth}
                     >
@@ -67,9 +83,7 @@ const Modal = ({
                             fullWidth={fullWidth}
                             {...framerProps}
                         >
-                            {title && <ModalHeader>{title}</ModalHeader>}
-                            <ModalContent>{children}</ModalContent>
-                            <ModalFooter>footer</ModalFooter>
+                            {children}
                         </ModalPaper>
                     </ModalContainer>
                 )}
@@ -83,4 +97,7 @@ const Modal = ({
     return portalElem ? createPortal(ModalRoot, portalElem) : null;
 };
 
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;
+Modal.Footer = ModalFooter;
 export default Modal;

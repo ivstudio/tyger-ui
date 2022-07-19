@@ -74,7 +74,7 @@ export const textStyles = {
     },
     subheading: {
         fontSize: scale['4'],
-        fontWeight: '300',
+        fontWeight: '600',
     },
     subheading1: {
         fontSize: scale['3'],
@@ -84,7 +84,6 @@ export const textStyles = {
         fontSize: scale['6'],
         fontWeight: '700',
     },
-
     label: {
         fontSize: scale['1'],
     },

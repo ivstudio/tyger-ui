@@ -67,7 +67,6 @@ export const color = {
 export const lightPalette = {
     name: 'lightTheme',
     backgroundColor: color.grey[0],
-
     primary: color.blue[5],
     border: color.grey[4],
     button: {
