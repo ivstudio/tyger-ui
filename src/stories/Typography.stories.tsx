@@ -61,6 +61,7 @@ export const TypographyVariants = () => (
             <Typography variant="lead">lead</Typography>
             <Typography variant="title">title</Typography>
             <Typography variant="subheading">subheading</Typography>
+            <Typography variant="subheading1">subheading1</Typography>
             <Typography variant="label">label</Typography>
             <Typography variant="footnote">footnote</Typography>
         </Box>

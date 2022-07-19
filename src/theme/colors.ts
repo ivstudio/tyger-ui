@@ -68,7 +68,8 @@ export const lightPalette = {
     name: 'lightTheme',
     backgroundColor: color.grey[0],
     primary: color.blue[5],
-    border: color.grey[4],
+    border: color.grey[3],
+    paper: color.grey[0],
     button: {
         filled: {
             color: color.grey[0],
@@ -163,7 +164,8 @@ export const darkPalette = {
     name: 'darkTheme',
     backgroundColor: color.grey[9],
     primary: color.blue[5],
-    border: color.grey[8],
+    border: color.grey[7],
+    paper: color.grey[8],
     button: {
         filled: {
             color: color.grey[9],

@@ -59,6 +59,7 @@ export const htmlTextElements = {
 export const textStyles = {
     body: {
         fontSize: scale['1'],
+        fontWeight: '300',
     },
     body1: {
         fontSize: scale['-1'],

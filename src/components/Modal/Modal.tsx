@@ -35,10 +35,10 @@ interface IModalHeader {
 
 const ModalHeader = ({ title, onClose }: IModalHeader) => (
     <ModalHeaderRoot aria-labelled={title}>
-        <Typography tag="h2" variant="subheading" mb="0">
+        <Typography tag="h2" variant="subheading1" weight="600" mb="0">
             {title}
         </Typography>
-        <IconButton onClick={onClose}>
+        <IconButton onClick={onClose} aria-labelled="close">
             <CloseIcon />
         </IconButton>
     </ModalHeaderRoot>
@@ -74,6 +74,7 @@ const Modal = ({
             <AnimatePresence>
                 {open && (
                     <ModalContainer
+                        role="dialog"
                         aria-described={description}
                         maxWidth={maxWidth}
                         fullWidth={fullWidth}

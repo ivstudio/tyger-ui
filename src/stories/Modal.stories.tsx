@@ -12,7 +12,23 @@ export default {
         options: { showPanel: true },
         controls: { sort: 'requiredFirst' },
     },
-    argTypes: {},
+    argTypes: {
+        maxWidth: {
+            control: {
+                type: 'select',
+            },
+        },
+        fullWidth: {
+            control: 'boolean',
+            defaultValue: false,
+        },
+        disableBackdropClick: {
+            control: 'boolean',
+            defaultValue: false,
+        },
+        children: { control: false },
+        className: { control: false },
+    },
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = args => {
@@ -30,14 +46,28 @@ const Template: ComponentStory<typeof Modal> = args => {
                     onClose={() => updateArgs({ open: false })}
                 />
                 <Modal.Body>
-                    <Typography mb="16">
+                    <Typography mb="16" variant="body">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua. Ut enim ad minim veniam, quis nostrud
                         exercitation ullamco laboris nisi ut aliquip ex ea
                         commodo consequat.
                     </Typography>
-                    <Typography>
+                    <Typography mb="16" variant="body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </Typography>
+                    <Typography mb="16" variant="body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </Typography>
+                    <Typography variant="body">
                         Duis aute irure dolor in reprehenderit in voluptate
                         velit esse cillum dolore eu fugiat nulla pariatur.
                         Excepteur sint occaecat cupidatat non proident, sunt in
@@ -66,6 +96,4 @@ const Template: ComponentStory<typeof Modal> = args => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-    children: <>HELLO</>,
-};
+Default.args = {};

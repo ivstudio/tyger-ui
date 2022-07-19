@@ -70,9 +70,9 @@ declare module 'styled-components' {
         zindex: typeof zindexScale;
         body: string;
         backgroundColor: string;
-
         primary: string;
         border: string;
+        paper: string;
         warning: string;
         error: string;
         success: string;
