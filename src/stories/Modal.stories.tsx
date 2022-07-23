@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from '../components/Button';
 import Modal from '../components/Modal';
 import Typography from '../components/Typography';
+import Box from '../components/Box';
 
 export default {
     title: 'Feedback/Modal',
@@ -17,6 +18,14 @@ export default {
             control: {
                 type: 'select',
             },
+        },
+        headerBorder: {
+            control: 'boolean',
+            defaultValue: true,
+        },
+        footerBorder: {
+            control: 'boolean',
+            defaultValue: true,
         },
         scroll: {
             control: {
@@ -102,5 +111,53 @@ const Template: ComponentStory<typeof Modal> = args => {
     );
 };
 
+const TemplateLean: ComponentStory<typeof Modal> = args => {
+    const [{ open }, updateArgs] = useArgs();
+
+    return (
+        <>
+            <Modal
+                {...args}
+                open={open}
+                footerBorder={false}
+                onBackdropClick={() => updateArgs({ open: false })}
+            >
+                <Modal.Body>
+                    <Typography mb="0" mt="8" variant="body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </Typography>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button
+                        variant="text"
+                        onClick={() => updateArgs({ open: false })}
+                    >
+                        CANCEL
+                    </Button>
+                    <Button onClick={() => updateArgs({ open: false })}>
+                        SAVE CHANGES
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            <Button onClick={() => updateArgs({ open: true })}>
+                Open Modal
+            </Button>
+            <div id="portal"></div>
+        </>
+    );
+};
+
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    maxWidth: 'sm',
+};
+
+export const FlexibleComposition = TemplateLean.bind({});
+FlexibleComposition.args = {
+    maxWidth: 'xs',
+};

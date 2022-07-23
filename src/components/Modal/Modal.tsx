@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Children, cloneElement } from 'react';
 import { createPortal } from 'react-dom';
 import { MdClose as CloseIcon } from 'react-icons/md';
 import useClickOutside from '../../hooks/useClickOutside';
@@ -16,11 +16,12 @@ import {
     ModalHeaderRoot,
     ModalPaper,
     ModalRoot,
+    modalElem,
 } from './Modal.styles';
 
 export type TScroll = 'body' | 'paper';
 interface IModal {
-    children?: React.ReactNode | React.ReactNode[];
+    children?: JSX.Element | JSX.Element[];
     parent?: HTMLElement;
     open: boolean;
     maxWidth?: TBreakpointKey;
@@ -29,6 +30,8 @@ interface IModal {
     onBackdropClick?: () => void;
     disableBackdropClick?: boolean;
     scroll?: TScroll;
+    headerBorder?: boolean;
+    footerBorder?: boolean;
 }
 
 interface IModalHeader {
@@ -55,6 +58,8 @@ const Modal = ({
     onBackdropClick,
     disableBackdropClick = false,
     scroll = 'paper',
+    headerBorder = true,
+    footerBorder = true,
 }: IModal) => {
     const modalRef = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
@@ -75,6 +80,20 @@ const Modal = ({
         return null;
     }
 
+    const body = Children.map(children, child => {
+        if (!child) return null;
+
+        if (child.type?.displayName === modalElem.body) {
+            return cloneElement(child, {
+                id: 'sss',
+                borderTop: headerBorder,
+                borderBottom: footerBorder,
+            });
+        }
+
+        return child;
+    });
+
     const ModalBase = (
         <AnimatePresence>
             {open && (
@@ -89,7 +108,7 @@ const Modal = ({
                             scroll={scroll}
                             {...framerProps}
                         >
-                            {children}
+                            {body}
                         </ModalPaper>
                     </ModalContainer>
                     {!fullWidth && <Backdrop open={open} zindex="-1" />}

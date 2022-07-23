@@ -27,6 +27,10 @@ const getWidth = (fullWidth: boolean, maxWidth: TBreakpointKey) => {
     return { maxWidth: breakpoint[maxWidth] };
 };
 
+export const modalElem = {
+    body: 'modalBody',
+};
+
 export const ModalRoot = styled.div`
     position: fixed;
     inset: 0px;
@@ -101,14 +105,21 @@ export const ModalHeaderRoot = styled.header`
     text-align: left;
 `;
 
-export const ModalBody = styled.div`
+export const ModalBody = styled.main<{
+    borderBottom?: boolean;
+    borderTop?: boolean;
+}>`
     flex: 1;
     overflow-y: auto;
     padding: ${({ theme }) => theme.spacing['16']};
-    border-bottom: 1px solid ${({ theme }) => theme.border};
-    border-top: 1px solid ${({ theme }) => theme.border};
+    border-bottom: ${({ theme, borderBottom }) =>
+        borderBottom && `1px solid ${theme.border}`};
+    border-top: ${({ theme, borderTop }) =>
+        borderTop && `1px solid ${theme.border}`};
     text-align: left;
 `;
+
+ModalBody.displayName = modalElem.body;
 
 export const ModalFooter = styled.div`
     display: flex;
