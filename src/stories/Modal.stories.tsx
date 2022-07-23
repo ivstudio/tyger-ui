@@ -18,6 +18,13 @@ export default {
                 type: 'select',
             },
         },
+        scroll: {
+            control: {
+                type: 'select',
+                options: ['body', 'paper'],
+                defaultValue: 'paper',
+            },
+        },
         fullWidth: {
             control: 'boolean',
             defaultValue: false,

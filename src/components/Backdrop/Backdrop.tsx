@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 
+import { flexCenterAll } from '../../styles';
+
+type TZIndex = string;
 interface IBackdrop {
     children?: React.ReactNode | React.ReactNode[];
     onClick?: () => void;
@@ -9,26 +12,23 @@ interface IBackdrop {
     base?: boolean;
     key?: string;
     transparent?: boolean;
-    zindex?: number;
+    zindex?: TZIndex;
 }
+
+const dark65 = 'rgba(0, 0, 0, 0.65)';
 
 export const BackdropRoot = styled(motion.div)<{
     color: string;
-    zindex?: number;
+    zindex?: TZIndex;
 }>`
     position: fixed;
-    left: 0;
-    bottom: 0;
-    top: 0;
+    inset: 0px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    ${flexCenterAll}
     background: ${({ color }) => color};
     z-index: ${({ zindex }) => zindex};
+    -webkit-tap-highlight-color: transparent;
 `;
-
-const dark65 = 'rgba(0, 0, 0, 0.65)';
 
 const Backdrop = ({
     key = 'backdrop',
@@ -52,7 +52,7 @@ const Backdrop = ({
                     color={transparent ? 'transparent' : dark65}
                     zindex={zindex}
                 >
-                    {children}
+                    {children && children}
                 </BackdropRoot>
             ) : null}
         </AnimatePresence>

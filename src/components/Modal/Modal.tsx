@@ -1,7 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { MdClose as CloseIcon } from 'react-icons/md';
+import useClickOutside from '../../hooks/useClickOutside';
 
 import { TBreakpointKey } from '../../styles';
 import Backdrop from '../Backdrop';
@@ -14,10 +15,11 @@ import {
     ModalFooter,
     ModalHeaderRoot,
     ModalPaper,
+    ModalRoot,
 } from './Modal.styles';
 
+export type TScroll = 'body' | 'paper';
 interface IModal {
-    description?: string;
     children?: React.ReactNode | React.ReactNode[];
     parent?: HTMLElement;
     open: boolean;
@@ -26,6 +28,7 @@ interface IModal {
     onClose: () => void;
     onBackdropClick?: () => void;
     disableBackdropClick?: boolean;
+    scroll?: TScroll;
 }
 
 interface IModalHeader {
@@ -34,25 +37,26 @@ interface IModalHeader {
 }
 
 const ModalHeader = ({ title, onClose }: IModalHeader) => (
-    <ModalHeaderRoot aria-labelled={title}>
+    <ModalHeaderRoot>
         <Typography tag="h2" variant="subheading1" weight="600" mb="0">
             {title}
         </Typography>
-        <IconButton onClick={onClose} aria-labelled="close">
+        <IconButton onClick={onClose}>
             <CloseIcon />
         </IconButton>
     </ModalHeaderRoot>
 );
 
 const Modal = ({
-    description,
     children,
     open,
     maxWidth = 'md',
     fullWidth = false,
     onBackdropClick,
     disableBackdropClick = false,
+    scroll = 'paper',
 }: IModal) => {
+    const modalRef = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -60,42 +64,42 @@ const Modal = ({
         return () => setMounted(false);
     }, []);
 
-    const handleBackdropClick = () => {
-        if (disableBackdropClick || !onBackdropClick) return;
+    const handleBackdrop = () => {
+        if (disableBackdropClick || !onBackdropClick || fullWidth) return;
         onBackdropClick();
     };
+
+    useClickOutside(modalRef, handleBackdrop);
 
     if (!mounted) {
         return null;
     }
 
-    const ModalRoot = (
-        <>
-            <AnimatePresence>
-                {open && (
-                    <ModalContainer
-                        role="dialog"
-                        aria-described={description}
-                        maxWidth={maxWidth}
-                        fullWidth={fullWidth}
-                    >
+    const ModalBase = (
+        <AnimatePresence>
+            {open && (
+                <ModalRoot>
+                    <ModalContainer scroll={scroll}>
                         <ModalPaper
+                            ref={modalRef}
+                            role="dialog"
                             key="paper"
+                            maxWidth={maxWidth}
                             fullWidth={fullWidth}
+                            scroll={scroll}
                             {...framerProps}
                         >
                             {children}
                         </ModalPaper>
                     </ModalContainer>
-                )}
-            </AnimatePresence>
-
-            {open && <Backdrop open={open} onClick={handleBackdropClick} />}
-        </>
+                    {!fullWidth && <Backdrop open={open} zindex="-1" />}
+                </ModalRoot>
+            )}
+        </AnimatePresence>
     );
 
     const portalElem = document.querySelector('#portal');
-    return portalElem ? createPortal(ModalRoot, portalElem) : null;
+    return portalElem ? createPortal(ModalBase, portalElem) : null;
 };
 
 Modal.Header = ModalHeader;

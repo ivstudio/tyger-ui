@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { breakpoint, TBreakpointKey } from '../../styles/mediaQueries';
+import { breakpoint, TBreakpointKey } from '../../styles';
+import { TScroll } from './Modal';
 
 export const framerProps = {
     initial: { opacity: 0, scale: 0 },
@@ -9,6 +10,9 @@ export const framerProps = {
     exit: { opacity: 0, scale: 0 },
     transition: { duration: 0.15, delay: 0.1 },
 };
+
+const elevation = `rgb(0 0 0 / 20%) 0px 11px 15px -7px,
+rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px`;
 
 const getWidth = (fullWidth: boolean, maxWidth: TBreakpointKey) => {
     if (fullWidth) {
@@ -23,38 +27,69 @@ const getWidth = (fullWidth: boolean, maxWidth: TBreakpointKey) => {
     return { maxWidth: breakpoint[maxWidth] };
 };
 
+export const ModalRoot = styled.div`
+    position: fixed;
+    inset: 0px;
+    z-index: ${({ theme }) => theme.zindex.modal};
+`;
+
+export const ModalContainer = styled.div<{ scroll: TScroll }>`
+    height: 100%;
+    outline: 0px;
+
+    ${({ scroll }) => {
+        switch (scroll) {
+            case 'paper':
+                return {
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                };
+            case 'body':
+            default:
+                return {
+                    overflow: 'hidden auto',
+                    textAlign: 'center',
+                };
+        }
+    }};
+`;
+
 export const ModalPaper = styled(motion.div)<{
     fullWidth: boolean;
+    maxWidth: TBreakpointKey;
+    scroll: TScroll;
 }>`
-    position: relative;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
     overflow-y: auto;
-    height: 100%;
+    box-shadow: ${elevation};
+    z-index: ${({ theme }) => theme.zindex.modal + 2};
     border-radius: ${({ fullWidth }) => !fullWidth && `4px`};
     margin: ${({ fullWidth, theme }) => !fullWidth && theme.spacing['32']};
     background-color: ${({ theme }) => theme.paper};
-    box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px,
-        rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+    ${({ maxWidth, fullWidth }) => getWidth(fullWidth, maxWidth)};
+
+    ${({ scroll, fullWidth }) => {
+        switch (scroll) {
+            case 'paper':
+                return {
+                    maxHeight: fullWidth ? '100%' : 'calc(100% - 64px)',
+                };
+            case 'body':
+            default:
+                return {
+                    display: 'inline-block',
+                    verticalAlign: 'middle',
+                };
+        }
+    }};
 
     @media print {
         overflow-y: visible;
         box-shadow: none;
     }
-`;
-
-export const ModalContainer = styled.div<{
-    maxWidth: TBreakpointKey;
-    fullWidth: boolean;
-}>`
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    z-index: ${({ theme }) => theme.zindex.modal};
-    ${({ maxWidth, fullWidth }) => getWidth(fullWidth, maxWidth)};
 `;
 
 export const ModalHeaderRoot = styled.header`
@@ -63,6 +98,7 @@ export const ModalHeaderRoot = styled.header`
     display: grid;
     grid-template-columns: 1fr 32px;
     align-items: center;
+    text-align: left;
 `;
 
 export const ModalBody = styled.div`
@@ -71,6 +107,7 @@ export const ModalBody = styled.div`
     padding: ${({ theme }) => theme.spacing['16']};
     border-bottom: 1px solid ${({ theme }) => theme.border};
     border-top: 1px solid ${({ theme }) => theme.border};
+    text-align: left;
 `;
 
 export const ModalFooter = styled.div`
