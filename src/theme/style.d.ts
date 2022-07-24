@@ -55,7 +55,7 @@ type TSwitchTheme = {
     off: {
         backgroundColor: string;
     };
-    disabled: {
+    disabled?: {
         backgroundColor: string;
     };
 };
@@ -94,12 +94,6 @@ declare module 'styled-components' {
             quarternary: string;
             placeholder: string;
         };
-        ui: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-        };
-
         bg: {
             primary: string;
             secondary: string;

@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
 
 import Chip, { TSize } from '../components/Chip';
 import { SBList } from './sb.styles';

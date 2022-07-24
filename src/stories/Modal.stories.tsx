@@ -1,10 +1,10 @@
+import React from 'react';
 import { useArgs } from '@storybook/client-api';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Button from '../components/Button';
 import Modal from '../components/Modal';
 import Typography from '../components/Typography';
-import Box from '../components/Box';
 
 export default {
     title: 'Feedback/Modal',

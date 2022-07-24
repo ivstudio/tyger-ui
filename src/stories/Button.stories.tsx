@@ -4,6 +4,7 @@ import Button, { TButtonVariant, TSize } from '../components/Button';
 import Typography from '../components/Typography';
 import { MdDelete as DeleteIcon, MdSend as SendIcon } from 'react-icons/md';
 import { SBList } from './sb.styles';
+import React from 'react';
 
 export default {
     title: 'Components/Button',

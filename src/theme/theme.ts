@@ -11,12 +11,12 @@ export const theme = {
     zindex,
 };
 
-const lightPalette = {
+export const lightPalette = {
     ...theme,
     ...light,
 };
 
-const darkPalette = {
+export const darkPalette = {
     ...theme,
     ...dark,
 };

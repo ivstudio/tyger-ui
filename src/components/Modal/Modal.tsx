@@ -85,7 +85,6 @@ const Modal = ({
 
         if (child.type?.displayName === modalElem.body) {
             return cloneElement(child, {
-                id: 'sss',
                 borderTop: headerBorder,
                 borderBottom: footerBorder,
             });

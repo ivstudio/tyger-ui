@@ -1,5 +1,6 @@
 import { useArgs } from '@storybook/client-api';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
 
 import Accordion from '../components/Accordion';
 
