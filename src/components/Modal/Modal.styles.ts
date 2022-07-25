@@ -34,7 +34,7 @@ export const modalElem = {
 export const ModalRoot = styled.div`
     position: fixed;
     inset: 0px;
-    z-index: ${({ theme }) => theme.zindex.modal};
+    z-index: ${({ theme }) => theme.zIndex.modal};
 `;
 
 export const ModalContainer = styled.div<{ scroll: TScroll }>`
@@ -69,7 +69,7 @@ export const ModalPaper = styled(motion.div)<{
     position: relative;
     overflow-y: auto;
     box-shadow: ${elevation};
-    z-index: ${({ theme }) => theme.zindex.modal + 2};
+    z-index: ${({ theme }) => theme.zIndex.modal + 2};
     border-radius: ${({ fullWidth }) => !fullWidth && `4px`};
     margin: ${({ fullWidth, theme }) => !fullWidth && theme.spacing['32']};
     background-color: ${({ theme }) => theme.paper};

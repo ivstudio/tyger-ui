@@ -1,3 +1,8 @@
+export enum ThemeModes {
+    Dark = 'Dark',
+    Light = 'Light',
+}
+
 export const color = {
     blue: [
         '#F0F9FF',
@@ -65,7 +70,7 @@ export const color = {
 };
 
 export const lightPalette = {
-    name: 'lightTheme',
+    name: ThemeModes.Light,
     backgroundColor: color.grey[0],
     primary: color.blue[5],
     border: color.grey[3],
@@ -161,11 +166,12 @@ export const lightPalette = {
 };
 
 export const darkPalette = {
-    name: 'darkTheme',
+    name: ThemeModes.Dark,
     backgroundColor: color.grey[9],
     primary: color.blue[5],
     border: color.grey[7],
     paper: color.grey[8],
+    body: '#000000',
     button: {
         filled: {
             color: color.grey[9],

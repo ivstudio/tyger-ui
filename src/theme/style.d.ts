@@ -1,13 +1,8 @@
 import 'styled-components';
 
 import { TSpacing } from '../utils/spacing';
-import {
-    colorScale,
-    fontSizeScale,
-    lineHeightScale,
-    TThemeNames,
-    zindexScale,
-} from './theme';
+import { ICommonTokens } from './theme';
+import { ThemeModes } from './colors';
 
 type TButtonTheme = {
     color: string;
@@ -61,21 +56,13 @@ type TSwitchTheme = {
 };
 
 declare module 'styled-components' {
-    export interface DefaultTheme {
-        name: TThemeNames;
-        color: typeof colorScale;
-        spacing: TSpacing;
-        fontSize: typeof fontSizeScale;
-        lineHeight: typeof lineHeightScale;
-        zindex: typeof zindexScale;
-        body: string;
-        backgroundColor: string;
+    export interface DefaultTheme extends ICommonTokens {
+        name: ThemeModes;
+        body?: string;
+        backgroundColor?: string;
         primary: string;
         border: string;
         paper: string;
-        warning: string;
-        error: string;
-        success: string;
         button: {
             filled: TButtonTheme;
             outlined: TButtonTheme;

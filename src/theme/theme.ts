@@ -1,28 +1,35 @@
 import { fontSize, lineHeight } from '../utils/font';
 import { spacing } from '../utils/spacing';
-import { zindex } from '../utils/zIndex';
+import { zIndex } from '../utils/zIndex';
 import { color, darkPalette as dark, lightPalette as light } from './colors';
+import { DefaultTheme } from 'styled-components';
 
-export const theme = {
+export interface ICommonTokens {
+    spacing: typeof spacing;
+    color: typeof color;
+    fontSize: typeof fontSize;
+    lineHeight: typeof lineHeight;
+    zIndex: typeof zIndex;
+}
+const commonTokens: ICommonTokens = {
     color,
     spacing,
     fontSize,
     lineHeight,
-    zindex,
+    zIndex,
 };
 
 export const lightPalette = {
-    ...theme,
+    ...commonTokens,
     ...light,
 };
 
 export const darkPalette = {
-    ...theme,
+    ...commonTokens,
     ...dark,
 };
 
-export const lightTheme: typeof lightPalette = lightPalette;
-export const darkTheme: typeof darkPalette = darkPalette;
-export type TThemeNames = 'darkTheme' | 'lightTheme';
-export type Theme = typeof lightTheme | typeof darkTheme;
-export type ThemeProps = { theme?: Theme };
+export const lightTheme: DefaultTheme = lightPalette;
+export const darkTheme: DefaultTheme = darkPalette;
+export type TTheme = typeof lightTheme | typeof darkTheme;
+export type ThemeProps = { theme?: TTheme };

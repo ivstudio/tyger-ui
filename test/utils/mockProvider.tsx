@@ -1,11 +1,19 @@
 import React, { FC, ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { darkTheme, darkPalette } from '../src/theme/theme';
-import GlobalStyles from '../src/styles/globalStyles';
+import { darkTheme, TTheme } from '../../src/theme/theme';
+import GlobalStyles from '../../src/styles/globalStyles';
 
-const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
-    return <ThemeProvider theme="light">{children}</ThemeProvider>;
+const AllTheProviders: FC<{ children: React.ReactNode; theme?: TTheme }> = ({
+    children,
+    theme = darkTheme,
+}) => {
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            {children}
+        </ThemeProvider>
+    );
 };
 
 const customRender = (

@@ -13,5 +13,6 @@ export const spacing = {
     '80': '80px',
     '96': '96px',
     '160': '160px',
-};
+} as const;
+
 export type TSpacing = keyof typeof spacing;

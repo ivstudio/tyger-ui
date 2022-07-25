@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders the Button 1`] = `
+<button
+  class="sc-gsnTZi gWoXO"
+  type="button"
+>
+  Button
+</button>
+`;
