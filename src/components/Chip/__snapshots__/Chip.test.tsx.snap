@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip renders Chip 1`] = `
+<span
+  class="sc-bczRLJ gLiHLa"
+>
+  Chip filled
+</span>
+`;

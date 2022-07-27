@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup renders ButtonGroup 1`] = `
+<div
+  class="sc-bczRLJ kidHRS"
+  orientation="horizontal"
+>
+  <button
+    class="sc-dkzDqf buNHyx first"
+    type="button"
+  >
+    Button
+  </button>
+  <button
+    class="sc-dkzDqf buNHyx center"
+    type="button"
+  >
+    Button
+  </button>
+  <button
+    class="sc-dkzDqf buNHyx last"
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
