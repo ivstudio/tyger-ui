@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, TTheme } from '../../src/theme/theme';
 import GlobalStyles from '../../src/styles/globalStyles';

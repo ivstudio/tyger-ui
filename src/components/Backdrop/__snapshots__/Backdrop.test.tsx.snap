@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop renders Backdrop 1`] = `
+<div
+  class="sc-bczRLJ etZFho"
+  color="rgba(0, 0, 0, 0.65)"
+  data-testid="backdrop"
+  style="opacity: 0;"
+/>
+`;

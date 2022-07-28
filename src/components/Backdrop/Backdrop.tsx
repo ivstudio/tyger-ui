@@ -44,6 +44,7 @@ const Backdrop = ({
             {open ? (
                 <BackdropRoot
                     key={key}
+                    data-testid="backdrop"
                     onClick={onClick}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
