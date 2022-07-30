@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box renders Box correctly 1`] = `
+exports[`Container renders Container correctly 1`] = `
 <div
-  class="sc-bczRLJ bJGtpP"
+  class="sc-bczRLJ sc-gsnTZi jCYsfH fXsEUQ"
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 </div>

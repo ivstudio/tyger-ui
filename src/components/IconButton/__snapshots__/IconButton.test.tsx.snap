@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IconButton renders IconButton 1`] = `
+exports[`IconButton renders IconButton correctly 1`] = `
 <button
   class="sc-bczRLJ kQftYZ"
   color="#bfbfbf"

@@ -6,7 +6,7 @@ import { render } from '../../../test/utils/mockProvider';
 const clickHandler = jest.fn();
 
 describe('ButtonGroup', () => {
-    it('renders ButtonGroup', () => {
+    it('renders ButtonGroup correctly', () => {
         const { container } = render(
             <ButtonGroup>
                 <Button onClick={clickHandler}>Button</Button>

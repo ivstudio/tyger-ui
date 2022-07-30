@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chip renders Chip 1`] = `
+exports[`Chip renders Chip correctly 1`] = `
 <span
   class="sc-bczRLJ gLiHLa"
 >

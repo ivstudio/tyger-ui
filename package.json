@@ -52,7 +52,7 @@
         "@storybook/theming": "^6.5.9",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^12.1.5",
-        "@testing-library/user-event": "^14.2.1",
+        "@testing-library/user-event": "^14.3.0",
         "@types/hoist-non-react-statics": "^3.3.1",
         "@types/jest": "^28.1.6",
         "@types/react": "^18.0.14",

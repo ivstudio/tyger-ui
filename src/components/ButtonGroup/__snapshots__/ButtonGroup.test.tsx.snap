@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonGroup renders ButtonGroup 1`] = `
+exports[`ButtonGroup renders ButtonGroup correctly 1`] = `
 <div
   class="sc-bczRLJ kidHRS"
   orientation="horizontal"

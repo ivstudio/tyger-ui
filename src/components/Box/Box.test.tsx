@@ -1,13 +1,13 @@
 import React from 'react';
 import Box from './Box';
 import { render } from '../../../test/utils/mockProvider';
+import { LongTextFixture } from '../../../test/fixtures';
 
 describe('Box', () => {
-    it('renders Box', () => {
+    it('renders Box correctly', () => {
         const { container } = render(
             <Box px="16" py="16">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {LongTextFixture}
             </Box>
         );
         expect(container.firstChild).toMatchSnapshot();
