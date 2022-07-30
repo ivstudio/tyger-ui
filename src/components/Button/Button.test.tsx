@@ -6,10 +6,10 @@ const clickHandler = jest.fn();
 
 describe('Button', () => {
     it('renders Button correctly', () => {
-        const { container, debug } = render(
+        const { container } = render(
             <Button onClick={clickHandler}>Button</Button>
         );
-        debug();
+
         expect(container.firstChild).toMatchSnapshot();
     });
 
