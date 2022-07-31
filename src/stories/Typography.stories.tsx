@@ -1,8 +1,8 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Box from '../components/Box';
-import { SBList } from './sb.styles';
-
 import Typography from '../components/Typography';
+import StoryHeadline from './components/StoryHeadline';
 
 export default {
     title: 'Data Display/Typography',
@@ -29,14 +29,16 @@ export const Types = Template.bind({});
 
 export const TypographyVariants = () => (
     <Box px="16">
-        <Typography variant="lead">Typography</Typography>
-        <Typography variant="subheading" mb="32" maxWidth={640}>
-            Documentation and typography examples, including global settings,
-            headings, variants, and more.
-        </Typography>
+        <StoryHeadline
+            title="Typography"
+            subTitle="Documentation and typography examples, including global settings,
+            headings, variants, and more."
+        />
 
-        <Typography variant="title">Headings</Typography>
-        <Typography mb="32">
+        <Typography variant="h3" mb="8">
+            Headings
+        </Typography>
+        <Typography mb="16">
             All HTML headings, h1 through h6, are available.
         </Typography>
 
@@ -49,19 +51,22 @@ export const TypographyVariants = () => (
             <Typography tag="h6">h6 Heading</Typography>
         </Box>
 
-        <Typography variant="title">Variants</Typography>
-        <Typography mb="32">
+        <Typography variant="h3" mb="8">
+            Variants
+        </Typography>
+        <Typography mb="16">
             All variants can have a semantic tag value and font-weight
             variation.
         </Typography>
 
         <Box p="16" mb="32" border borderRadius>
-            <Typography variant="body">body</Typography>
-            <Typography variant="body1">body1</Typography>
+            <Typography variant="display">display</Typography>
             <Typography variant="lead">lead</Typography>
             <Typography variant="title">title</Typography>
             <Typography variant="subheading">subheading</Typography>
             <Typography variant="subheading1">subheading1</Typography>
+            <Typography variant="body">body</Typography>
+            <Typography variant="body1">body1</Typography>
             <Typography variant="label">label</Typography>
             <Typography variant="footnote">footnote</Typography>
         </Box>

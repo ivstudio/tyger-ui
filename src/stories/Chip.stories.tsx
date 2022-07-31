@@ -2,6 +2,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 
 import Chip, { TSize } from '../components/Chip';
+import Box from '../components/Box';
+import Typography from '../components/Typography';
+import StoryHeadline from './components/StoryHeadline';
 import { SBList } from './sb.styles';
 
 export default {
@@ -46,18 +49,47 @@ Outlined.args = {
     variant: 'outlined',
 };
 
-export const AllChipSizes = () => (
+export const ChipVariants = () => (
     <SBList>
-        {['sm', 'md'].map(item => (
-            <li key={item}>
-                <Chip size={item as TSize} label="Chip filled" />
+        <StoryHeadline
+            title="Chip"
+            subTitle="Chips are used to make selections, filter content, or trigger
+            actions."
+        />
+
+        <Typography variant="h3" mb="8">
+            Variants
+        </Typography>
+        <Typography mb="16">
+            The Chip component provides outlined and filled variants.
+        </Typography>
+        <Box p="16" mb="32" border borderRadius>
+            <li>
+                <Chip variant="filled" label="Chip filled" />
             </li>
-        ))}
+            <li>
+                <Chip variant="outlined" label="Chip filled" />
+            </li>
+        </Box>
+
+        <Typography variant="h3" mb="8">
+            Sizes
+        </Typography>
+        <Typography mb="16">
+            You can use the size prop to define a small size.
+        </Typography>
+        <Box p="16" mb="32" border borderRadius>
+            {['sm', 'md'].map(item => (
+                <li key={item}>
+                    <Chip size={item as TSize} label="Chip filled" />
+                </li>
+            ))}
+        </Box>
     </SBList>
 );
 
-AllChipSizes.story = {
-    name: 'All Chip Sizes',
+ChipVariants.story = {
+    name: 'Chip Variants',
     parameters: {
         options: { showPanel: false },
     },

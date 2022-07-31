@@ -73,6 +73,7 @@ const Typography = ({
     tag = 'p',
     color,
     maxWidth,
+    className,
 }: ITypography) => {
     return (
         <RootTypography
@@ -85,6 +86,7 @@ const Typography = ({
             mb={mb}
             color={color}
             maxWidth={maxWidth}
+            className={className}
         >
             {children}
         </RootTypography>

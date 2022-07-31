@@ -23,62 +23,33 @@ const scale = {
     '-2': '0.75em',
 };
 
-export const htmlTextElements = {
-    h1: {
-        fontSize: scale['6'],
-    },
-    h2: {
-        fontSize: scale['5'],
-    },
-    h3: {
-        fontSize: scale['4'],
-    },
-    h4: {
-        fontSize: scale['3'],
-    },
-    h5: {
-        fontSize: scale['2'],
-    },
-    h6: {
-        fontSize: scale['1'],
-    },
-    p: {
-        fontSize: scale['1'],
-    },
-    div: {
-        fontSize: scale['1'],
-    },
-    span: {
-        fontSize: scale['1'],
-    },
-    li: {
-        fontSize: scale['1'],
-    },
-} as const;
-
-export const textStyles = {
+export const typographyVariant = {
     body: {
         fontSize: scale['1'],
         fontWeight: '300',
     },
     body1: {
         fontSize: scale['-1'],
-        fontWeight: 'normal',
-    },
-    lead: {
-        fontSize: scale['11'],
-        fontWeight: '600',
-    },
-    lead1: {
-        fontSize: scale['7'],
         fontWeight: '300',
     },
     subheading: {
         fontSize: scale['4'],
-        fontWeight: '600',
+        fontWeight: '300',
     },
     subheading1: {
         fontSize: scale['3'],
+        fontWeight: '300',
+    },
+    display: {
+        fontSize: scale['11'],
+        fontWeight: '600',
+    },
+    lead: {
+        fontSize: scale['8'],
+        fontWeight: '300',
+    },
+    lead1: {
+        fontSize: scale['7'],
         fontWeight: '300',
     },
     title: {
@@ -93,7 +64,40 @@ export const textStyles = {
     },
 } as const;
 
-export const typographyVariants = { ...htmlTextElements, ...textStyles };
+export const htmlTextElements = {
+    h1: {
+        fontSize: scale['6'],
+        fontWeight: '600',
+    },
+    h2: {
+        fontSize: scale['5'],
+        fontWeight: '600',
+    },
+    h3: {
+        fontSize: scale['4'],
+        fontWeight: '600',
+    },
+    h4: {
+        fontSize: scale['3'],
+        fontWeight: '600',
+    },
+    h5: {
+        fontSize: scale['2'],
+        fontWeight: '600',
+    },
+    h6: {
+        fontSize: scale['1'],
+        fontWeight: '600',
+    },
+    p: typographyVariant.body,
+    div: typographyVariant.body,
+    span: typographyVariant.body,
+    li: typographyVariant.body,
+} as const;
 
-export type TVariant = keyof typeof textStyles | keyof typeof htmlTextElements;
+export const typographyVariants = { ...htmlTextElements, ...typographyVariant };
+
+export type TVariant =
+    | keyof typeof typographyVariant
+    | keyof typeof htmlTextElements;
 // export type TVariantKey = typeof typographyVariants[TVariant];
