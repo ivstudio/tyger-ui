@@ -41,6 +41,7 @@ export interface IBox extends TBox {
     tag?: TBoxElem;
     flexCenterAll?: boolean;
     flexCenterInline?: boolean;
+    flex?: boolean;
     styles?: React.CSSProperties;
 }
 
@@ -61,6 +62,7 @@ export const BoxRoot = styled.div<IBox>`
         (my && theme.spacing[my]) || (mb && theme.spacing[mb])};
     margin-left: ${({ theme, ml, mx }) =>
         (mx && theme.spacing[mx]) || (ml && theme.spacing[ml])};
+    display: ${({ flex }) => flex && 'flex'};
     ${({ flexCenterInline }) => flexCenterInline && flexCenterInlineMixin};
     ${({ flexCenterAll }) => flexCenterAll && flexCenterAllMixin}
     padding: ${({ theme, p }) => p && theme.spacing[p]};
@@ -70,7 +72,7 @@ export const BoxRoot = styled.div<IBox>`
 `;
 
 const Box = ({ tag, children, styles, ...props }: IBox) => (
-    <BoxRoot tag={tag} style={styles} {...props}>
+    <BoxRoot as={tag} style={styles} {...props}>
         {children}
     </BoxRoot>
 );

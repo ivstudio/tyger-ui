@@ -1,8 +1,9 @@
+import React from 'react';
 import { useArgs } from '@storybook/client-api';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import Switch, { TSize } from '../components/Switch';
-import { SBList } from './sb.styles';
+import { StoryHeadline, StoryTitleSection } from './components';
+import { SBContainer, SBContainerInline } from './sb.styles';
 
 export default {
     title: 'Components/Switch',
@@ -45,24 +46,36 @@ const Template: ComponentStory<typeof Switch> = args => {
 export const Default = Template.bind({});
 Default.args = {};
 
-export const AllSwitchSizes = () => {
+export const SwitchVariants = () => {
     return (
-        <SBList>
-            {['sm', 'md', 'lg'].map(item => (
-                <li key={item}>
-                    <Switch
-                        size={item as TSize}
-                        checked={true}
-                        onChange={() => console.log('click')}
-                    />
-                </li>
-            ))}
-        </SBList>
+        <SBContainer>
+            <StoryHeadline
+                title="Switch"
+                subTitle="Switches toggle the state of a single setting on or off."
+            />
+
+            <StoryTitleSection
+                title="Size"
+                description="For larger or smaller buttons, use the size prop."
+            />
+            <SBContainerInline p="16" mb="48" border borderRadius tag="ul">
+                {['sm', 'md', 'lg'].map(item => (
+                    <li>
+                        <Switch
+                            key={item}
+                            size={item as TSize}
+                            checked={true}
+                            onChange={() => console.log('click')}
+                        />
+                    </li>
+                ))}
+            </SBContainerInline>
+        </SBContainer>
     );
 };
 
-AllSwitchSizes.story = {
-    name: 'All Switch Sizes',
+SwitchVariants.story = {
+    name: 'Switch Variants',
     parameters: {
         options: { showPanel: false },
     },

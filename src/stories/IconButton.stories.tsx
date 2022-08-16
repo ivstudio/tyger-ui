@@ -4,7 +4,8 @@ import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
 import { MdMoreHoriz as MoreIcon } from 'react-icons/md';
 
 import IconButton, { TSize } from '../components/IconButton';
-import { SBList } from './sb.styles';
+import { StoryHeadline, StoryTitleSection } from './components';
+import { SBContainer, SBContainerInline } from './sb.styles';
 
 export default {
     title: 'Components/IconButton',
@@ -38,19 +39,30 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const AllIconButtonsSizes = () => (
-    <SBList>
-        {['sm', 'md', 'lg'].map(item => (
-            <li key={item}>
-                <IconButton
-                    filled
-                    size={item as TSize}
-                    onClick={() => console.log('click')}
-                >
-                    <MenuIcon />
-                </IconButton>
-            </li>
-        ))}
-    </SBList>
+    <SBContainer>
+        <StoryHeadline
+            title="Icon Button"
+            subTitle="Icon Buttons represent their behavior with an icon."
+        />
+
+        <StoryTitleSection
+            title="Size"
+            description="For larger or smaller buttons, use the size prop."
+        />
+        <SBContainerInline p="16" mb="48" border borderRadius tag="ul" flex>
+            {['sm', 'md', 'lg'].map(item => (
+                <li key={item}>
+                    <IconButton
+                        filled
+                        size={item as TSize}
+                        onClick={() => console.log('click')}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </li>
+            ))}
+        </SBContainerInline>
+    </SBContainer>
 );
 
 AllIconButtonsSizes.story = {

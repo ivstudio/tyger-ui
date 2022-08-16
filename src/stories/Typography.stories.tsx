@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Box from '../components/Box';
 import Typography from '../components/Typography';
-import StoryHeadline from './components/StoryHeadline';
+import { StoryHeadline, StoryTitleSection } from './components';
 
 export default {
     title: 'Data Display/Typography',
@@ -35,14 +35,11 @@ export const TypographyVariants = () => (
             headings, variants, and more."
         />
 
-        <Typography variant="h3" mb="8">
-            Headings
-        </Typography>
-        <Typography mb="16">
-            All HTML headings, h1 through h6, are available.
-        </Typography>
-
-        <Box p="16" mb="32" border borderRadius>
+        <StoryTitleSection
+            title="Headings"
+            description="All HTML headings, h1 through h6, are available."
+        />
+        <Box p="16" mb="48" border borderRadius>
             <Typography tag="h1">h1 Heading</Typography>
             <Typography tag="h2">h2 Heading</Typography>
             <Typography tag="h3">h3 Heading</Typography>
@@ -51,15 +48,12 @@ export const TypographyVariants = () => (
             <Typography tag="h6">h6 Heading</Typography>
         </Box>
 
-        <Typography variant="h3" mb="8">
-            Variants
-        </Typography>
-        <Typography mb="16">
-            All variants can have a semantic tag value and font-weight
-            variation.
-        </Typography>
-
-        <Box p="16" mb="32" border borderRadius>
+        <StoryTitleSection
+            title="Variants"
+            description="All variants can have a semantic tag value and font-weight
+            variation."
+        />
+        <Box p="16" mb="48" border borderRadius>
             <Typography variant="display">display</Typography>
             <Typography variant="lead">lead</Typography>
             <Typography variant="title">title</Typography>

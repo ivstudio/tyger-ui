@@ -1,10 +1,10 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Button, { TButtonVariant, TSize } from '../components/Button';
-import Typography from '../components/Typography';
+import { StoryHeadline, StoryTitleSection } from './components';
 import { MdDelete as DeleteIcon, MdSend as SendIcon } from 'react-icons/md';
-import { SBList } from './sb.styles';
-import React from 'react';
+import { SBContainer, SBContainerInline } from './sb.styles';
 
 export default {
     title: 'Components/Button',
@@ -38,6 +38,8 @@ export default {
         fullWidth: { control: 'boolean', defaultValue: false },
         rounded: { control: 'boolean', defaultValue: true },
         className: { control: false },
+        startIcon: { control: false },
+        endIcon: { control: false },
     },
 } as ComponentMeta<typeof Button>;
 
@@ -58,73 +60,104 @@ Text.args = {
     variant: 'text',
 };
 
-export const AllButtonsSizes = () => (
-    <SBList>
-        <li>
-            <Typography tag="h3">Buttons</Typography>
-            <Typography tag="p">
-                The button contains three variants filled (default), text, and
-                outlined.
-            </Typography>
-        </li>
-        {['text', 'outlined', 'filled'].map(item => (
-            <li key={item}>
-                <Button
-                    variant={item as TButtonVariant}
-                    size="sm"
-                    onClick={() => console.log('click')}
-                >
-                    Button
-                </Button>
-                <Button
-                    variant={item as TButtonVariant}
-                    size="md"
-                    onClick={() => console.log('click')}
-                >
-                    Button
-                </Button>
-                <Button
-                    variant={item as TButtonVariant}
-                    size="lg"
-                    onClick={() => console.log('click')}
-                >
-                    Button
-                </Button>
-            </li>
-        ))}
+export const ButtonsVariant = () => (
+    <SBContainer>
+        <StoryHeadline
+            title="Button"
+            subTitle="A control that executes your custom code in response to user interactions."
+        />
 
-        <li>
+        <StoryTitleSection
+            title="Buttons"
+            description="The button contains three variants filled (default), text, and
+            outlined."
+        />
+        <SBContainerInline p="16" mb="48" border borderRadius>
+            {['text', 'outlined', 'filled'].map(item => (
+                <Button
+                    variant={item as TButtonVariant}
+                    onClick={() => console.log('click')}
+                >
+                    Button
+                </Button>
+            ))}
+        </SBContainerInline>
+
+        <StoryTitleSection
+            title="Buttons with icons and label"
+            description="Enhance the UX of the interface by using icons with labels."
+        />
+        <SBContainerInline p="16" mb="48" border borderRadius>
+            <Button
+                startIcon={<DeleteIcon />}
+                variant="outlined"
+                onClick={() => console.log('click')}
+            >
+                Button
+            </Button>
+            <Button endIcon={<SendIcon />} onClick={() => console.log('click')}>
+                Button
+            </Button>
+        </SBContainerInline>
+
+        <StoryTitleSection
+            title="Size"
+            description="For larger or smaller buttons, use the size prop."
+        />
+
+        <SBContainerInline p="16" mb="48" border borderRadius>
+            <SBContainerInline flex mb="12">
+                {['sm', 'md', 'lg'].map(size => (
+                    <li key={size}>
+                        <Button
+                            size={size as TSize}
+                            onClick={() => console.log('click')}
+                        >
+                            Button
+                        </Button>
+                    </li>
+                ))}
+            </SBContainerInline>
+            <SBContainerInline flex mb="12">
+                {['sm', 'md', 'lg'].map(size => (
+                    <li key={size}>
+                        <Button
+                            variant="outlined"
+                            size={size as TSize}
+                            onClick={() => console.log('click')}
+                        >
+                            Button
+                        </Button>
+                    </li>
+                ))}
+            </SBContainerInline>
+            <SBContainerInline flex>
+                {['sm', 'md', 'lg'].map(size => (
+                    <li key={size}>
+                        <Button
+                            startIcon={<DeleteIcon />}
+                            variant="text"
+                            size={size as TSize}
+                            onClick={() => console.log('click')}
+                        >
+                            Button
+                        </Button>
+                    </li>
+                ))}
+            </SBContainerInline>
+        </SBContainerInline>
+
+        <StoryTitleSection title="Full width Button" />
+        <SBContainerInline p="16" mb="48" border borderRadius>
             <Button fullWidth size="lg" onClick={() => console.log('click')}>
                 Button
             </Button>
-        </li>
-        <li>
-            {['sm', 'md', 'lg'].map(size => (
-                <Button
-                    startIcon={<DeleteIcon />}
-                    size={size as TSize}
-                    onClick={() => console.log('click')}
-                >
-                    Button
-                </Button>
-            ))}
-        </li>
-        <li>
-            {['sm', 'md', 'lg'].map(size => (
-                <Button
-                    endIcon={<SendIcon />}
-                    size={size as TSize}
-                    onClick={() => console.log('click')}
-                >
-                    Button
-                </Button>
-            ))}
-        </li>
-    </SBList>
+        </SBContainerInline>
+    </SBContainer>
 );
 
-AllButtonsSizes.story = {
-    name: 'All Button Sizes',
+ButtonsVariant.story = {
+    name: 'Button Variants',
     parameters: {
         options: { showPanel: false },
     },
