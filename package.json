@@ -5,8 +5,7 @@
     "main": "dist/lib-commonjs/index.js",
     "module": "dist/lib-esm/index.js",
     "files": [
-        "dist/lib-esm",
-        "dist/lib-commonjs"
+        "dist"
     ],
     "scripts": {
         "clean": "rm -rf dist",
