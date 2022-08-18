@@ -15,7 +15,6 @@ export default [
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
-                name: 'tyger-react-lib',
             },
             {
                 file: packageJson.module,
