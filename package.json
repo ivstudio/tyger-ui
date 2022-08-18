@@ -1,6 +1,6 @@
 {
     "name": "tyger-ui",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Tyger Design System",
     "main": "dist/lib-commonjs/index.js",
     "module": "dist/lib-esm/index.js",
@@ -91,6 +91,5 @@
         "react-icons": "^4.4.0",
         "styled-components": "^5.3.5"
     },
-    "readme": "ERROR: No README data found!",
-    "_id": "tyger-design-system@1.0.0"
+    "readme": "ERROR: No README data found!"
 }
