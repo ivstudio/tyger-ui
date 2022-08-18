@@ -1,6 +1,6 @@
 {
     "name": "tyger-ui",
-    "version": "1.0.3",
+    "version": "1.0.2",
     "description": "Tyger Design System",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -9,9 +9,7 @@
     ],
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "npm run clean && npm run build:esm && npm run build:cjs",
-        "build:esm": "tsc",
-        "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+        "build": "npm run clean && rollup -c",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "test": "jest",
@@ -93,5 +91,8 @@
         "react-icons": "^4.4.0",
         "styled-components": "^5.3.5"
     },
-    "readme": "ERROR: No README data found!"
+    "readme": "ERROR: No README data found!",
+    "dependencies": {
+        "rollup-plugin-dts": "^4.2.2"
+    }
 }
