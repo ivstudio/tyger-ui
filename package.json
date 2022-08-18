@@ -2,14 +2,16 @@
     "name": "tyger-ui",
     "version": "1.0.2",
     "description": "Tyger Design System",
-    "main": "dist/lib-commonjs/index.js",
-    "module": "dist/lib-esm/index.js",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
     "files": [
         "dist"
     ],
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "npm run clean && rollup -c",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "test": "jest",
