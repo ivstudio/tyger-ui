@@ -1,6 +1,6 @@
 {
     "name": "tyger-ui",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tyger Design System",
     "main": "dist/lib-commonjs/index.js",
     "module": "dist/lib-esm/index.js",
