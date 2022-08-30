@@ -7,7 +7,7 @@ const packageJson = require('./package.json');
 
 export default [
     {
-        input: ['src/index.ts'],
+        input: ['src/index.ts', 'src/theme/theme.ts'],
         output: {
             dir: 'dist',
             sourcemap: true,
