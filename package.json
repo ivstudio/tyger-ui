@@ -1,6 +1,6 @@
 {
     "name": "tyger-ui",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Tyger Design System",
     "main": "dist/src/index.js",
     "files": [
