@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { ThemeProps } from '../theme/theme';
+import { ThemeProps } from '@tyger-ui/system';
 
 const GlobalStyles = createGlobalStyle<ThemeProps>`
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

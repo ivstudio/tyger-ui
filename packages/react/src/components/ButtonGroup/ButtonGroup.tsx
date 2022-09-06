@@ -10,7 +10,6 @@ export const ButtonGroupRoot = styled.div<IButtonRoot>`
     box-sizing: border-box;
 
     ${({ orientation, theme }) => {
-        console.log(theme.name);
         const borderColor =
             theme.name === 'Dark'
                 ? 'rgba(0, 0, 0, 0.23)'

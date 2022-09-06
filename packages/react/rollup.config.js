@@ -21,5 +21,5 @@ export default {
         terser(),
     ],
     preserveModules: true,
-    external: ['react', 'react-dom', 'styled-components'],
+    external: ['react', 'react-dom', 'styled-components, @tyger-ui/system'],
 };

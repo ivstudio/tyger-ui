@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '../../components/Typography';
-import { color } from '../../theme/colors';
+import { color } from '@tyger-ui/system';
 
 interface IStoryHeadline {
     title: string;

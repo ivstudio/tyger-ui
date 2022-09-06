@@ -1,8 +1,11 @@
 import 'styled-components';
 
-import { TSpacing } from '../utils/spacing';
-import { ICommonTokens } from './theme';
-import { ThemeModes } from './colors';
+import { tokens } from '@tyger-ui/system';
+
+export enum ThemeMode {
+    Dark = 'Dark',
+    Light = 'Light',
+}
 
 type TButtonTheme = {
     color: string;
@@ -54,9 +57,15 @@ type TSwitchTheme = {
         backgroundColor: string;
     };
 };
-
+interface ISystemTokens {
+    spacing: typeof tokens.spacing;
+    color: typeof tokens.color;
+    fontSize: typeof tokens.fontSize;
+    lineHeight: typeof tokens.lineHeight;
+    zIndex: typeof tokens.zIndex;
+}
 declare module 'styled-components' {
-    export interface DefaultTheme extends ICommonTokens {
+    export interface DefaultTheme extends ISystemTokens {
         name: ThemeModes;
         body?: string;
         backgroundColor?: string;
