@@ -1,7 +1,7 @@
 {
     "name": "@tyger-ui/react",
     "version": "0.1.0",
-    "description": "Tyger Design System",
+    "description": "React component library",
     "author": {
         "name": "Tyger"
     },
