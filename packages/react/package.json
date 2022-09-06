@@ -1,6 +1,6 @@
 {
     "name": "@tyger-ui/react",
-    "version": "1.0.7",
+    "version": "1.0.0",
     "description": "Tyger Design System",
     "author": {
         "name": "Tyger"
@@ -89,5 +89,7 @@
         "react-icons": "^4.4.0",
         "styled-components": "^5.3.5"
     },
-    "readme": "ERROR: No README data found!"
+    "publishConfig": {
+        "access": "public"
+    }
 }

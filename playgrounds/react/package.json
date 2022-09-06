@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
+    "private": "true",
     "devDependencies": {
         "@types/react": "^17.0.39",
         "parcel-bundler": "^1.12.5",
