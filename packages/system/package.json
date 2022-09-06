@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "main": "dist/packages/system/src/index.js",
     "license": "MIT",
-    "description": "Tyger Design System system",
+    "description": "tyger-ui system tokens",
     "files": [
         "dist"
     ],
