@@ -19,6 +19,15 @@
         "allowSyntheticDefaultImports": true,
         "emitDeclarationOnly": false
     },
+    "plugins": [
+        {
+            "transform": "typescript-plugin-styled-components",
+            "type": "config",
+
+            // other typescript-plugin-styled-components options can be added here
+            "ssr": true
+        }
+    ],
     "include": ["src/**/*.ts", "src/**/*.tsx"],
     "exclude": ["dist", "node_modules", "src/**/*.test.tsx"]
 }
