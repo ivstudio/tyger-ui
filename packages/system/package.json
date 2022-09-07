@@ -1,7 +1,7 @@
 {
     "name": "@tyger-ui/system",
     "version": "0.1.0",
-    "main": "dist/packages/system/src/index.js",
+    "main": "dist/index.js",
     "license": "MIT",
     "description": "tyger-ui system tokens",
     "files": [

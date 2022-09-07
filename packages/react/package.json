@@ -1,7 +1,13 @@
 {
     "name": "@tyger-ui/react",
     "version": "0.1.0",
+    "main": "dist/packages/react/src/index.js",
+    "license": "MIT",
     "description": "React component library",
+    "files": [
+        "dist"
+    ],
+    "types": "./dist/index.d.ts",
     "author": {
         "name": "Tyger"
     },
@@ -20,12 +26,6 @@
         "design system",
         "component library"
     ],
-    "license": "MIT",
-    "main": "dist/packages/react/src/index.js",
-    "files": [
-        "dist"
-    ],
-    "types": "./dist/index.d.ts",
     "scripts": {
         "clean": "rm -rf dist",
         "build": "npm run clean && rollup -c",

@@ -1,7 +1,5 @@
-import spacing from './spacing/spacing';
-import zIndex from './zIndex/zIndex';
-import color from './color/color';
-import { darkTheme, lightTheme } from './theme/theme';
-import { fontSize, lineHeight } from './typography/typography';
-
-export { color, spacing, fontSize, lineHeight, zIndex, darkTheme, lightTheme };
+export { default as spacing } from './spacing/spacing';
+export { default as zIndex } from './zIndex/zIndex';
+export { default as color } from './color/color';
+export * from './theme/theme';
+export * from './typography/typography';
