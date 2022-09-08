@@ -1,18 +1,21 @@
 {
     "name": "@tyger-ui/system",
     "version": "0.1.2-alpha.0",
-    "main": "dist/index.js",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/esm/index.d.ts",
     "license": "MIT",
     "description": "tyger-ui system tokens",
+    "type": "module",
     "files": [
         "dist"
     ],
-    "types": "./dist/index.d.ts",
     "scripts": {
         "clean": "rm -rf dist",
         "build": "npm run clean && rollup -c"
     },
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@types/rollup-plugin-peer-deps-external": "^2.2.1",
         "@types/styled-components": "^5.1.25",

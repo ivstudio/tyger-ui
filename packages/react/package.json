@@ -1,13 +1,15 @@
 {
     "name": "@tyger-ui/react",
     "version": "0.1.2-alpha.0",
-    "main": "dist/packages/react/src/index.js",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/esm/index.d.ts",
     "license": "MIT",
     "description": "React component library",
+    "type": "module",
     "files": [
         "dist"
     ],
-    "types": "./dist/index.d.ts",
     "author": {
         "name": "Tyger"
     },
@@ -36,6 +38,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.18.6",
+        "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@storybook/addon-actions": "^6.5.9",
         "@storybook/addon-docs": "^6.5.9",
@@ -92,5 +95,9 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "@rollup/plugin-commonjs": "^22.0.2",
+        "commonjs": "^0.0.1"
     }
 }
