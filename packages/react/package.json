@@ -6,12 +6,12 @@
     "types": "dist/esm/index.d.ts",
     "license": "MIT",
     "description": "React component library",
-    "type": "module",
-    "files": [
-        "dist"
-    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ivstudio/tyger-ui"
+    },
     "author": {
-        "name": "Tyger"
+        "name": "ivstudio"
     },
     "contributors": [
         {
@@ -28,6 +28,9 @@
         "design system",
         "component library"
     ],
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "clean": "rm -rf dist",
         "build": "npm run clean && rollup -c",
@@ -38,7 +41,6 @@
     },
     "devDependencies": {
         "@babel/core": "^7.18.6",
-        "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@storybook/addon-actions": "^6.5.9",
         "@storybook/addon-docs": "^6.5.9",
@@ -97,7 +99,6 @@
         "access": "public"
     },
     "dependencies": {
-        "@rollup/plugin-commonjs": "^22.0.2",
-        "commonjs": "^0.0.1"
+        "@rollup/plugin-commonjs": "^22.0.2"
     }
 }

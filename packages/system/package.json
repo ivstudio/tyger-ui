@@ -6,7 +6,28 @@
     "types": "dist/esm/index.d.ts",
     "license": "MIT",
     "description": "tyger-ui system tokens",
-    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ivstudio/tyger-ui"
+    },
+    "author": {
+        "name": "ivstudio"
+    },
+    "contributors": [
+        {
+            "name": "Ignacio Villamar",
+            "email": "iggy@ivstudio.com"
+        },
+        {
+            "name": "Cathy Attix",
+            "email": "cathyattix@gmail.com"
+        }
+    ],
+    "keywords": [
+        "react",
+        "design system",
+        "component library"
+    ],
     "files": [
         "dist"
     ],

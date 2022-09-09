@@ -6291,14 +6291,6 @@ commondir@^1.0.1:
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==
 
-commonjs@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/commonjs/-/commonjs-0.0.1.tgz#65c531dcff6565ca7c95ddfc96622b89cc0294d5"
-  integrity sha512-hscVSSFaViuW9i3q7G9BYDpcg/vEdzgk570bUD1u54tcrXQwB2pbHgI7placWz9ZQEJ04goyx8W7mPI/EPpxyw==
-  dependencies:
-    system ">=0.0.1"
-    test ">=0.0.5"
-
 compare-func@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/compare-func/-/compare-func-2.0.0.tgz#fb65e75edbddfd2e568554e8b5b05fff7a51fcb3"
@@ -15045,18 +15037,6 @@ string.prototype.padstart@^3.0.0:
     define-properties "^1.1.3"
     es-abstract "^1.19.1"
 
-string.prototype.replaceall@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/string.prototype.replaceall/-/string.prototype.replaceall-1.0.6.tgz#566cba7c413713d0b1a85c5dba98b31f8db38196"
-  integrity sha512-OA8VDhE7ssNFlyoDXUHxw6V5cjgPrtosyJKqJX5i1P5tV9eUynsbhx1yz0g+Ye4fjFwAxhKLxt8GSRx2Aqc+Sw==
-  dependencies:
-    call-bind "^1.0.2"
-    define-properties "^1.1.3"
-    es-abstract "^1.19.1"
-    get-intrinsic "^1.1.1"
-    has-symbols "^1.0.2"
-    is-regex "^1.1.4"
-
 string.prototype.trimend@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/string.prototype.trimend/-/string.prototype.trimend-1.0.5.tgz#914a65baaab25fbdd4ee291ca7dde57e869cb8d0"
@@ -15320,11 +15300,6 @@ synckit@^0.8.3:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.4.0"
 
-system@>=0.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/system/-/system-2.0.1.tgz#d26a85135ee7f36e054e7f0eec4467f3b1dd9742"
-  integrity sha512-BwSUSa8LMHZouGadZ34ck3TsrH5s3oMmTKPK+xHdbBnTCZOZMJ38fHGKLAHkBl0PXru1Z4BsymQU4qqvTxWzdQ==
-
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
@@ -15462,14 +15437,6 @@ test-exclude@^6.0.0:
     "@istanbuljs/schema" "^0.1.2"
     glob "^7.1.4"
     minimatch "^3.0.4"
-
-test@>=0.0.5:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/test/-/test-3.2.1.tgz#8876adae35e86c4bccbcfdf5b018493b1c9501be"
-  integrity sha512-D9eN4OxdhyYS3xHSsAh5A0e+UhaOPxeREwBHTknZHoVFd4TqnPtkVrQ7lIUATPgpO9vvGg1D+TyMckVmUyaEig==
-  dependencies:
-    minimist "^1.2.6"
-    string.prototype.replaceall "^1.0.6"
 
 text-extensions@^1.0.0:
   version "1.9.0"
