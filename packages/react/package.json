@@ -41,6 +41,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.18.6",
+        "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@storybook/addon-actions": "^6.5.9",
         "@storybook/addon-docs": "^6.5.9",
@@ -98,7 +99,5 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {
-        "@rollup/plugin-commonjs": "^22.0.2"
-    }
+    "dependencies": {}
 }
