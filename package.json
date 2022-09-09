@@ -1,11 +1,33 @@
 {
     "name": "@tyger-ui/core",
     "version": "1.0.0",
-    "description": "",
+    "description": "tyger-ui is themeable set of UI components for React.",
     "main": "rollup.config.js",
-    "author": "Ignacio Villamar",
-    "license": "ISC",
+    "author": "ivstudio",
     "private": "true",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ivstudio/tyger-ui"
+    },
+    "contributors": [
+        {
+            "name": "Ignacio Villamar",
+            "email": "iggy@ivstudio.com"
+        },
+        {
+            "name": "Cathy Attix",
+            "email": "cathyattix@gmail.com"
+        }
+    ],
+    "keywords": [
+        "react",
+        "design system",
+        "component library",
+        "design system",
+        "javascript",
+        "typescript"
+    ],
     "devDependencies": {
         "lerna": "^5.4.3"
     },
