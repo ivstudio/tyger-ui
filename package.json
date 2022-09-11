@@ -1,10 +1,10 @@
 {
     "name": "@tyger-ui/core",
     "version": "1.0.0",
+    "private": "true",
+    "author": "ivstudio",
     "description": "tyger-ui is themeable set of UI components for React.",
     "main": "rollup.config.js",
-    "author": "ivstudio",
-    "private": "true",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -13,7 +13,8 @@
     "contributors": [
         {
             "name": "Ignacio Villamar",
-            "email": "iggy@ivstudio.com"
+            "email": "iggy@ivstudio.com",
+            "url": "https://ivstudio.com/"
         },
         {
             "name": "Cathy Attix",
@@ -39,5 +40,8 @@
     },
     "scripts": {
         "build": "yarn lerna run build"
+    },
+    "engines": {
+        "node": ">=12.0.0"
     }
 }

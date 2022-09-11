@@ -1,14 +1,14 @@
 <h1 align="center">
-  Tyger UI
+  @tyger-ui/system
 </h1>
 
 <div align="center">
-Tyger-ui is themeable set of UI components for React. 
+CSS utilities for customizing react components
 <br /> 
 <br />
 </div>
 
-Tyger-ui is available as an [npm package](https://www.npmjs.com/package/@tyger-ui/react).
+Tyger-ui is available as an [npm package](https://www.npmjs.com/package/@tyger-ui/system).
 
 ## Installing Tyger UI
 
