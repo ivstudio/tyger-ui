@@ -1,6 +1,6 @@
 {
     "name": "@tyger-ui/system",
-    "version": "0.1.5-alpha.0",
+    "version": "0.1.6-alpha.0",
     "author": "ivstudio",
     "description": "tyger-ui CSS utilities.",
     "main": "dist/cjs/index.js",
