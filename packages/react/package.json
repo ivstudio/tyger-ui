@@ -3,7 +3,7 @@
     "version": "0.1.9-alpha.0",
     "author": "ivstudio",
     "license": "MIT",
-    "description": "tyger-ui react components",
+    "description": "tyger-ui themeable react components",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/index.d.ts",

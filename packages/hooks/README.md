@@ -13,9 +13,9 @@ React Hooks Library
 ![npm](https://img.shields.io/npm/dm/@tyger-ui/hooks)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mui/material-ui/blob/HEAD/LICENSE)
 
-Tyger-ui is available as an [npm package](https://www.npmjs.com/package/@tyger-ui/hooks).
+Tyger-ui/hooks is available as an [npm package](https://www.npmjs.com/package/@tyger-ui/hooks).
 
-## Installing Tyger UI
+## Installing
 
 ```sh
 npm i @tyger-ui/hooks

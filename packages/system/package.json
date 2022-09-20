@@ -2,7 +2,7 @@
     "name": "@tyger-ui/system",
     "version": "0.1.8-alpha.0",
     "author": "ivstudio",
-    "description": "tyger-ui CSS utilities.",
+    "description": "Styling system that powers tyger-ui",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/index.d.ts",
