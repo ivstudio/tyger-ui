@@ -219,5 +219,3 @@ export const darkTheme: DefaultTheme = {
 };
 
 export type TTheme = typeof lightTheme | typeof darkTheme;
-
-export type ThemeProps = { theme?: TTheme };

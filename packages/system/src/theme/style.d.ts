@@ -57,6 +57,7 @@ type TSwitchTheme = {
         backgroundColor: string;
     };
 };
+
 interface ISystemTokens {
     spacing: typeof tokens.spacing;
     color: typeof tokens.color;
@@ -64,38 +65,41 @@ interface ISystemTokens {
     lineHeight: typeof tokens.lineHeight;
     zIndex: typeof tokens.zIndex;
 }
-declare module 'styled-components' {
-    export interface DefaultTheme extends ISystemTokens {
-        name: ThemeModes;
-        body?: string;
-        backgroundColor?: string;
+
+export interface ITheme extends ISystemTokens {
+    name: ThemeModes;
+    body?: string;
+    backgroundColor?: string;
+    primary: string;
+    border: string;
+    paper: string;
+    button: {
+        filled: TButtonTheme;
+        outlined: TButtonTheme;
+        text: TButtonTheme;
+    };
+    iconButton: TIconButtonTheme;
+    chip: {
+        filled: TChipTheme;
+        outlined: TChipTheme;
+    };
+    switch: TSwitchTheme;
+    text: {
         primary: string;
-        border: string;
-        paper: string;
-        button: {
-            filled: TButtonTheme;
-            outlined: TButtonTheme;
-            text: TButtonTheme;
-        };
-        iconButton: TIconButtonTheme;
-        chip: {
-            filled: TChipTheme;
-            outlined: TChipTheme;
-        };
-        switch: TSwitchTheme;
-        text: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            quarternary: string;
-            placeholder: string;
-        };
-        bg: {
-            primary: string;
-            secondary: string;
-            inset: string;
-            input: string;
-            appBar: string;
-        };
-    }
+        secondary: string;
+        tertiary: string;
+        quarternary: string;
+        placeholder: string;
+    };
+    bg: {
+        primary: string;
+        secondary: string;
+        inset: string;
+        input: string;
+        appBar: string;
+    };
+}
+
+declare module 'styled-components' {
+    export interface DefaultTheme extends ITheme {}
 }

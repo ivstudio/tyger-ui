@@ -1,3 +1,2 @@
-export * from './mediaQueries';
-export * from './mixins/ellipsis';
-export * from './mixins/styledMixins';
+export * from './ellipsis';
+export * from './styledMixins';

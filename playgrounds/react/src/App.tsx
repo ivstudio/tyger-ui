@@ -4,7 +4,9 @@ const App = () => {
     return (
         <div>
             <div>HELLO!</div>
-            <Button variant="outlined">hh</Button>
+            <Button variant="outlined" onClick={() => console.log('h')}>
+                hh
+            </Button>
         </div>
     );
 };

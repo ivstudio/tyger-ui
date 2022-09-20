@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { breakpoint, TBreakpointKey } from '../../styles';
+import { breakpoint, TBreakpointKey } from '@tyger-ui/system/src/mediaQueries';
 import { TScroll } from './Modal';
 
 export const framerProps = {

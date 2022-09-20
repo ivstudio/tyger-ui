@@ -16,3 +16,8 @@ export const device = {
 
 export type TBreakpoints = typeof breakpoint;
 export type TBreakpointKey = keyof TBreakpoints;
+
+export default {
+    breakpoint,
+    device,
+};

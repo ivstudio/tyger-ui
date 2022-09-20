@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { device, flexCenterAll } from '../../styles';
+import { flexCenterAll } from '../../styles';
+import { device } from '@tyger-ui/system/src/mediaQueries';
 
 const shadow = 'rgba(0, 0, 0, 0.1) 0px 20px 40px 0px';
 
