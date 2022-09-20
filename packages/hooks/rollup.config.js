@@ -4,10 +4,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
-const createStyledComponentsTransformer =
-    require('typescript-plugin-styled-components').default;
-const styledComponentsTransformer = createStyledComponentsTransformer();
-
 const packageJson = require('./package.json');
 
 export default {
@@ -28,21 +24,8 @@ export default {
         peerDepsExternal(),
         resolve(),
         commonjs(),
-        typescript({
-            tsconfig: 'tsconfig.json',
-            transformers: [
-                () => ({
-                    before: [styledComponentsTransformer],
-                }),
-            ],
-        }),
+        typescript({ tsconfig: 'tsconfig.json' }),
         terser(),
     ],
-    external: [
-        'react',
-        'react-dom',
-        'styled-components',
-        '@tyger-ui/system',
-        '@tyger-ui/hooks',
-    ],
+    external: ['react'],
 };

@@ -2,8 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState, useRef, Children, cloneElement } from 'react';
 import { createPortal } from 'react-dom';
 import { MdClose as CloseIcon } from 'react-icons/md';
-import useClickOutside from '../../hooks/useClickOutside';
-
+import useClickOutside from '@tyger-ui/hooks/src/useClickOutside';
 import { TBreakpointKey } from '@tyger-ui/system/src/mediaQueries';
 import Backdrop from '../Backdrop';
 import IconButton from '../IconButton';
