@@ -1,7 +1,7 @@
 {
     "name": "@tyger-ui/react",
     "version": "0.1.9-alpha.0",
-    "author": "ivstudio",
+    "author": "Iggy Villamar <iggy@ivstudio.com>",
     "license": "MIT",
     "description": "tyger-ui themeable react components",
     "main": "dist/cjs/index.js",
