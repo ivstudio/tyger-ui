@@ -1,0 +1,30 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "plugins": ["simple-import-sort"],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-unused-vars": "error",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error"
+    },
+    "ignorePatterns": ["src/test/*", "dist", "*config.js"],
+    "root": true
+}
