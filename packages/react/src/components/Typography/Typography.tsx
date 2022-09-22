@@ -1,7 +1,7 @@
+import { TSpacing } from '@tyger-ui/system/src/spacing';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import { TSpacing } from '@tyger-ui/system/src/spacing';
 import { TVariant, typographyVariants as variants } from './TypographyVariants';
 
 export type TTypography =

@@ -1,8 +1,9 @@
-import React from 'react';
-import Container from './Container';
-import { render } from '../../../test/utils/mockProvider';
-import { LongTextFixture } from '../../../test/fixtures';
 import { breakpoint } from '@tyger-ui/system/src/mediaQueries';
+import React from 'react';
+
+import { LongTextFixture } from '../../../test/fixtures';
+import { render } from '../../../test/utils/mockProvider';
+import Container from './Container';
 
 describe('Container', () => {
     it('renders Container correctly', () => {

@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-
 import {
     breakpoint,
     device,
     TBreakpointKey,
 } from '@tyger-ui/system/src/mediaQueries';
+import styled from 'styled-components';
+
 import { BoxRoot, IBox } from '../Box';
 
 interface IContainer extends IBox {

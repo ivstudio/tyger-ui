@@ -1,6 +1,7 @@
 import React from 'react';
+
+import { fireEvent, render, screen } from '../../../test/utils/mockProvider';
 import Button from './Button';
-import { render, fireEvent, screen } from '../../../test/utils/mockProvider';
 
 const clickHandler = jest.fn();
 

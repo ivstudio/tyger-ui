@@ -1,9 +1,12 @@
-import React, { FC, ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
+/* eslint-disable import/named */
+/* eslint-disable import/export */
 import '@testing-library/jest-dom';
-import { ThemeProvider } from 'styled-components';
-import { darkTheme, TTheme } from '@tyger-ui/system/src/theme/theme';
+
+import { render, RenderOptions } from '@testing-library/react';
 import GlobalStyles from '@tyger-ui/system/src/GlobalStyles/GlobalStyles';
+import { darkTheme, TTheme } from '@tyger-ui/system/src/theme/theme';
+import React, { FC, ReactElement } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 const AllTheProviders: FC<{ children: React.ReactNode; theme?: TTheme }> = ({
     children,

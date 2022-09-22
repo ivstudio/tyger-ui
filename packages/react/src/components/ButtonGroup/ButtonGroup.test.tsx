@@ -1,7 +1,8 @@
 import React from 'react';
-import ButtonGroup from './ButtonGroup';
-import Button from '../Button';
+
 import { render } from '../../../test/utils/mockProvider';
+import Button from '../Button';
+import ButtonGroup from './ButtonGroup';
 
 const clickHandler = jest.fn();
 

@@ -1,10 +1,10 @@
+import { TSpacing } from '@tyger-ui/system/src/spacing';
 import styled from 'styled-components';
 
 import {
     flexCenterAll as flexCenterAllMixin,
     flexCenterInline as flexCenterInlineMixin,
 } from '../../styles';
-import { TSpacing } from '@tyger-ui/system/src/spacing';
 
 export type TBoxElem =
     | 'div'

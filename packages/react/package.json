@@ -26,6 +26,7 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "test": "jest",
+        "lint": "eslint **/*.{ts,tsx} --quiet",
         "chromatic": "npx chromatic --project-token=35343248fd17"
     },
     "devDependencies": {
@@ -58,6 +59,7 @@
         "eslint": "^8.19.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-import-resolver-typescript": "^3.1.5",
+        "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.30.1",
         "eslint-plugin-simple-import-sort": "^7.0.0",

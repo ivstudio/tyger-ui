@@ -1,9 +1,10 @@
-import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState, useRef, Children, cloneElement } from 'react';
-import { createPortal } from 'react-dom';
-import { MdClose as CloseIcon } from 'react-icons/md';
 import useClickOutside from '@tyger-ui/hooks/src/useClickOutside';
 import { TBreakpointKey } from '@tyger-ui/system/src/mediaQueries';
+import { AnimatePresence } from 'framer-motion';
+import { Children, cloneElement, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { MdClose as CloseIcon } from 'react-icons/md';
+
 import Backdrop from '../Backdrop';
 import IconButton from '../IconButton';
 import Typography from '../Typography';
@@ -11,11 +12,11 @@ import {
     framerProps,
     ModalBody,
     ModalContainer,
+    modalElem,
     ModalFooter,
     ModalHeaderRoot,
     ModalPaper,
     ModalRoot,
-    modalElem,
 } from './Modal.styles';
 
 export type TScroll = 'body' | 'paper';

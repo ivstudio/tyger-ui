@@ -1,56 +1,56 @@
 {
-    "name": "@tyger-ui/core",
-    "version": "1.0.0",
-    "private": "true",
-    "author": "ivstudio",
-    "description": "tyger-ui is themeable set of UI components for React.",
-    "main": "rollup.config.js",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ivstudio/tyger-ui"
-    },
-    "contributors": [
-        {
-            "name": "Ignacio Villamar",
-            "email": "iggy@ivstudio.com",
-            "url": "https://ivstudio.com/"
-        },
-        {
-            "name": "Cathy Attix",
-            "email": "cathyattix@gmail.com"
-        }
-    ],
-    "keywords": [
-        "react",
-        "design system",
-        "component library",
-        "design system",
-        "javascript",
-        "typescript"
-    ],
-    "devDependencies": {
-        "commitizen": "^4.2.5",
-        "cz-conventional-changelog": "^3.3.0",
-        "lerna": "^5.4.3"
-    },
-    "workspaces": {
-        "packages": [
-            "packages/*",
-            "playgrounds/*"
-        ]
-    },
-    "scripts": {
-        "build": "yarn lerna run build",
-        "publish": "yarn test && yarn build && yarn lerna publish",
-        "commit": "yarn git-cz"
-    },
-    "engines": {
-        "node": ">=12.0.0"
-    },
-    "config": {
-        "commitizen": {
-            "path": "cz-conventional-changelog"
-        }
-    }
+	"name": "@tyger-ui/core",
+	"version": "1.0.0",
+	"private": "true",
+	"author": "ivstudio",
+	"description": "tyger-ui is themeable set of UI components for React.",
+	"main": "rollup.config.js",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ivstudio/tyger-ui"
+	},
+	"contributors": [
+		{
+			"name": "Ignacio Villamar",
+			"email": "iggy@ivstudio.com",
+			"url": "https://ivstudio.com/"
+		},
+		{
+			"name": "Cathy Attix",
+			"email": "cathyattix@gmail.com"
+		}
+	],
+	"keywords": [
+		"react",
+		"design system",
+		"component library",
+		"design system",
+		"javascript",
+		"typescript"
+	],
+	"devDependencies": {
+		"commitizen": "^4.2.5",
+		"cz-conventional-changelog": "^3.3.0",
+		"lerna": "^5.4.3"
+	},
+	"workspaces": {
+		"packages": [
+			"packages/*",
+			"playgrounds/*"
+		]
+	},
+	"scripts": {
+		"build": "yarn lerna run build",
+		"publish": "yarn test && yarn build && yarn lerna publish",
+		"commit": "yarn git-cz"
+	},
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	}
 }

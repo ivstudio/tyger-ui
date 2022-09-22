@@ -1,7 +1,8 @@
 import React from 'react';
-import Backdrop from './Backdrop';
-import { render, fireEvent, screen } from '../../../test/utils/mockProvider';
+
 import { shortTextFixture } from '../../../test/fixtures';
+import { fireEvent, render, screen } from '../../../test/utils/mockProvider';
+import Backdrop from './Backdrop';
 
 const clickHandler = jest.fn();
 

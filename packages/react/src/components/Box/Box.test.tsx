@@ -1,7 +1,8 @@
 import React from 'react';
-import Box from './Box';
-import { render } from '../../../test/utils/mockProvider';
+
 import { LongTextFixture } from '../../../test/fixtures';
+import { render } from '../../../test/utils/mockProvider';
+import Box from './Box';
 
 describe('Box', () => {
     it('renders Box correctly', () => {

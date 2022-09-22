@@ -25,5 +25,6 @@
         "import/newline-after-import": "error",
         "import/no-duplicates": "error"
     },
-    "ignorePatterns": ["src/test/*", "dist", "*config.js", "src/stories/*"]
+    "ignorePatterns": ["src/test/*", "dist", "*config.js", "src/stories/*"],
+    "root": true
 }

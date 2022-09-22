@@ -1,6 +1,7 @@
 import React from 'react';
-import Chip from './Chip';
+
 import { render } from '../../../test/utils/mockProvider';
+import Chip from './Chip';
 
 describe('Chip', () => {
     it('renders Chip correctly', () => {

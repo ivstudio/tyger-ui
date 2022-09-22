@@ -1,7 +1,8 @@
 import React from 'react';
-import IconButton from './IconButton';
 import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
-import { render, fireEvent, screen } from '../../../test/utils/mockProvider';
+
+import { fireEvent, render, screen } from '../../../test/utils/mockProvider';
+import IconButton from './IconButton';
 
 const clickHandler = jest.fn();
 
