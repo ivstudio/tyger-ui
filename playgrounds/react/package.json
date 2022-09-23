@@ -1,6 +1,6 @@
 {
 	"name": "@playgrounds/react",
-	"version": "0.1.8-alpha.0",
+	"version": "0.1.10-alpha.0",
 	"main": "index.js",
 	"license": "MIT",
 	"private": "true",
@@ -13,10 +13,10 @@
 		"dev": "parcel src/index.html -p 3000"
 	},
 	"dependencies": {
+		"framer-motion": "^7.3.6",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-icons": "^4.4.0",
-		"styled-components": "^5.3.5",
-		"framer-motion": "^7.3.6"
+		"styled-components": "^5.3.5"
 	}
 }
