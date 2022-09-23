@@ -27,7 +27,8 @@
         "build-storybook": "build-storybook",
         "test": "jest",
         "lint": "eslint **/*.{ts,tsx} --quiet",
-        "chromatic": "npx chromatic --project-token=35343248fd17"
+        "chromatic": "npx chromatic --project-token=35343248fd17",
+        "dev": "rollup -c --watch"
     },
     "devDependencies": {
         "@babel/core": "^7.18.6",

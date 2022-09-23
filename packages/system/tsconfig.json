@@ -1,15 +1,15 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-        "baseUrl": "."
-    },
-    "plugins": [
-        {
-            "transform": "typescript-plugin-styled-components",
-            "type": "config",
-            "ssr": true
-        }
-    ],
-    "include": ["src/**/*.ts", "src/**/*.tsx"],
-    "exclude": ["dist", "node_modules", "src/**/*.test.tsx"]
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"baseUrl": "."
+	},
+	"plugins": [
+		{
+			"transform": "typescript-plugin-styled-components",
+			"type": "config",
+			"ssr": true
+		}
+	],
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["dist", "node_modules", "src/**/*.test.tsx"]
 }

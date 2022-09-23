@@ -116,7 +116,7 @@ const Modal = ({
         </AnimatePresence>
     );
 
-    const portalElem = document.querySelector('#portal');
+    const portalElem = document.querySelector('body');
     return portalElem ? createPortal(ModalBase, portalElem) : null;
 };
 

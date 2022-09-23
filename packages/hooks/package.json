@@ -22,9 +22,10 @@
     ],
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "npm run clean && rollup -c",
+        "build": "yarn clean && rollup -c",
         "test": "jest",
-        "lint": "eslint **/*.{ts,tsx} --quiet"
+        "lint": "eslint **/*.{ts,tsx} --quiet",
+        "dev": "rollup -c --watch"
     },
     "devDependencies": {
         "@babel/core": "^7.18.6",
