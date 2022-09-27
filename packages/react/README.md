@@ -20,13 +20,13 @@ To use Tyger UI components, install `@tyger-ui/react`, `@tyger-ui/system`, `@tyg
 **npm:**
 
 ```sh
-npm i @tyger-ui/react @tyger-ui/system styled-components react-icons
+npm i @tyger-ui/react @tyger-ui/system @tyger-ui/hooks styled-components framer-motion react-icons
 ```
 
 **yarn:**
 
 ```sh
-yarn add @tyger-ui/react @tyger-ui/system styled-components react-icons
+yarn add @tyger-ui/react @tyger-ui/system @tyger-ui/hooks styled-components framer-motion react-icons
 ```
 
 ### TypeScript
