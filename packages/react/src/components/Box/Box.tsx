@@ -8,6 +8,7 @@ import {
 
 export type TBoxElem =
     | 'div'
+    | 'p'
     | 'section'
     | 'span'
     | 'article'
@@ -30,8 +31,8 @@ export type TBox = {
     ml?: TSpacing;
     my?: TSpacing;
     mx?: TSpacing;
-    p?: TSpacing;
-    m?: TSpacing;
+    padding?: TSpacing;
+    margin?: TSpacing;
     border?: boolean;
     borderRadius?: boolean;
 };
@@ -65,8 +66,8 @@ export const BoxRoot = styled.div<IBox>`
     display: ${({ flex }) => flex && 'flex'};
     ${({ flexCenterInline }) => flexCenterInline && flexCenterInlineMixin};
     ${({ flexCenterAll }) => flexCenterAll && flexCenterAllMixin}
-    padding: ${({ theme, p }) => p && theme.spacing[p]};
-    margin: ${({ theme, m }) => m && theme.spacing[m]};
+    padding: ${({ theme, padding }) => padding && theme.spacing[padding]};
+    margin: ${({ theme, margin }) => margin && theme.spacing[margin]};
     border: ${({ theme, border }) => border && `1px solid ${theme.border}`};
     border-radius: ${({ borderRadius }) => borderRadius && '4px'};
 `;

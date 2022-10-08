@@ -26,19 +26,15 @@ const scale = {
 export const typographyVariant = {
     body: {
         fontSize: scale['1'],
-        fontWeight: '300',
     },
     body1: {
         fontSize: scale['-1'],
-        fontWeight: '300',
     },
     subheading: {
         fontSize: scale['4'],
-        fontWeight: '300',
     },
     subheading1: {
         fontSize: scale['3'],
-        fontWeight: '300',
     },
     display: {
         fontSize: scale['11'],
@@ -46,11 +42,9 @@ export const typographyVariant = {
     },
     lead: {
         fontSize: scale['8'],
-        fontWeight: '300',
     },
     lead1: {
         fontSize: scale['7'],
-        fontWeight: '300',
     },
     title: {
         fontSize: scale['6'],

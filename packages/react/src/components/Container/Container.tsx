@@ -9,6 +9,7 @@ import { BoxRoot, IBox } from '../Box';
 
 interface IContainer extends IBox {
     maxWidth?: TBreakpointKey;
+    className?: string;
 }
 
 const ContainerRoot = styled(BoxRoot)<{
@@ -18,8 +19,8 @@ const ContainerRoot = styled(BoxRoot)<{
     margin-left: auto;
     margin-right: auto;
     max-width: ${({ maxWidth }) =>
-        maxWidth && `${breakpoint[maxWidth]}!important`};
-
+        maxWidth && `${breakpoint[maxWidth]} !important`};
+    color: ${({ theme }) => theme && theme.text?.primary};
     @media ${device.sm} {
         max-width: ${breakpoint.sm};
     }
@@ -41,10 +42,16 @@ const Container = ({
     children,
     maxWidth,
     tag = 'div',
+    className,
     ...props
 }: IContainer) => {
     return (
-        <ContainerRoot as={tag} maxWidth={maxWidth} {...props}>
+        <ContainerRoot
+            as={tag}
+            maxWidth={maxWidth}
+            className={className}
+            {...props}
+        >
             {children}
         </ContainerRoot>
     );
