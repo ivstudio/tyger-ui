@@ -81,7 +81,7 @@ export const ChipButtonRoot = styled(ChipRoot)`
     ${buttonBase};
     text-transform: none;
     &:hover {
-        background-color: ${({ theme: { bg } }) => bg.input};
+        background-color: ${({ theme: { background } }) => background.input};
     }
 `;
 

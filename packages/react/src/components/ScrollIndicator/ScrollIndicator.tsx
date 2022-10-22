@@ -12,7 +12,7 @@ const Container = styled.div`
 const ProgressBar = styled.div`
     height: 2px;
     transition: width 0.5s ease;
-    background: ${({ theme }) => theme.bg.primary};
+    background: ${({ theme }) => theme.background.primary};
 `;
 
 const ScrollIndicator = () => {

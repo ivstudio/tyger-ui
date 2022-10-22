@@ -102,7 +102,7 @@ const DrawerContainer = styled(motion.div)<{
     position: fixed;
     box-sizing: border-box;
     ${({ anchor }) => getPosition(anchor)};
-    background-color: ${({ theme: { bg } }) => bg.secondary};
+    background-color: ${({ theme: { background } }) => background.secondary};
     z-index: ${({ theme: { zIndex } }) => zIndex.drawer};
 `;
 

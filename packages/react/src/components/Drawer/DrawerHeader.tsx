@@ -15,7 +15,8 @@ const DrawerHeaderRoot = styled.header`
     position: relative;
     box-sizing: border-box;
     padding: ${({ theme: { spacing } }) => `0 ${spacing['16']}`};
-    border-bottom: 1px solid ${({ theme: { bg } }) => bg.primary};
+    border-bottom: 1px solid
+        ${({ theme: { background } }) => background.primary};
 `;
 
 const DrawerCloseButton = styled(IconButton)`
