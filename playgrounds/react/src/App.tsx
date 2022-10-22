@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Modal, Typography, AppBar, Container } from '@tyger-ui/react';
+import { Button, Modal, Typography, Container, AppBar } from '@tyger-ui/react';
 
 import { lgTextFixture } from '../../../packages/react/test/fixtures';
 
@@ -19,7 +19,9 @@ const App = () => {
 				{[1, 2, 3, 4, 5].map((item) => {
 					return (
 						<Container key={item}>
-							<Typography>{lgTextFixture}</Typography>
+							<Typography align="left">
+								{lgTextFixture}
+							</Typography>
 							<Typography>{lgTextFixture}</Typography>
 						</Container>
 					);
