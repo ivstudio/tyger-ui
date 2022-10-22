@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 
 import Container from '../components/Container';
-import { LongTextFixture } from '../../test/fixtures';
+import { lgTextFixture } from '../../test/fixtures';
 
 export default {
     title: 'Components/Container',
@@ -50,7 +50,7 @@ const Template: ComponentStory<typeof Container> = args => {
 
 export const Component = Template.bind({});
 Component.args = {
-    children: LongTextFixture,
+    children: lgTextFixture,
     maxWidth: 'sm',
     mt: '32',
     tag: 'section',

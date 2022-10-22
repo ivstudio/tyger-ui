@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LongTextFixture } from '../../../test/fixtures';
+import { lgTextFixture } from '../../../test/fixtures';
 import MockPortal from '../../../test/utils/MockPortal';
 import { render } from '../../../test/utils/mockProvider';
 import Modal from './Modal';
@@ -33,7 +33,7 @@ describe('Modal', () => {
             <MockPortal>
                 <Modal open={false} onClose={clickHandler}>
                     <Modal.Header title="Modal Title" onClose={clickHandler} />
-                    <p>{LongTextFixture}</p>
+                    <p>{lgTextFixture}</p>
                 </Modal>
             </MockPortal>
         );
@@ -43,7 +43,7 @@ describe('Modal', () => {
             <MockPortal>
                 <Modal open={true} onClose={clickHandler}>
                     <Modal.Header title="Modal Title" onClose={clickHandler} />
-                    <p>{LongTextFixture}</p>
+                    <p>{lgTextFixture}</p>
                 </Modal>
             </MockPortal>
         );
