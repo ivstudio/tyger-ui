@@ -15,7 +15,7 @@ const App = () => {
 					Welcome
 				</Typography>
 			</AppBar>
-			<Container maxWidth="sm">
+			<Container maxWidth="xs">
 				{[1, 2, 3, 4, 5].map((item) => {
 					return (
 						<Container key={item}>
