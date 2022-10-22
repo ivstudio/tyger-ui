@@ -2,15 +2,7 @@ import { device } from '@tyger-ui/system/src/mediaQueries';
 import styled from 'styled-components';
 
 import { flexCenterAll } from '../../styles';
-// import AppBarAnimated from './AppBarAnimated/AppBarAnimated';
-
-export type TAppBarPosition = 'fixed' | 'static' | 'sticky';
-export interface IAppBarRoot {
-    children: React.ReactNode | React.ReactNode[];
-    boxShadow?: boolean;
-    position?: TAppBarPosition;
-    hideOnScroll?: boolean;
-}
+import { TAppBarPosition } from './AppBar.types';
 
 const shadow = 'rgba(0, 0, 0, 0.1) 0px 20px 40px 0px';
 
@@ -56,36 +48,13 @@ export const AppBarRoot = styled.header<{
     }
 `;
 
-const BackButton = styled.div`
+export const BackButton = styled.div`
     ${flexCenterAll};
     color: ${({ theme: { color } }) => color.grey[0]};
     font-weight: 600;
 `;
 
-const BackButtonText = styled.span`
+export const BackButtonText = styled.span`
     display: block;
     padding-left: ${({ theme: { spacing } }) => `0 ${spacing['4']}`};
 `;
-
-const AppBar = ({
-    children,
-    hideOnScroll = false,
-    boxShadow = false,
-    position = 'static',
-}: IAppBarRoot) => {
-    // if (hideOnScroll) {
-    //     return (
-    //         <AppBarAnimated position={position} boxShadow={boxShadow}>
-    //             {children}
-    //         </AppBarAnimated>
-    //     );
-    // }
-
-    return (
-        <AppBarRoot position={position} boxShadow={boxShadow}>
-            {children}
-        </AppBarRoot>
-    );
-};
-
-export default AppBar;

@@ -1,9 +1,7 @@
-import { IAppBarRoot } from './AppBar';
+import { IAppBarRoot, AppBarRoot } from '..';
 import useScrollDirection from './useScrollDirection';
 
 import styled from 'styled-components';
-
-import { AppBarRoot } from './AppBar';
 
 interface IAppBarAnimatedRoot {
     isVisible: boolean;
