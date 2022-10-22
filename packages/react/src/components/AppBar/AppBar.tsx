@@ -6,14 +6,18 @@ const AppBar = ({
     children,
     hideOnScroll = false,
     boxShadow = false,
+    position = 'static',
 }: IAppBar) => {
+    const props = {
+        boxShadow: boxShadow,
+        position: position,
+    };
+
     if (hideOnScroll) {
-        return (
-            <AppBarAnimated boxShadow={boxShadow}>{children}</AppBarAnimated>
-        );
+        return <AppBarAnimated {...props}>{children}</AppBarAnimated>;
     }
 
-    return <AppBarRoot boxShadow={boxShadow}>{children}</AppBarRoot>;
+    return <AppBarRoot {...props}>{children}</AppBarRoot>;
 };
 
 export default AppBar;

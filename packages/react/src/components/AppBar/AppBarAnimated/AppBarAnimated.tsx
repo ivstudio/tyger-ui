@@ -6,7 +6,11 @@ const AppBarAnimated = ({ children, boxShadow = false }: IAppBarRoot) => {
     const { isVisible } = useScrollDirection();
     return (
         <>
-            <AppBarAnimatedRoot isVisible={isVisible} boxShadow={boxShadow}>
+            <AppBarAnimatedRoot
+                isVisible={isVisible}
+                boxShadow={boxShadow}
+                position="static"
+            >
                 {children}
             </AppBarAnimatedRoot>
         </>
