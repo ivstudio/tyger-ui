@@ -49,7 +49,14 @@ export const AllIconButtonsSizes = () => (
             title="Size"
             description="For larger or smaller buttons, use the size prop."
         />
-        <SBContainerInline p="16" mb="48" border borderRadius tag="ul" flex>
+        <SBContainerInline
+            padding="16"
+            mb="48"
+            border
+            borderRadius
+            tag="ul"
+            flex
+        >
             {['sm', 'md', 'lg'].map(item => (
                 <li key={item}>
                     <IconButton

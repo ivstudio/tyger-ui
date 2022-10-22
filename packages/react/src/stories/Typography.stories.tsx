@@ -39,7 +39,7 @@ export const TypographyVariants = () => (
             title="Headings"
             description="All HTML headings, h1 through h6, are available."
         />
-        <Box p="16" mb="48" border borderRadius>
+        <Box padding="16" mb="48" border borderRadius>
             <Typography tag="h1">h1 Heading</Typography>
             <Typography tag="h2">h2 Heading</Typography>
             <Typography tag="h3">h3 Heading</Typography>
@@ -53,7 +53,7 @@ export const TypographyVariants = () => (
             description="All variants can have a semantic tag value and font-weight
             variation."
         />
-        <Box p="16" mb="48" border borderRadius>
+        <Box padding="16" mb="48" border borderRadius>
             <Typography variant="display">display</Typography>
             <Typography variant="lead">lead</Typography>
             <Typography variant="title">title</Typography>

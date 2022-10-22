@@ -59,7 +59,7 @@ export const ChipVariants = () => (
             title="Variants"
             description="The Chip component provides outlined and filled variants."
         />
-        <SBContainerInline p="16" mb="48" border borderRadius>
+        <SBContainerInline padding="16" mb="48" border borderRadius>
             <Chip variant="filled" label="Chip filled" />
             <Chip variant="outlined" label="Chip filled" />
         </SBContainerInline>
@@ -68,7 +68,7 @@ export const ChipVariants = () => (
             title="Size"
             description="You can use the size prop to define a small size."
         />
-        <SBContainerInline p="16" mb="48" border borderRadius>
+        <SBContainerInline padding="16" mb="48" border borderRadius>
             <Chip size="sm" label="Chip filled" />
             <Chip label="Chip filled" />
         </SBContainerInline>

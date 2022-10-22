@@ -72,7 +72,7 @@ export const ButtonsVariant = () => (
             description="The button contains three variants filled (default), text, and
             outlined."
         />
-        <SBContainerInline p="16" mb="48" border borderRadius>
+        <SBContainerInline padding="16" mb="48" border borderRadius>
             {['text', 'outlined', 'filled'].map(item => (
                 <Button
                     variant={item as TButtonVariant}
@@ -87,7 +87,7 @@ export const ButtonsVariant = () => (
             title="Buttons with icons and label"
             description="Enhance the UX of the interface by using icons with labels."
         />
-        <SBContainerInline p="16" mb="48" border borderRadius>
+        <SBContainerInline padding="16" mb="48" border borderRadius>
             <Button
                 startIcon={<DeleteIcon />}
                 variant="outlined"
@@ -105,7 +105,7 @@ export const ButtonsVariant = () => (
             description="For larger or smaller buttons, use the size prop."
         />
 
-        <SBContainerInline p="16" mb="48" border borderRadius>
+        <SBContainerInline padding="16" mb="48" border borderRadius>
             <SBContainerInline flex mb="12">
                 {['sm', 'md', 'lg'].map(size => (
                     <li key={size}>
@@ -148,7 +148,7 @@ export const ButtonsVariant = () => (
         </SBContainerInline>
 
         <StoryTitleSection title="Full width Button" />
-        <SBContainerInline p="16" mb="48" border borderRadius>
+        <SBContainerInline padding="16" mb="48" border borderRadius>
             <Button fullWidth size="lg" onClick={() => console.log('click')}>
                 Button
             </Button>
