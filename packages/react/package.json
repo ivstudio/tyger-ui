@@ -1,6 +1,6 @@
 {
     "name": "@tyger-ui/react",
-    "version": "0.1.16-alpha.0",
+    "version": "0.1.17-alpha.0",
     "author": "Iggy Villamar <iggy@ivstudio.com>",
     "license": "MIT",
     "description": "tyger-ui themeable react components",
