@@ -1,7 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import AppBar from '../components/AppBar';
+import HideOnScrollComponent from '../components/HideOnScroll';
 import Container from '../components/Container';
 import { xlTextFixture } from '../../test/fixtures';
 
@@ -9,24 +10,50 @@ export default {
     title: 'Surfaces/AppBar',
     component: AppBar,
     parameters: {
-        options: { showPanel: true },
+        options: {
+            showPanel: true,
+        },
         controls: { sort: 'requiredFirst' },
         layout: 'fullscreen',
     },
-    argTypes: {},
+    argTypes: {
+        position: {
+            control: {
+                type: 'select',
+                options: ['fixed', 'static', 'sticky'],
+            },
+        },
+    },
 } as ComponentMeta<typeof AppBar>;
 
+const Content = ({ top }) => (
+    <Container mt={top}>
+        {[1, 2, 3, 4, 5].map(i => (
+            <Container key={i} mb="16" maxWidth="xs">
+                {xlTextFixture}
+            </Container>
+        ))}
+    </Container>
+);
+
 const Template: ComponentStory<typeof AppBar> = args => {
+    const top = args.position === 'fixed' ? '64' : '16';
     return (
         <>
             <AppBar {...args}>{args.children}</AppBar>
-            <Container mt="64">
-                {[1, 2, 3, 4, 5].map(i => (
-                    <Container key={i} mb="16" maxWidth="xs">
-                        {xlTextFixture}
-                    </Container>
-                ))}
-            </Container>
+            <Content top={top} />
+        </>
+    );
+};
+
+const TemplateHideOnScroll: ComponentStory<typeof AppBar> = args => {
+    const top = args.position === 'fixed' ? '64' : '16';
+    return (
+        <>
+            <HideOnScrollComponent>
+                <AppBar {...args}>{args.children}</AppBar>
+            </HideOnScrollComponent>
+            <Content top={top} />
         </>
     );
 };
@@ -34,5 +61,16 @@ const Template: ComponentStory<typeof AppBar> = args => {
 export const Default = Template.bind({});
 Default.args = {
     children: 'Logo',
+    position: 'static',
+};
+
+export const PositionFixed = Template.bind({});
+PositionFixed.args = {
+    children: 'Logo',
     position: 'fixed',
+};
+
+export const HideOnScroll = TemplateHideOnScroll.bind({});
+HideOnScroll.args = {
+    children: 'Logo',
 };

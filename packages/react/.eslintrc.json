@@ -24,7 +24,7 @@
         "import/first": "error",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",
-        "no-empty-interface": false
+        "no-empty-interface": 0
     },
     "ignorePatterns": ["src/test/*", "dist", "*config.js", "src/stories/*"],
     "root": true

@@ -7,6 +7,7 @@ export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Chip } from './components/Chip';
 export { default as Container } from './components/Container';
 export { default as Drawer } from './components/Drawer';
+export { default as HideOnScroll } from './components/HideOnScroll';
 export { default as IconButton } from './components/IconButton';
 export { default as Modal } from './components/Modal';
 export { default as ScrollIndicator } from './components/ScrollIndicator';

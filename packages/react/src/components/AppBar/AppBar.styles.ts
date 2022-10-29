@@ -1,14 +1,11 @@
 import { device } from '@tyger-ui/system/src/mediaQueries';
 import styled from 'styled-components';
 
-import { flexCenterAll } from '../../styles';
-import { TAppBarPosition } from './AppBar.types';
-
 const shadow = 'rgba(0, 0, 0, 0.1) 0px 20px 40px 0px';
 
-export const AppBarRoot = styled.header<{
+export const AppBarBase = styled.header<{
     boxShadow: boolean;
-    position: TAppBarPosition;
+    position: 'fixed' | 'static' | 'sticky';
 }>`
     width: 100%;
     height: 48px;
@@ -30,8 +27,8 @@ export const AppBarRoot = styled.header<{
                     left: 'auto',
                     right: 0,
                 };
-            case 'static':
-                return { position: 'static', top: 0 };
+            case 'sticky':
+                return { position: 'sticky', top: 0 };
             default:
                 return {
                     position: 'static',
@@ -46,15 +43,4 @@ export const AppBarRoot = styled.header<{
     @media ${device.md} {
         padding: ${({ theme: { spacing } }) => `0 ${spacing['32']}`};
     }
-`;
-
-export const BackButton = styled.div`
-    ${flexCenterAll};
-    color: ${({ theme: { color } }) => color.grey[0]};
-    font-weight: 600;
-`;
-
-export const BackButtonText = styled.span`
-    display: block;
-    padding-left: ${({ theme: { spacing } }) => `0 ${spacing['4']}`};
 `;

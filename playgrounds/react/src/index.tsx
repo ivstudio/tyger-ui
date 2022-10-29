@@ -1,15 +1,25 @@
+import { useState } from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from '@tyger-ui/system';
+import { lightTheme, GlobalStyles, darkTheme } from '@tyger-ui/system';
 import React from 'react';
 
 const rootElement = document.getElementById('root');
-render(
-    <React.StrictMode>
-        <ThemeProvider theme={lightTheme}>
-            <App />
-        </ThemeProvider>
-    </React.StrictMode>,
-    rootElement
-);
+
+const Root = () => {
+	const [isDefaultTheme, setTheme] = useState(true);
+	return (
+		<React.StrictMode>
+			<ThemeProvider theme={isDefaultTheme ? darkTheme : lightTheme}>
+				<GlobalStyles />
+				<App
+					isDefaultTheme={isDefaultTheme}
+					onChangeTheme={() => setTheme(!isDefaultTheme)}
+				/>
+			</ThemeProvider>
+		</React.StrictMode>
+	);
+};
+
+render(<Root />, rootElement);

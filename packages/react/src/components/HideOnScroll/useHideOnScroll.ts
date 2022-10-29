@@ -1,8 +1,8 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 type TScroll = number;
 
-const useScrollDirection = (delta = 50) => {
+const useHideOnScroll = (delta = 50) => {
     const [isVisible, setVisible] = useState<boolean>(true);
     const [scrollingY, setScollingY] = useState<TScroll>(0);
     const [progress, setProgress] = useState<TScroll>(0);
@@ -31,4 +31,4 @@ const useScrollDirection = (delta = 50) => {
     return { isVisible, progress };
 };
 
-export default useScrollDirection;
+export default useHideOnScroll;

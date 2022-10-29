@@ -1,21 +1,41 @@
+import {
+	HideOnScroll,
+	Button,
+	Modal,
+	Typography,
+	Container,
+	AppBar,
+	Switch,
+} from '@tyger-ui/react';
 import { useState } from 'react';
-import { Button, Modal, Typography, Container, AppBar } from '@tyger-ui/react';
-
 import { lgTextFixture } from '../../../packages/react/test/fixtures';
 
-const App = () => {
+interface IApp {
+	isDefaultTheme: boolean;
+	onChangeTheme(value: boolean): void;
+}
+
+const App = ({ isDefaultTheme, onChangeTheme }: IApp) => {
 	const [openModal, setOpenModal] = useState(false);
 	const handleModal = () => {
 		setOpenModal((prevState) => !prevState);
 	};
 	return (
 		<>
-			<AppBar position="fixed">
-				<Typography variant="h5" tag="h1">
-					Welcome
-				</Typography>
-			</AppBar>
-			<Container maxWidth="xs">
+			<HideOnScroll>
+				<AppBar>
+					<Typography variant="h5" tag="h1">
+						Welcome
+					</Typography>
+					<Switch
+						id="theme"
+						checked={isDefaultTheme}
+						onChange={onChangeTheme}
+					/>
+				</AppBar>
+			</HideOnScroll>
+
+			<Container maxWidth="xs" mt="16">
 				{[1, 2, 3, 4, 5].map((item) => {
 					return (
 						<Container key={item}>
