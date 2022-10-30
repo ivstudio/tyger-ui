@@ -1,4 +1,4 @@
-import useClickOutside from '@tyger-ui/hooks/src/useClickOutside';
+import { useClickOutside } from '@tyger-ui/hooks';
 import { TBreakpointKey } from '@tyger-ui/system/src/mediaQueries';
 import { AnimatePresence } from 'framer-motion';
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
