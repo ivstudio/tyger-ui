@@ -26,9 +26,8 @@ interface IModal {
     open: boolean;
     maxWidth?: TBreakpointKey;
     fullWidth?: boolean;
-    onClose: () => void;
+    onClose?: () => void;
     onBackdropClick?: () => void;
-    disableBackdropClick?: boolean;
     scroll?: TScroll;
     headerBorder?: boolean;
     footerBorder?: boolean;
@@ -55,8 +54,8 @@ const Modal = ({
     open,
     maxWidth = 'md',
     fullWidth = false,
+    onClose,
     onBackdropClick,
-    disableBackdropClick = false,
     scroll = 'paper',
     headerBorder = true,
     footerBorder = true,
@@ -70,8 +69,13 @@ const Modal = ({
     }, []);
 
     const handleBackdrop = () => {
-        if (disableBackdropClick || !onBackdropClick || fullWidth) return;
-        onBackdropClick();
+        if (onBackdropClick && !fullWidth) {
+            onBackdropClick();
+        }
+
+        if (onClose) {
+            onClose();
+        }
     };
 
     useClickOutside(modalRef, handleBackdrop);

@@ -9,11 +9,11 @@ export enum ThemeMode {
 
 export type TButtonTheme = {
 	color: string;
-	backgroundColor: string;
+	backgroundColor?: string;
 	border?: string;
 	hover: {
 		color?: string;
-		backgroundColor: string;
+		backgroundColor?: string;
 		border?: string;
 	};
 	disabled: {
@@ -39,7 +39,7 @@ export type TIconButtonTheme = {
 	backgroundColor: string;
 	hover: {
 		color?: string;
-		backgroundColor: string;
+		backgroundColor?: string;
 	};
 	disabled: {
 		color?: string;
@@ -61,6 +61,7 @@ export type TSwitchTheme = {
 export type TDrawer = {
 	backgroundColor: string;
 	border?: string;
+	color?: string;
 };
 
 export interface ISystemTokens {
@@ -95,6 +96,7 @@ export interface ITheme extends ISystemTokens {
 	switch: TSwitchTheme;
 	appBar: {
 		backgroundColor: string;
+		color: string;
 	};
 	text: {
 		primary: string;

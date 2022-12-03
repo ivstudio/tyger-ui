@@ -40,7 +40,9 @@ const Template: ComponentStory<typeof Chip> = args => (
 );
 
 export const Filled = Template.bind({});
-Filled.args = {};
+Filled.args = {
+    variant: 'filled',
+};
 
 export const Outlined = Template.bind({});
 Outlined.args = {

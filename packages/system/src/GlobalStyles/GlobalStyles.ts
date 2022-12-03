@@ -4,12 +4,10 @@ import { TTheme } from '../theme/theme';
 import { normalize } from './normalize';
 
 const GlobalStyles = createGlobalStyle<{ theme: TTheme }>`
+
 ${normalize};
 
-/* TYGER GLOBAL
-   ========================================================================== 
-*/
-
+/* TYGER GLOBAL ==================== */
 html,
 body {
   padding: 0;

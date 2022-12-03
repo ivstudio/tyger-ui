@@ -104,6 +104,7 @@ const DrawerContainer = styled(motion.div)<{
     ${({ anchor }) => getPosition(anchor)};
     background-color: ${({ theme: { drawer } }) => drawer.backgroundColor};
     z-index: ${({ theme: { zIndex } }) => zIndex.drawer};
+    color: ${({ theme: { drawer } }) => drawer.color};
 `;
 
 const Drawer = ({

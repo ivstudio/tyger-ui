@@ -12,6 +12,7 @@
 -   @tyger-ui/react [npm package](https://www.npmjs.com/package/@tyger-ui/react).
 -   @tyger-ui/system [npm package](https://www.npmjs.com/package/@tyger-ui/system).
 -   [Tyger UI Storybook](https://main--62cb3e5f2ca3572c994908ed.chromatic.com/?path=/story/components-button--filled)
+-   [Tyger UI Figma](https://www.figma.com/file/K92rrUbRBVydLIMocibbIC/Blog-Design)
 
 ## Install
 
@@ -20,13 +21,13 @@ To use Tyger UI components, install `@tyger-ui/react` and `@tyger-ui/system` and
 **npm:**
 
 ```sh
-npm i @tyger-ui/react @tyger-ui/system styled-components react-icons
+npm i @tyger-ui/react styled-components react-icons
 ```
 
 **yarn:**
 
 ```sh
-yarn add @tyger-ui/react @tyger-ui/system styled-components react-icons
+yarn add @tyger-ui/react styled-components react-icons
 ```
 
 ### TypeScript
@@ -42,7 +43,7 @@ import * as React from 'react';
 import { Button } from '@tyger-ui/react';
 
 function App() {
-    return <Button>Hello World</Button>;
+	return <Button>Hello World</Button>;
 }
 ```
 

@@ -1,7 +1,7 @@
 import { fontSize, lineHeight } from '../typography/typography';
 import spacing from '../spacing/spacing';
 import zIndex from '../zIndex/zIndex';
-import color from '../color/color';
+import color, { opacityHex } from '../color';
 import { DefaultTheme } from 'styled-components';
 
 export const tokens = {
@@ -20,7 +20,7 @@ export enum ThemeMode {
 export const lightPalette = {
 	name: ThemeMode.Light,
 	primary: color.blue[5],
-	backgroundColor: color.grey[2],
+	backgroundColor: color.grey[3],
 	paper: color.grey[0],
 	border: color.grey[4],
 	button: {
@@ -38,8 +38,8 @@ export const lightPalette = {
 			border: color.blue[5],
 			backgroundColor: 'transparent',
 			hover: {
-				backgroundColor: color.blue[0],
 				color: color.blue[6],
+				backgroundColor: opacityHex(color.blue[5], 0.12),
 				border: color.blue[6],
 			},
 			disabled: {
@@ -51,7 +51,10 @@ export const lightPalette = {
 		text: {
 			color: color.blue[5],
 			backgroundColor: 'transparent',
-			hover: { color: color.blue[6], backgroundColor: color.blue[0] },
+			hover: {
+				color: color.blue[6],
+				backgroundColor: opacityHex(color.blue[5], 0.12),
+			},
 			disabled: {
 				backgroundColor: 'transparent',
 				color: color.grey[5],
@@ -59,11 +62,11 @@ export const lightPalette = {
 		},
 	},
 	iconButton: {
-		color: color.grey[5],
+		color: color.grey[9],
 		backgroundColor: 'transparent',
-		hover: { backgroundColor: color.grey[3] },
+		hover: { backgroundColor: opacityHex(color.blue[5], 0.12) },
 		disabled: {
-			color: color.grey[3],
+			color: color.grey[5],
 		},
 	},
 	chip: {
@@ -91,6 +94,7 @@ export const lightPalette = {
 	},
 	appBar: {
 		backgroundColor: color.grey[0],
+		color: color.grey[9],
 	},
 	switch: {
 		on: {
@@ -113,13 +117,14 @@ export const lightPalette = {
 	drawer: {
 		backgroundColor: color.grey[0],
 		border: color.grey[4],
+		color: color.grey[9],
 	},
 };
 
 export const darkPalette = {
 	name: ThemeMode.Dark,
 	primary: color.blue[5],
-	backgroundColor: color.grey[9],
+	backgroundColor: color.grey[11],
 	paper: color.grey[8],
 	border: color.grey[7],
 	button: {
@@ -129,7 +134,7 @@ export const darkPalette = {
 			hover: { backgroundColor: color.blue[4] },
 			disabled: {
 				backgroundColor: color.grey[7],
-				color: color.grey[9],
+				color: color.grey[5],
 			},
 		},
 		outlined: {
@@ -137,30 +142,33 @@ export const darkPalette = {
 			border: color.blue[3],
 			backgroundColor: 'transparent',
 			hover: {
-				backgroundColor: color.grey[8],
+				backgroundColor: opacityHex(color.blue[3], 0.15),
 				border: color.blue[4],
 			},
 			disabled: {
 				backgroundColor: 'transparent',
 				color: color.grey[7],
-				border: color.blue[7],
+				border: color.grey[7],
 			},
 		},
 		text: {
 			color: color.blue[3],
 			backgroundColor: 'transparent',
-			hover: { color: color.blue[3], backgroundColor: color.grey[8] },
+			hover: {
+				color: color.blue[3],
+				backgroundColor: opacityHex(color.blue[3], 0.15),
+			},
 			disabled: {
 				color: color.grey[7],
 			},
 		},
 	},
 	iconButton: {
-		color: color.grey[5],
+		color: color.grey[1],
 		backgroundColor: 'transparent',
-		hover: { backgroundColor: color.grey[7] },
+		hover: { backgroundColor: opacityHex(color.blue[3], 0.15) },
 		disabled: {
-			color: color.grey[7],
+			color: color.grey[6],
 		},
 	},
 	chip: {
@@ -187,7 +195,8 @@ export const darkPalette = {
 		},
 	},
 	appBar: {
-		backgroundColor: color.grey[8],
+		backgroundColor: color.grey[9],
+		color: color.grey[1],
 	},
 	switch: {
 		on: {
@@ -208,8 +217,9 @@ export const darkPalette = {
 		placeholder: 'rgba(145,148,161,0.5)',
 	},
 	drawer: {
-		backgroundColor: color.grey[8],
-		border: color.grey[7],
+		backgroundColor: color.grey[9],
+		border: color.grey[8],
+		color: color.grey[1],
 	},
 };
 

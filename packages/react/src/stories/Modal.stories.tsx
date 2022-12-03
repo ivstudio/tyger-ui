@@ -38,10 +38,6 @@ export default {
             control: 'boolean',
             defaultValue: false,
         },
-        disableBackdropClick: {
-            control: 'boolean',
-            defaultValue: false,
-        },
         children: { control: false },
         className: { control: false },
     },

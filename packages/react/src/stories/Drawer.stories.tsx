@@ -2,9 +2,10 @@ import { useArgs } from '@storybook/client-api';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
-
+import AppBar from '../components/AppBar';
 import Drawer from '../components/Drawer';
 import IconButton from '../components/IconButton';
+import Container from '../components/Container';
 
 export default {
     title: 'Navigation/Drawer',
@@ -12,6 +13,7 @@ export default {
     parameters: {
         options: { showPanel: true },
         controls: { sort: 'requiredFirst' },
+        layout: 'fullscreen',
     },
     argTypes: {
         anchor: {
@@ -40,9 +42,11 @@ const Template: ComponentStory<typeof Drawer> = args => {
             >
                 {args.children}
             </Drawer>
-            <IconButton onClick={() => updateArgs({ open: true })}>
-                <MenuIcon />
-            </IconButton>
+            <AppBar dense>
+                <IconButton onClick={() => updateArgs({ open: true })}>
+                    <MenuIcon />
+                </IconButton>
+            </AppBar>
         </>
     );
 };

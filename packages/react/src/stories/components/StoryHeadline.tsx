@@ -17,7 +17,7 @@ export const StoryHeadline = ({ title, subTitle }: IStoryHeadline) => {
                     variant="subheading1"
                     mb="32"
                     maxWidth={640}
-                    color={color.grey[5]}
+                    color={color.grey[6]}
                 >
                     {subTitle}
                 </Typography>

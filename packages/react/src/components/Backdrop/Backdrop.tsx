@@ -12,21 +12,21 @@ interface IBackdrop {
     base?: boolean;
     key?: string;
     transparent?: boolean;
-    zindex?: TZIndex;
+    zIndex?: TZIndex;
 }
 
-const dark65 = 'rgba(0, 0, 0, 0.65)';
+const dark65 = 'rgba(0, 0, 0, 0.5)';
 
 export const BackdropRoot = styled(motion.div)<{
     color: string;
-    zindex?: TZIndex;
+    zIndex?: TZIndex;
 }>`
     position: fixed;
     inset: 0px;
     width: 100%;
     ${flexCenterAll}
     background: ${({ color }) => color};
-    z-index: ${({ zindex }) => zindex};
+    z-index: ${({ zIndex }) => zIndex};
     -webkit-tap-highlight-color: transparent;
 `;
 
@@ -36,7 +36,7 @@ const Backdrop = ({
     onClick,
     open = false,
     duration = 0.15,
-    zindex,
+    zIndex = '1',
     transparent,
 }: IBackdrop) => {
     return (
@@ -51,7 +51,7 @@ const Backdrop = ({
                     exit={{ opacity: 0 }}
                     transition={{ duration }}
                     color={transparent ? 'transparent' : dark65}
-                    zindex={zindex}
+                    zIndex={zIndex}
                 >
                     {children && children}
                 </BackdropRoot>

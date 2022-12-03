@@ -6,6 +6,7 @@ const shadow = 'rgba(0, 0, 0, 0.1) 0px 20px 40px 0px';
 export const AppBarBase = styled.header<{
     boxShadow: boolean;
     position: 'fixed' | 'static' | 'sticky';
+    dense: boolean;
 }>`
     width: 100%;
     height: 48px;
@@ -14,6 +15,7 @@ export const AppBarBase = styled.header<{
     box-sizing: border-box;
     backdrop-filter: blur(20px);
     background-color: ${({ theme: { appBar } }) => appBar.backgroundColor};
+    color: ${({ theme: { appBar } }) => appBar.color};
     padding: ${({ theme: { spacing } }) => `0 ${spacing['16']}`};
     box-shadow: ${({ boxShadow }) => (boxShadow ? shadow : 'none')};
     ${({ position }) => {
@@ -41,6 +43,7 @@ export const AppBarBase = styled.header<{
     }
 
     @media ${device.md} {
-        padding: ${({ theme: { spacing } }) => `0 ${spacing['32']}`};
+        padding: ${({ theme: { spacing }, dense }) =>
+            `0 ${dense ? spacing['16'] : spacing['32']}`};
     }
 `;
