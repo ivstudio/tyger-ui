@@ -2,8 +2,8 @@
 
 exports[`IconButton renders IconButton correctly 1`] = `
 <button
-  class="sc-bczRLJ kQftYZ"
-  color="#bfbfbf"
+  class="sc-bczRLJ iMUAJJ"
+  color="#fafafa"
 >
   <svg
     fill="currentColor"

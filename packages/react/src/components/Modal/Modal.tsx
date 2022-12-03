@@ -114,7 +114,7 @@ const Modal = ({
                             {body}
                         </ModalPaper>
                     </ModalContainer>
-                    {!fullWidth && <Backdrop open={open} zindex="-1" />}
+                    {!fullWidth && <Backdrop open={open} zIndex="-1" />}
                 </ModalRoot>
             )}
         </AnimatePresence>
