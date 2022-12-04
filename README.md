@@ -2,39 +2,68 @@
   Tyger UI
 </h1>
 
-### Tyger-ui is a themeable set of UI components for React.
+<div align="center">
+<p>
+  Tyger-ui is a React-based component library for the web.
+  </br>
+</p>
 
 ![npm](https://img.shields.io/npm/v/@tyger-ui/react)
 ![npm type definitions](https://img.shields.io/npm/types/@tyger-ui/react)
 ![npm](https://img.shields.io/npm/dm/@tyger-ui/react)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/mui/material-ui/blob/HEAD/LICENSE)
 
--   @tyger-ui/react [npm package](https://www.npmjs.com/package/@tyger-ui/react).
--   @tyger-ui/system [npm package](https://www.npmjs.com/package/@tyger-ui/system).
--   [Tyger UI Storybook](https://main--62cb3e5f2ca3572c994908ed.chromatic.com/?path=/story/components-button--filled)
--   [Tyger UI Figma](https://www.figma.com/file/K92rrUbRBVydLIMocibbIC/Blog-Design)
+</div>
 
-## Install
+</br>
 
-To use Tyger UI components, install `@tyger-ui/react` and `@tyger-ui/system` and its peer dependencies:
+## ✨ Features
+
+-   A set of high-quality React components.
+-   Written using TypeScript and Styled Components.
+-   Powerful theme customization.
+-   Server-side Rendering support.
+
+[**Try it out on CodeSandbox ▸**](https://codesandbox.io/s/amazing-danny-i26k2y?fontsize=14&hidenavigation=1&theme=dark)
+
+</br>
+
+## Installation
+
+-   Tyger UI is available as an [npm package](https://www.npmjs.com/package/@tyger-ui/react).
+-   Tyger UI system is available as an [npm package](https://www.npmjs.com/package/@tyger-ui/system).
+
+<br />
 
 **npm:**
 
 ```sh
-npm i @tyger-ui/react styled-components react-icons
+npm i @tyger-ui/react @tyger-ui/system styled-components framer-motion
 ```
 
 **yarn:**
 
 ```sh
-yarn add @tyger-ui/react styled-components react-icons
+yarn add @tyger-ui/react @tyger-ui/system styled-components framer-motion
 ```
 
-### TypeScript
+**SVG icons**
 
-Tyger UI is written in TypeScript with complete definitions, check [Use in TypeScript](https://ant.design/docs/react/use-in-typescript) to get started.
+tyger-ui is currently using react-icons on its components.
+
+```sh
+
+npm install react-icons --save
+# or
+yarn add react-icons
+
+```
+
+<br />
 
 ---
+
+<br />
 
 ## Getting started with Tyger UI
 
@@ -47,6 +76,22 @@ function App() {
 }
 ```
 
-In the interactive demo below, try adding a few other components. Visit [Tyger UI Storybook](https://main--62cb3e5f2ca3572c994908ed.chromatic.com/?path=/story/components-button--filled) for available options:
-
 [![Edit tyger-ui](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/amazing-danny-i26k2y?fontsize=14&hidenavigation=1&theme=dark)
+
+</br>
+
+## Storybook documentation
+
+-   [Tyger UI Storybook](https://main--62cb3e5f2ca3572c994908ed.chromatic.com/?path=/story/components-button--filled)
+
+</br>
+
+## Roadmap and contributors
+
+tyger-ui is currently under development and it welcomes contributors.
+
+</br>
+
+## License
+
+MIT License © 2023 [ivstudio](https://github.com/ivstudio)

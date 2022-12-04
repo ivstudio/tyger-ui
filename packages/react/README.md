@@ -41,10 +41,6 @@ yarn add react-icons
 npm install react-icons --save
 ```
 
-### TypeScript
-
-Tyger UI is written in TypeScript with complete definitions, check [Use in TypeScript](https://ant.design/docs/react/use-in-typescript) to get started.
-
 ---
 
 ## Getting started with Tyger UI

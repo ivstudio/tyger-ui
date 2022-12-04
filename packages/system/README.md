@@ -22,7 +22,3 @@ npm i @tyger-ui/system
 # or
 yarn add  @tyger-ui/system
 ```
-
-### TypeScript
-
-`tyger-ui` is written in TypeScript with complete definitions, check [Use in TypeScript](https://ant.design/docs/react/use-in-typescript) to get started.
