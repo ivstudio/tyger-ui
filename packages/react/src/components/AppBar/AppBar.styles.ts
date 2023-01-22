@@ -14,6 +14,7 @@ export const AppBarBase = styled.header<{
     align-items: center;
     box-sizing: border-box;
     backdrop-filter: blur(20px);
+    z-index: ${({ theme: { zIndex } }) => zIndex.appBar};
     background-color: ${({ theme: { appBar } }) => appBar.backgroundColor};
     color: ${({ theme: { appBar } }) => appBar.color};
     padding: ${({ theme: { spacing } }) => `0 ${spacing['16']}`};
