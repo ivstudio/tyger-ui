@@ -80,10 +80,23 @@ export const ChipRoot = styled.div<{
 export const ChipButtonRoot = styled(ChipRoot)`
     ${buttonBase};
     text-transform: none;
-    &:hover {
-        background-color: ${({ theme: { chip } }) =>
-            chip.button?.hover?.backgroundColor};
-    }
+
+    ${({ theme }) => {
+        if (!theme) return null;
+        const { chip } = theme;
+
+        return {
+            color: chip.button.color,
+            background: chip.button.backgroundColor,
+            '&:hover': {
+                background: chip.button.hover.backgroundColor,
+            },
+            '&:disabled': {
+                color: chip.button.disabled.color,
+                background: chip.button.disabled.backgroundColor,
+            },
+        };
+    }}
 `;
 
 const Chip = ({

@@ -34,6 +34,13 @@ export type TChipTheme = {
 	};
 };
 
+export interface IChipButtonTheme extends TChipTheme {
+	hover: {
+		color?: string;
+		backgroundColor?: string;
+	};
+}
+
 export type TIconButtonTheme = {
 	color: string;
 	backgroundColor: string;
@@ -87,11 +94,7 @@ export interface ITheme extends ISystemTokens {
 	chip: {
 		filled: TChipTheme;
 		outlined: TChipTheme;
-		button: {
-			hover?: {
-				backgroundColor: string;
-			};
-		};
+		button: IChipButtonTheme;
 	};
 	switch: TSwitchTheme;
 	appBar: {

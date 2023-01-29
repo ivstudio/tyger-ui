@@ -20,7 +20,7 @@ export enum ThemeMode {
 export const lightPalette = {
 	name: ThemeMode.Light,
 	primary: color.blue[5],
-	backgroundColor: color.grey[3],
+	backgroundColor: color.grey[2],
 	paper: color.grey[0],
 	border: color.grey[4],
 	button: {
@@ -72,7 +72,7 @@ export const lightPalette = {
 	chip: {
 		filled: {
 			color: color.grey[7],
-			backgroundColor: color.grey[3],
+			backgroundColor: color.grey[4],
 			disabled: {
 				backgroundColor: color.grey[2],
 				color: color.grey[5],
@@ -89,7 +89,13 @@ export const lightPalette = {
 			},
 		},
 		button: {
-			hover: { backgroundColor: 'rgba(65,67,78,0.12)' },
+			color: color.grey[7],
+			backgroundColor: color.grey[4],
+			hover: { backgroundColor: color.grey[5] },
+			disabled: {
+				backgroundColor: color.grey[2],
+				color: color.grey[5],
+			},
 		},
 	},
 	appBar: {
@@ -191,7 +197,13 @@ export const darkPalette = {
 			},
 		},
 		button: {
-			hover: { backgroundColor: 'rgba(65,67,78,0.12)' },
+			color: color.grey[0],
+			backgroundColor: color.grey[7],
+			hover: { backgroundColor: color.grey[6] },
+			disabled: {
+				backgroundColor: color.grey[7],
+				color: color.grey[8],
+			},
 		},
 	},
 	appBar: {

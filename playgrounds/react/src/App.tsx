@@ -6,6 +6,7 @@ import {
 	Container,
 	AppBar,
 	Switch,
+	Chip,
 } from '@tyger-ui/react';
 import { useState } from 'react';
 import { lgTextFixture } from '../../../packages/react/test/fixtures';
@@ -19,6 +20,9 @@ const App = ({ isDefaultTheme, onChangeTheme }: IApp) => {
 	const [openModal, setOpenModal] = useState(false);
 	const handleModal = () => {
 		setOpenModal((prevState) => !prevState);
+	};
+	const handleClick = () => {
+		console.log('click');
 	};
 	return (
 		<>
@@ -36,6 +40,13 @@ const App = ({ isDefaultTheme, onChangeTheme }: IApp) => {
 			</HideOnScroll>
 
 			<Container maxWidth="xs" mt="16">
+				<Chip label="JavaScript" tag="button" onClick={handleClick} />
+				<Chip label="React" tag="button" onClick={handleClick} />
+				<Chip
+					label="Styled Components"
+					tag="button"
+					onClick={handleClick}
+				/>
 				{[1, 2, 3, 4, 5].map((item) => {
 					return (
 						<Container key={item}>

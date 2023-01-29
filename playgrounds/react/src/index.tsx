@@ -11,7 +11,7 @@ const Root = () => {
 	const [isDefaultTheme, setTheme] = useState(true);
 	return (
 		<React.StrictMode>
-			<ThemeProvider theme={isDefaultTheme ? darkTheme : lightTheme}>
+			<ThemeProvider theme={isDefaultTheme ? lightTheme : darkTheme}>
 				<GlobalStyles />
 				<App
 					isDefaultTheme={isDefaultTheme}
