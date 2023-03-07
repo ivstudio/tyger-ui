@@ -6,3 +6,4 @@ export * from './theme/theme';
 export * from './typography/typography';
 export * from './mediaQueries/mediaQueries';
 export * from './color/utils/opacityHex';
+export * from './spacing/spacing';

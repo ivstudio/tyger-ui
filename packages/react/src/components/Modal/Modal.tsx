@@ -1,5 +1,5 @@
 import { useClickOutside } from '@tyger-ui/hooks';
-import { TBreakpointKey } from '@tyger-ui/system/src/mediaQueries';
+import type { TBreakpointKey } from '@tyger-ui/system';
 import { AnimatePresence } from 'framer-motion';
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';

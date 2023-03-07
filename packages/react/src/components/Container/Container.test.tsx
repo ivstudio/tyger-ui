@@ -1,4 +1,3 @@
-import { breakpoint } from '@tyger-ui/system/src/mediaQueries';
 import React from 'react';
 
 import { lgTextFixture } from '../../../test/fixtures';
@@ -12,9 +11,7 @@ describe('Container', () => {
     });
 
     it('renders correct element tag', () => {
-        const { container, rerender, debug } = render(
-            <Container>{lgTextFixture}</Container>
-        );
+        const { container } = render(<Container>{lgTextFixture}</Container>);
 
         expect(container.querySelector('div')).toBeInTheDocument();
 

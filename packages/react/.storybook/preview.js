@@ -1,8 +1,7 @@
 import { addDecorator } from '@storybook/react';
 import { withThemesProvider } from 'themeprovider-storybook';
-import { darkTheme, lightTheme } from '../../system/src/index';
 
-import GlobalStyles from '../../system/src/GlobalStyles';
+import { darkTheme, lightTheme, GlobalStyles } from '@tyger-ui/system';
 
 addDecorator(withThemesProvider([darkTheme, lightTheme]));
 addDecorator(style => (

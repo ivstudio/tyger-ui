@@ -1,4 +1,4 @@
-import { TSpacing } from '@tyger-ui/system/src/spacing';
+import type { TSpacing } from '@tyger-ui/system';
 import styled from 'styled-components';
 
 import {

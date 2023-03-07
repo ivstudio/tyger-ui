@@ -1,4 +1,4 @@
-import { device } from '@tyger-ui/system/src/mediaQueries';
+import { device } from '@tyger-ui/system';
 import styled from 'styled-components';
 
 const shadow = 'rgba(0, 0, 0, 0.1) 0px 20px 40px 0px';

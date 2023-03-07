@@ -2,11 +2,6 @@ import 'styled-components';
 
 import { tokens } from '@tyger-ui/system';
 
-export enum ThemeMode {
-	Dark = 'Dark',
-	Light = 'Light',
-}
-
 export type TButtonTheme = {
 	color: string;
 	backgroundColor?: string;

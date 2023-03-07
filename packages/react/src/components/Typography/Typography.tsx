@@ -1,4 +1,4 @@
-import { TSpacing } from '@tyger-ui/system/src/spacing';
+import type { TSpacing } from '@tyger-ui/system';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 

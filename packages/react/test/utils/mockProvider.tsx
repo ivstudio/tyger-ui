@@ -3,8 +3,8 @@
 import '@testing-library/jest-dom';
 
 import { render, RenderOptions } from '@testing-library/react';
-import GlobalStyles from '@tyger-ui/system/src/GlobalStyles/GlobalStyles';
-import { darkTheme, TTheme } from '@tyger-ui/system/src/theme/theme';
+import type { TTheme } from '@tyger-ui/system';
+import { darkTheme, GlobalStyles } from '@tyger-ui/system';
 import React, { FC, ReactElement } from 'react';
 import { ThemeProvider } from 'styled-components';
 
