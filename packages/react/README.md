@@ -15,18 +15,18 @@ Tyger-ui is themeable set of UI components for React.
 
 ## Install
 
-To use Tyger UI components, install `@tyger-ui/react`, `@tyger-ui/system`, and its peer dependencies:
+To use Tyger UI components, install `@tyger-ui/react`, and its peer dependencies:
 
 **npm:**
 
 ```sh
-npm i @tyger-ui/react @tyger-ui/system styled-components framer-motion
+npm i @tyger-ui/react styled-components framer-motion
 ```
 
 **yarn:**
 
 ```sh
-yarn add @tyger-ui/react @tyger-ui/system styled-components framer-motion
+yarn add @tyger-ui/react styled-components framer-motion
 ```
 
 ---
