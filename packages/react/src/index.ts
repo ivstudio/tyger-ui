@@ -13,3 +13,15 @@ export { default as Modal } from './components/Modal';
 export { default as ScrollIndicator } from './components/ScrollIndicator';
 export { default as Switch } from './components/Switch';
 export { default as Typography } from './components/Typography';
+/* system */
+export { default as GlobalStyles } from '@tyger-ui/system/src/GlobalStyles';
+export {
+    breakpoint,
+    color,
+    darkTheme,
+    device,
+    lightTheme,
+    opacityHex,
+    spacing,
+    zIndex,
+} from '@tyger-ui/system/src/index';
