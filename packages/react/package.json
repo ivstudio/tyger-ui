@@ -71,7 +71,7 @@
         "prettier": "^2.7.1",
         "rollup": "^2.75.7",
         "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-terser": "^7.0.2",
+        "@rollup/plugin-terser": "^0.4.0",
         "rollup-plugin-typescript2": "^0.32.1",
         "storybook": "^6.5.12",
         "themeprovider-storybook": "^1.8.0",
@@ -90,14 +90,14 @@
         "styled-components": "^5.3.5"
     },
     "dependencies": {
-        "@tyger-ui/hooks": "^0.1.26-alpha.0",
-        "@tyger-ui/system": "^0.1.26-alpha.0"
+        "@tyger-ui/hooks": "^0.1.27-alpha.0",
+        "@tyger-ui/system": "^0.1.27-alpha.0"
     },
     "publishConfig": {
         "access": "public"
     },
     "engines": {
-        "node": ">=12.0.0"
+        "node": ">=16.0.0"
     },
-    "gitHead": "2f701ba2ae453d78b338e337c2c2b05b5e5ba5f1"
+    "gitHead": "04ec694e99aaa8f31ed610b6e39e41f09d31178d"
 }
