@@ -41,8 +41,8 @@
         "@storybook/addon-interactions": "^6.5.13",
         "@storybook/addon-links": "^6.5.13",
         "@storybook/addons": "^6.5.13",
-        "@storybook/builder-webpack4": "^6.5.13",
-        "@storybook/manager-webpack4": "^6.5.13",
+        "@storybook/builder-webpack4": "^6.5.16",
+        "@storybook/manager-webpack4": "^6.5.16",
         "@storybook/react": "^6.5.13",
         "@storybook/testing-library": "^0.0.13",
         "@storybook/theming": "^6.5.13",
@@ -99,5 +99,5 @@
     "engines": {
         "node": ">=16.0.0"
     },
-    "gitHead": "04ec694e99aaa8f31ed610b6e39e41f09d31178d"
+    "gitHead": "b6ebe9cd6d2b834e0e8d1cd55cd3fe3367440f9d"
 }
