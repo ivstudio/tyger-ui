@@ -1,4 +1,4 @@
-export const shortTextFixture = 'Lorem ipsum dolor sit amet.';
+export const shortTextFixture = 'Lorem ipsum dolor sit ameat.';
 
 export const lgTextFixture =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
