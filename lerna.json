@@ -3,6 +3,6 @@
   "useNx": true,
   "useWorkspaces": true,
   "stream": true,
-  "version": "0.1.27-alpha.0",
+  "version": "0.1.28-alpha.0",
   "npmClient": "yarn"
 }
