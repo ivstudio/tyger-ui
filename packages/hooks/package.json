@@ -68,7 +68,7 @@
         "access": "public"
     },
     "engines": {
-        "node": ">=16.0.0"
+        "node": ">=16.14.0"
     },
     "gitHead": "b6ebe9cd6d2b834e0e8d1cd55cd3fe3367440f9d",
     "dependencies": {
