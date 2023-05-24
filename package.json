@@ -30,9 +30,9 @@
 		"typescript"
 	],
 	"devDependencies": {
-		"commitizen": "^4.2.5",
+		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"lerna": "^5.5.2"
+		"lerna": "^6.6.2"
 	},
 	"workspaces": {
 		"packages": [
