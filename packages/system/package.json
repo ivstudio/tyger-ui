@@ -1,6 +1,6 @@
 {
 	"name": "@tyger-ui/system",
-	"version": "0.2.0-alpha.0",
+	"version": "0.2.1-alpha.0",
 	"author": "Iggy Villamar <iggy@ivstudio.com>",
 	"description": "Styling system that powers tyger-ui",
 	"main": "dist/cjs/index.js",
