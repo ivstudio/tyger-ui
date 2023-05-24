@@ -1,6 +1,6 @@
 {
 	"name": "@tyger-ui/system",
-	"version": "0.1.28-alpha.0",
+	"version": "0.2.0-alpha.0",
 	"author": "Iggy Villamar <iggy@ivstudio.com>",
 	"description": "Styling system that powers tyger-ui",
 	"main": "dist/cjs/index.js",
@@ -27,15 +27,15 @@
 		"dev": "rollup --bundleConfigAsCjs -c --watch"
 	},
 	"devDependencies": {
-		"rollup": "^3.23.0",
 		"@rollup/plugin-commonjs": "^25.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.2",
 		"@rollup/plugin-terser": "^0.4.3",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"@types/rollup-plugin-peer-deps-external": "^2.2.1",
-		"rollup-plugin-typescript2": "^0.34.1",
 		"@types/styled-components": "^5.1.25",
 		"nodemon": "^2.0.22",
+		"rollup": "^3.23.0",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-typescript2": "^0.34.1",
 		"typescript": "^4.7.4",
 		"typescript-plugin-styled-components": "^2.0.0"
 	},
