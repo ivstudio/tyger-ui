@@ -2,23 +2,23 @@
 
 exports[`ButtonGroup renders ButtonGroup correctly 1`] = `
 <div
-  class="sc-dmyDGi bwKfTS"
+  class="sc-ewnqHT kvoNBg"
   orientation="horizontal"
 >
   <button
-    class="sc-guDLRT eLvZBK first"
+    class="sc-gTRrQi iPMzLQ first"
     type="button"
   >
     Button
   </button>
   <button
-    class="sc-guDLRT eLvZBK center"
+    class="sc-gTRrQi iPMzLQ center"
     type="button"
   >
     Button
   </button>
   <button
-    class="sc-guDLRT eLvZBK last"
+    class="sc-gTRrQi iPMzLQ last"
     type="button"
   >
     Button
