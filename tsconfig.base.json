@@ -16,5 +16,6 @@
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
 		"emitDeclarationOnly": false
-	}
+	},
+	"exclude": ["dist", "node_modules"]
 }
