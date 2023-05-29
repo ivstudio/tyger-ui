@@ -1,6 +1,6 @@
 {
     "name": "@tyger-ui/react",
-    "version": "0.2.3-alpha.0",
+    "version": "0.2.4-alpha.0",
     "author": "Iggy Villamar <iggy@ivstudio.com>",
     "license": "MIT",
     "description": "tyger-ui themeable react components",
@@ -90,8 +90,8 @@
         "styled-components": ">=5.3.5"
     },
     "dependencies": {
-        "@tyger-ui/hooks": "^0.2.3-alpha.0",
-        "@tyger-ui/system": "^0.2.3-alpha.0"
+        "@tyger-ui/hooks": "^0.2.4-alpha.0",
+        "@tyger-ui/system": "^0.2.4-alpha.0"
     },
     "publishConfig": {
         "access": "public"
