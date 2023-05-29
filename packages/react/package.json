@@ -6,7 +6,7 @@
     "description": "tyger-ui themeable react components",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
-    "types": "dist/esm/index.d.ts",
+    "types": "dist/esm//react/src/index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/ivstudio/tyger-ui",
