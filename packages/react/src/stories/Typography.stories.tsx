@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import Box from '../components/Box';
 import Typography from '../components/Typography';
 import { StoryHeadline, StoryTitleSection } from './components';
@@ -17,9 +17,9 @@ export default {
         },
         className: { control: false },
     },
-} as ComponentMeta<typeof Typography>;
+} as Meta<typeof Typography>;
 
-const Template: ComponentStory<typeof Typography> = args => (
+const Template: StoryFn<typeof Typography> = args => (
     <Typography {...args}>
         Lorem ipsum dolor sit amet consectetur adipiscing elit.
     </Typography>

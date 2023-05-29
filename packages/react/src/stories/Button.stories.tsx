@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import Button, { TButtonVariant, TSize } from '../components/Button';
 import { StoryHeadline, StoryTitleSection } from './components';
@@ -41,13 +41,16 @@ export default {
         startIcon: { control: false },
         endIcon: { control: false },
     },
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
+const Template: StoryFn<typeof Button> = args => (
+    <Button {...args}>Button</Button>
+);
 
 export const Filled = Template.bind({});
 Filled.args = {
     variant: 'filled',
+    chidren: 'Button',
 };
 
 export const Outlined = Template.bind({});
@@ -75,6 +78,7 @@ export const ButtonsVariant = () => (
         <SBContainerInline padding="16" mb="48" border borderRadius>
             {['text', 'outlined', 'filled'].map(item => (
                 <Button
+                    key={item}
                     variant={item as TButtonVariant}
                     onClick={() => console.log('click')}
                 >

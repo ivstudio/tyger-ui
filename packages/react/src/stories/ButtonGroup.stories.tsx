@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import Button from '../components/Button';
 import ButtonGroup from '../components/ButtonGroup';
@@ -22,9 +22,9 @@ export default {
         children: { control: false },
         disabled: { control: 'boolean', defaultValue: false },
     },
-} as ComponentMeta<typeof ButtonGroup>;
+} as Meta<typeof ButtonGroup>;
 
-const Template: ComponentStory<typeof ButtonGroup> = args => (
+const Template: StoryFn<typeof ButtonGroup> = args => (
     <ButtonGroup {...args}>
         <Button onClick={() => alert('Button 0')}>Button</Button>
         <Button onClick={() => alert('Button 1')}>Button</Button>

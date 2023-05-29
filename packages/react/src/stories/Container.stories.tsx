@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import Container from '../components/Container';
 import { lgTextFixture } from '../../test/fixtures';
@@ -38,9 +38,9 @@ export default {
         styles: { control: false },
         padding: { control: { type: 'select' } },
     },
-} as ComponentMeta<typeof Container>;
+} as Meta<typeof Container>;
 
-const Template: ComponentStory<typeof Container> = args => {
+const Template: StoryFn<typeof Container> = args => {
     return (
         <div>
             <Container {...args}>{args.children}</Container>

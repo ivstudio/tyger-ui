@@ -1,6 +1,6 @@
 import React from 'react';
 import { useArgs } from '@storybook/client-api';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import Button from '../components/Button';
 import Modal from '../components/Modal';
@@ -41,9 +41,9 @@ export default {
         children: { control: false },
         className: { control: false },
     },
-} as ComponentMeta<typeof Modal>;
+} as Meta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = args => {
+const Template: StoryFn<typeof Modal> = args => {
     const [{ open }, updateArgs] = useArgs();
 
     return (
@@ -107,7 +107,7 @@ const Template: ComponentStory<typeof Modal> = args => {
     );
 };
 
-const TemplateLean: ComponentStory<typeof Modal> = args => {
+const TemplateLean: StoryFn<typeof Modal> = args => {
     const [{ open }, updateArgs] = useArgs();
 
     return (

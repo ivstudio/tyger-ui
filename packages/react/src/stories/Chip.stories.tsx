@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import Chip from '../components/Chip';
 import { StoryHeadline, StoryTitleSection } from './components';
@@ -33,9 +33,9 @@ export default {
         disabled: { control: 'boolean', defaultValue: false },
         className: { control: false },
     },
-} as ComponentMeta<typeof Chip>;
+} as Meta<typeof Chip>;
 
-const Template: ComponentStory<typeof Chip> = args => (
+const Template: StoryFn<typeof Chip> = args => (
     <Chip {...args} label={`Chip ${args.variant}`} />
 );
 

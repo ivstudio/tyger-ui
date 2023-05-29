@@ -1,6 +1,6 @@
 import React from 'react';
 import { useArgs } from '@storybook/client-api';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import Switch, { TSize } from '../components/Switch';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
@@ -29,9 +29,9 @@ export default {
         },
         disabled: { control: 'boolean', defaultValue: false },
     },
-} as ComponentMeta<typeof Switch>;
+} as Meta<typeof Switch>;
 
-const Template: ComponentStory<typeof Switch> = args => {
+const Template: StoryFn<typeof Switch> = args => {
     const [{ checked }, updateArgs] = useArgs();
 
     return (

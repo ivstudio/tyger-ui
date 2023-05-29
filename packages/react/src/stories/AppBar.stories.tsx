@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import AppBar from '../components/AppBar';
 import HideOnScrollComponent from '../components/HideOnScroll';
@@ -24,7 +24,7 @@ export default {
             },
         },
     },
-} as ComponentMeta<typeof AppBar>;
+} as Meta<typeof AppBar>;
 
 const Content = ({ top }) => (
     <Container mt={top}>
@@ -36,7 +36,7 @@ const Content = ({ top }) => (
     </Container>
 );
 
-const Template: ComponentStory<typeof AppBar> = args => {
+const Template: StoryFn<typeof AppBar> = args => {
     const top = args.position === 'fixed' ? '64' : '16';
     return (
         <>
@@ -46,7 +46,7 @@ const Template: ComponentStory<typeof AppBar> = args => {
     );
 };
 
-const TemplateHideOnScroll: ComponentStory<typeof AppBar> = args => {
+const TemplateHideOnScroll: StoryFn<typeof AppBar> = args => {
     const top = args.position === 'fixed' ? '64' : '16';
     return (
         <>

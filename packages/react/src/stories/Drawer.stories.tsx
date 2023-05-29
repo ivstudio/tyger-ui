@@ -1,6 +1,6 @@
-import { useArgs } from '@storybook/client-api';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { useArgs } from '@storybook/client-api';
+import { Meta, StoryFn } from '@storybook/react';
 import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
 import AppBar from '../components/AppBar';
 import Drawer from '../components/Drawer';
@@ -28,9 +28,9 @@ export default {
         hideBackdrop: { control: 'boolean', defaultValue: false },
         title: { control: 'text' },
     },
-} as ComponentMeta<typeof Drawer>;
+} as Meta<typeof Drawer>;
 
-const Template: ComponentStory<typeof Drawer> = args => {
+const Template: StoryFn<typeof Drawer> = args => {
     const [{ open }, updateArgs] = useArgs();
 
     return (

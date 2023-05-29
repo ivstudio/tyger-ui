@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
 import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
 import { MdMoreHoriz as MoreIcon } from 'react-icons/md';
 
@@ -27,9 +27,9 @@ export default {
         disabled: { control: 'boolean', defaultValue: false },
         className: { control: false },
     },
-} as ComponentMeta<typeof IconButton>;
+} as Meta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = args => (
+const Template: StoryFn<typeof IconButton> = args => (
     <IconButton {...args}>
         <MoreIcon />
     </IconButton>

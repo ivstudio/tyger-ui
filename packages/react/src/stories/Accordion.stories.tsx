@@ -1,6 +1,6 @@
-import { useArgs } from '@storybook/client-api';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
+import { useArgs } from '@storybook/client-api';
 
 import Accordion from '../components/Accordion';
 
@@ -40,9 +40,9 @@ export default {
             control: { type: 'select', options: ['01', '02', '03'] },
         },
     },
-} as ComponentMeta<typeof Accordion>;
+} as Meta<typeof Accordion>;
 
-const Template: ComponentStory<typeof Accordion> = args => {
+const Template: StoryFn<typeof Accordion> = args => {
     const [{ expandedId }, updateArgs] = useArgs();
 
     return (
