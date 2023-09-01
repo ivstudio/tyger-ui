@@ -23,7 +23,7 @@ export interface IButton {
     rounded?: boolean;
     startIcon?: React.ReactNode;
     endIcon?: React.ReactNode;
-    onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 type TButtonRoot = {
