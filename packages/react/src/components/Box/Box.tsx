@@ -1,3 +1,4 @@
+'use client';
 import type { TSpacing } from '@tyger-ui/system';
 import styled from 'styled-components';
 

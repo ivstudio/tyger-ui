@@ -1,3 +1,4 @@
+'use client';
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';

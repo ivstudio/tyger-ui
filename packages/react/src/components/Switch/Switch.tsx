@@ -1,3 +1,4 @@
+'use client';
 import styled from 'styled-components';
 
 export type TSize = 'sm' | 'md' | 'lg';

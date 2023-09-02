@@ -1,2 +1,3 @@
+'use client';
 export { default } from './IconButton';
 export * from './IconButton';

@@ -1,3 +1,4 @@
+'use client';
 import type { TBreakpointKey } from '@tyger-ui/system';
 import { breakpoint, device } from '@tyger-ui/system';
 import styled from 'styled-components';

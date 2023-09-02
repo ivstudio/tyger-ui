@@ -1,3 +1,4 @@
+'use client';
 import styled from 'styled-components';
 
 import { buttonBase, flexCenterInline } from '../../styles';

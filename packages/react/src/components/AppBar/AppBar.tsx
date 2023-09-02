@@ -1,3 +1,4 @@
+'use client';
 import { AppBarBase } from './AppBar.styles';
 
 export type TAppBarPosition = 'fixed' | 'static' | 'sticky';

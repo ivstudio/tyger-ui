@@ -1,3 +1,4 @@
+'use client';
 import { Children, cloneElement, isValidElement } from 'react';
 import styled, { css } from 'styled-components';
 

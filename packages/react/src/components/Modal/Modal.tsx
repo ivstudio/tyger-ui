@@ -1,3 +1,4 @@
+'use client';
 import { useClickOutside } from '@tyger-ui/hooks';
 import type { TBreakpointKey } from '@tyger-ui/system';
 import { AnimatePresence } from 'framer-motion';

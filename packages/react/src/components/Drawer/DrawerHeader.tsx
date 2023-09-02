@@ -1,3 +1,4 @@
+'use client';
 import { MdChevronLeft as BackIcon } from 'react-icons/md';
 import styled from 'styled-components';
 
