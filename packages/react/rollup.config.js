@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
-
+import preserveDirectives from 'rollup-plugin-preserve-directives';
 const createStyledComponentsTransformer =
     require('typescript-plugin-styled-components').default;
 
@@ -15,16 +15,23 @@ export default {
     input: ['src/index.ts'],
     output: [
         {
-            file: packageJson.main,
+            dir: 'dist/cjs/',
             format: 'cjs',
             sourcemap: true,
+            preserveModules: true,
         },
         {
-            file: packageJson.module,
+            dir: 'dist/esm/',
             format: 'esm',
             sourcemap: true,
+            preserveModules: true,
         },
     ],
+    onwarn(warning, warn) {
+        if (warning.code !== 'MODULE_LEVEL_DIRECTIVE') {
+            warn(warning);
+        }
+    },
     plugins: [
         peerDepsExternal(),
         resolve(),
@@ -37,6 +44,7 @@ export default {
                 }),
             ],
         }),
+        preserveDirectives(),
         terser(),
     ],
     external: [

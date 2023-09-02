@@ -4,9 +4,9 @@
     "author": "Iggy Villamar <iggy@ivstudio.com>",
     "license": "MIT",
     "description": "tyger-ui themeable react components",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "types": "dist/esm//react/src/index.d.ts",
+    "main": "dist/cjs/react/src/index.js",
+    "module": "dist/esm/react/src/index.js",
+    "types": "dist/esm/react/src/index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/ivstudio/tyger-ui",
@@ -74,6 +74,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rollup": "^2.79.1",
+        "rollup-plugin-preserve-directives": "^0.2.0",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-typescript2": "^0.34.1",
         "storybook": "^7.4.0",
@@ -101,5 +102,5 @@
     "engines": {
         "node": ">=16.14.0"
     },
-    "gitHead": "ae7560f25f651eafcd34ba33c7d755135f8dc701"
+    "gitHead": "ec65a8c7d7c858cff82a0e6780a3df34c70e783e"
 }
