@@ -2,23 +2,7 @@
 import styled from 'styled-components';
 
 import { buttonBase, flexCenterInline } from '../../styles';
-
-export type TSize = 'sm' | 'md';
-
-type TChipVariant = 'filled' | 'outlined';
-
-type TChipTags = 'span' | 'div' | 'button';
-
-interface IChip {
-    id?: string;
-    tag?: TChipTags;
-    size?: TSize;
-    label: React.ReactNode;
-    onClick?: () => void;
-    variant?: TChipVariant;
-    className?: string;
-    disabled?: boolean;
-}
+import { ChipProps, ChipSizes, ChipVariant } from './Chip.d';
 
 const sizes = {
     sm: {
@@ -32,8 +16,8 @@ const sizes = {
 } as const;
 
 export const ChipRoot = styled.div<{
-    size: TSize;
-    variant: TChipVariant;
+    size: ChipSizes;
+    variant: ChipVariant;
     disabled: boolean;
 }>`
     outline: 0;
@@ -109,7 +93,7 @@ const Chip = ({
     variant = 'filled',
     className,
     disabled = false,
-}: IChip) => {
+}: ChipProps) => {
     if (tag === 'button') {
         return (
             <ChipButtonRoot

@@ -245,4 +245,4 @@ export const darkTheme: DefaultTheme = {
 	...darkPalette,
 };
 
-export type TTheme = typeof lightTheme | typeof darkTheme;
+export type Theme = typeof lightTheme | typeof darkTheme;

@@ -3,24 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import { flexCenterAll } from '../../styles';
-
-type TZIndex = string;
-interface IBackdrop {
-    children?: React.ReactNode | React.ReactNode[];
-    onClick?: () => void;
-    open?: boolean;
-    duration?: number;
-    base?: boolean;
-    key?: string;
-    transparent?: boolean;
-    zIndex?: TZIndex;
-}
+import { BackdropProps } from './Backdrop.d';
 
 const dark65 = 'rgba(0, 0, 0, 0.5)';
 
 export const BackdropRoot = styled(motion.div)<{
     color: string;
-    zIndex?: TZIndex;
+    zIndex?: string;
 }>`
     position: fixed;
     inset: 0px;
@@ -39,7 +28,7 @@ const Backdrop = ({
     duration = 0.15,
     zIndex = '1',
     transparent,
-}: IBackdrop) => {
+}: BackdropProps) => {
     return (
         <AnimatePresence>
             {open ? (

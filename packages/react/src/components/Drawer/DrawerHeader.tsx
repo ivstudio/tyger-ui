@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { flexCenterAll } from '../../styles';
 import IconButton from '../IconButton';
 
-interface IDrawerHeader {
+interface DrawerHeaderProps {
     children?: React.ReactNode | React.ReactNode[];
     onClose?: () => void;
 }
@@ -24,7 +24,7 @@ const DrawerCloseButton = styled(IconButton)`
     right: ${({ theme: { spacing } }) => spacing['16']};
 `;
 
-const DrawerHeader = ({ children, onClose }: IDrawerHeader) => {
+const DrawerHeader = ({ children, onClose }: DrawerHeaderProps) => {
     return (
         <DrawerHeaderRoot>
             <DrawerCloseButton onClick={onClose}>

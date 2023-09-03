@@ -3,12 +3,12 @@
 import '@testing-library/jest-dom';
 
 import { render, RenderOptions } from '@testing-library/react';
-import type { TTheme } from '@tyger-ui/system';
+import type { Theme } from '@tyger-ui/system';
 import { darkTheme, GlobalStyles } from '@tyger-ui/system';
 import React, { FC, ReactElement } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-const AllTheProviders: FC<{ children: React.ReactNode; theme?: TTheme }> = ({
+const AllTheProviders: FC<{ children: React.ReactNode; theme?: Theme }> = ({
     children,
     theme = darkTheme,
 }) => {

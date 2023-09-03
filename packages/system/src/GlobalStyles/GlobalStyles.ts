@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { TTheme } from '../theme/theme';
+import { Theme } from '../theme/theme';
 import { normalize } from './normalize';
 
-const GlobalStyles = createGlobalStyle<{ theme: TTheme }>`
+const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
 ${normalize};
 

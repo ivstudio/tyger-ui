@@ -2,7 +2,7 @@ import 'styled-components';
 
 import { tokens } from '@tyger-ui/system';
 
-export type TButtonTheme = {
+export type ButtonTheme = {
 	color: string;
 	backgroundColor?: string;
 	border?: string;
@@ -18,7 +18,7 @@ export type TButtonTheme = {
 	};
 };
 
-export type TChipTheme = {
+export type ChipTheme = {
 	color: string;
 	backgroundColor: string;
 	border?: string;
@@ -29,14 +29,14 @@ export type TChipTheme = {
 	};
 };
 
-export interface IChipButtonTheme extends TChipTheme {
+export interface ChipButtonTheme extends ChipTheme {
 	hover: {
 		color?: string;
 		backgroundColor?: string;
 	};
 }
 
-export type TIconButtonTheme = {
+export type IconButtonTheme = {
 	color: string;
 	backgroundColor: string;
 	hover: {
@@ -48,7 +48,7 @@ export type TIconButtonTheme = {
 	};
 };
 
-export type TSwitchTheme = {
+export type SwitchTheme = {
 	on: {
 		backgroundColor: string;
 	};
@@ -60,13 +60,13 @@ export type TSwitchTheme = {
 	};
 };
 
-export type TDrawer = {
+export type Drawer = {
 	backgroundColor: string;
 	border?: string;
 	color?: string;
 };
 
-export interface ISystemTokens {
+export interface SystemTokens {
 	spacing: typeof tokens.spacing;
 	color: typeof tokens.color;
 	fontSize: typeof tokens.fontSize;
@@ -74,24 +74,24 @@ export interface ISystemTokens {
 	zIndex: typeof tokens.zIndex;
 }
 
-export interface ITheme extends ISystemTokens {
+export interface ITheme extends SystemTokens {
 	name: ThemeMode;
 	primary: string;
 	backgroundColor?: string;
 	border: string;
 	paper: string;
 	button: {
-		filled: TButtonTheme;
-		outlined: TButtonTheme;
-		text: TButtonTheme;
+		filled: ButtonTheme;
+		outlined: ButtonTheme;
+		text: ButtonTheme;
 	};
-	iconButton: TIconButtonTheme;
+	iconButton: IconButtonTheme;
 	chip: {
-		filled: TChipTheme;
-		outlined: TChipTheme;
-		button: IChipButtonTheme;
+		filled: ChipTheme;
+		outlined: ChipTheme;
+		button: ChipButtonTheme;
 	};
-	switch: TSwitchTheme;
+	switch: SwitchTheme;
 	appBar: {
 		backgroundColor: string;
 		color: string;
@@ -103,7 +103,7 @@ export interface ITheme extends ISystemTokens {
 		quarternary: string;
 		placeholder: string;
 	};
-	drawer: TDrawer;
+	drawer: Drawer;
 }
 
 declare module 'styled-components' {

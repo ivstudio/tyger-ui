@@ -15,5 +15,5 @@ const spacing = {
 	'160': '160px',
 } as const;
 
-export type TSpacing = keyof typeof spacing;
+export type SpacingProps = keyof typeof spacing;
 export default spacing;

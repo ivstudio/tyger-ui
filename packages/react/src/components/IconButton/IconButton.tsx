@@ -6,23 +6,13 @@ import {
     buttonBase,
     flexCenterInline,
 } from '../../styles';
+import {
+    IconButtonProps,
+    IconRootProps,
+    IconsButtonsSizes,
+} from './IconButton.d';
 
-export type TSize = 'sm' | 'md' | 'lg';
-
-interface IIconRoot {
-    size?: TSize;
-    color?: string;
-    background?: string;
-    filled?: boolean;
-}
-interface IIconButton extends IIconRoot {
-    children: React.ReactNode;
-    onClick?: () => void;
-    disabled?: boolean;
-    className?: string;
-}
-
-const getSize = (size: TSize = 'sm') => {
+const getSize = (size: IconsButtonsSizes = 'sm') => {
     const buttonSizes = {
         sm: 4,
         md: 6,
@@ -39,7 +29,7 @@ const getSize = (size: TSize = 'sm') => {
     };
 };
 
-export const IconButtonRoot = styled.button<IIconRoot>`
+export const IconButtonRoot = styled.button<IconRootProps>`
     ${({ size }) => getSize(size)};
     color: ${({ color }) => color};
     background-color: ${({ background, filled }) => {
@@ -71,7 +61,7 @@ const IconButton = ({
     filled = false,
     className,
     ...baseProps
-}: IIconButton) => {
+}: IconButtonProps) => {
     const { iconButton } = useTheme();
 
     return (

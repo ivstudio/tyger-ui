@@ -91,7 +91,7 @@ export const htmlTextElements = {
 
 export const typographyVariants = { ...htmlTextElements, ...typographyVariant };
 
-export type TVariant =
+export type TypographyVariantProps =
     | keyof typeof typographyVariant
     | keyof typeof htmlTextElements;
 // export type TVariantKey = typeof typographyVariants[TVariant];

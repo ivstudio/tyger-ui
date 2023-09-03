@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-type TScroll = number;
+type Scroll = number;
 
 const useHideOnScroll = (delta = 50) => {
     const [isVisible, setVisible] = useState<boolean>(true);
-    const [scrollingY, setScollingY] = useState<TScroll>(0);
-    const [progress, setProgress] = useState<TScroll>(0);
+    const [scrollingY, setScollingY] = useState<Scroll>(0);
+    const [progress, setProgress] = useState<Scroll>(0);
 
     const navAnimation = useCallback(() => {
         if (typeof window === 'undefined') {

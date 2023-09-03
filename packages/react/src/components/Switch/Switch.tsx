@@ -1,19 +1,9 @@
 'use client';
 import styled from 'styled-components';
 
-export type TSize = 'sm' | 'md' | 'lg';
+import { SwitchProps, SwitchRootProps, SwitchSizes } from './Switch.d';
 
-interface TSwitchRoot {
-    checked: boolean;
-    size?: TSize;
-}
-interface ISwitch extends TSwitchRoot {
-    id?: string;
-    disabled?: boolean;
-    onChange: (val: boolean) => void;
-}
-
-const getSize = (size: TSize) => {
+const getSize = (size: SwitchSizes) => {
     const buttonSizes = {
         sm: 16,
         md: 24,
@@ -48,7 +38,7 @@ const Checkbox = styled.input`
     display: none;
 `;
 
-const Thumb = styled.label<TSwitchRoot>`
+const Thumb = styled.label<SwitchRootProps>`
     cursor: pointer;
     margin: 0;
     padding: 0;
@@ -83,7 +73,7 @@ const Switch = ({
     checked = false,
     size = 'md',
     disabled = false,
-}: ISwitch) => {
+}: SwitchProps) => {
     return (
         <Container disabled={disabled}>
             <Checkbox

@@ -3,7 +3,8 @@ import { Meta, StoryFn } from '@storybook/react';
 import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
 import { MdMoreHoriz as MoreIcon } from 'react-icons/md';
 
-import IconButton, { TSize } from '../components/IconButton';
+import IconButton from '../components/IconButton';
+import { IconsButtonsSizes } from '../components/IconButton/IconButton.d';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
 
@@ -61,7 +62,7 @@ export const AllIconButtonsSizes = () => (
                 <li key={item}>
                     <IconButton
                         filled
-                        size={item as TSize}
+                        size={item as IconsButtonsSizes}
                         onClick={() => console.log('click')}
                     >
                         <MenuIcon />

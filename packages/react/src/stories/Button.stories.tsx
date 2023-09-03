@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 
-import Button, { TButtonVariant, TSize } from '../components/Button';
+import Button from '../components/Button';
+import { ButtonSizes, ButtonVariant } from '../components/Button/Button.d';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { MdDelete as DeleteIcon, MdSend as SendIcon } from 'react-icons/md';
 import { SBContainer, SBContainerInline } from './sb.styles';
@@ -79,7 +80,7 @@ export const ButtonsVariant = () => (
             {['text', 'outlined', 'filled'].map(item => (
                 <Button
                     key={item}
-                    variant={item as TButtonVariant}
+                    variant={item as ButtonVariant}
                     onClick={() => console.log('click')}
                 >
                     Button
@@ -114,7 +115,7 @@ export const ButtonsVariant = () => (
                 {['sm', 'md', 'lg'].map(size => (
                     <li key={size}>
                         <Button
-                            size={size as TSize}
+                            size={size as ButtonSizes}
                             onClick={() => console.log('click')}
                         >
                             Button
@@ -127,7 +128,7 @@ export const ButtonsVariant = () => (
                     <li key={size}>
                         <Button
                             variant="outlined"
-                            size={size as TSize}
+                            size={size as ButtonSizes}
                             onClick={() => console.log('click')}
                         >
                             Button
@@ -141,7 +142,7 @@ export const ButtonsVariant = () => (
                         <Button
                             startIcon={<DeleteIcon />}
                             variant="text"
-                            size={size as TSize}
+                            size={size as ButtonSizes}
                             onClick={() => console.log('click')}
                         >
                             Button

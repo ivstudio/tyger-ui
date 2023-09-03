@@ -2,7 +2,7 @@
 
 exports[`Backdrop renders Backdrop correctly 1`] = `
 <div
-  class="sc-bgqQcB jOkQWs"
+  class="sc-aXZVg kGpObX"
   color="rgba(0, 0, 0, 0.5)"
   data-testid="backdrop"
   style="opacity: 0;"

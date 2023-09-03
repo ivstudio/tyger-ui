@@ -1,7 +1,8 @@
 import React from 'react';
 import { useArgs } from '@storybook/client-api';
 import { Meta, StoryFn } from '@storybook/react';
-import Switch, { TSize } from '../components/Switch';
+import Switch from '../components/Switch';
+import { SwitchSizes } from '../components/Switch/Switch.d';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
 
@@ -69,7 +70,7 @@ export const SwitchVariants = () => {
                     <li>
                         <Switch
                             key={item}
-                            size={item as TSize}
+                            size={item as SwitchSizes}
                             checked={true}
                             onChange={() => console.log('click')}
                         />

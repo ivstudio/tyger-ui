@@ -8,33 +8,7 @@ import {
     flexCenterInline,
 } from '../../styles';
 import Box from '../Box';
-
-export type TButtonVariant = 'filled' | 'outlined' | 'text';
-export type TSize = 'sm' | 'md' | 'lg';
-
-export interface IButton {
-    id?: string;
-    className?: string;
-    type?: 'submit' | 'button' | 'reset';
-    disabled?: boolean;
-    size?: TSize;
-    fullWidth?: boolean;
-    children?: React.ReactNode;
-    variant?: TButtonVariant;
-    rounded?: boolean;
-    startIcon?: React.ReactNode;
-    endIcon?: React.ReactNode;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-}
-
-type TButtonRoot = {
-    size: TSize;
-    fullWidth: boolean;
-    variant: TButtonVariant;
-    rounded: boolean;
-    hasStartIcon?: boolean;
-    hasEndIcon?: boolean;
-};
+import { ButtonProps, ButtonRootProps } from './Button.d';
 
 const buttonSpacing = {
     text: {
@@ -90,25 +64,25 @@ const buttonSpacing = {
     },
 } as const;
 
-const fontSizes = {
+const fonButtonSizess = {
     sm: {
-        fontSize: '0.8125rem',
+        fonButtonSizes: '0.8125rem',
         '& svg': {
-            fontSize: '16px',
+            fonButtonSizes: '16px',
         },
     },
 
     md: {
-        fontSize: '0.875rem',
+        fonButtonSizes: '0.875rem',
         '& svg': {
-            fontSize: '20px',
+            fonButtonSizes: '20px',
         },
     },
 
     lg: {
-        fontSize: '0.9375rem',
+        fonButtonSizes: '0.9375rem',
         '& svg': {
-            fontSize: '24px',
+            fonButtonSizes: '24px',
         },
     },
 } as const;
@@ -125,14 +99,14 @@ const iconSpacing = {
     lg: '6px',
 } as const;
 
-const ButtonRoot = styled.button<TButtonRoot>`
+const ButtonRoot = styled.button<ButtonRootProps>`
     ${flexCenterInline};
     ${buttonBase};
     ${backgroundTransition};
     min-width: 64px;
     font-weight: 500;
     letter-spacing: 0.02857em;
-    ${({ size }) => fontSizes[size]};
+    ${({ size }) => fonButtonSizess[size]};
     line-height: ${({ theme }) => theme.lineHeight.xl};
     width: ${({ fullWidth }) => fullWidth && '100%'};
     border-radius: ${({ rounded, size }) => {
@@ -208,7 +182,7 @@ const Button = ({
     startIcon = null,
     endIcon = null,
     ...baseProps
-}: IButton) => (
+}: ButtonProps) => (
     <ButtonRoot
         {...baseProps}
         id={id}

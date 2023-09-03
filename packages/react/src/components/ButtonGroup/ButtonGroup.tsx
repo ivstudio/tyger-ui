@@ -2,11 +2,13 @@
 import { Children, cloneElement, isValidElement } from 'react';
 import styled, { css } from 'styled-components';
 
+import { ButtonGroupProps, ButtonRootProps } from './ButtonGroup.d';
+
 const buttonCommonStyles = css`
     text-transform: none;
 `;
 
-export const ButtonGroupRoot = styled.div<IButtonRoot>`
+export const ButtonGroupRoot = styled.div<ButtonRootProps>`
     display: inline-flex;
     box-sizing: border-box;
 
@@ -57,18 +59,10 @@ export const ButtonGroupRoot = styled.div<IButtonRoot>`
     }};
 `;
 
-interface IButtonRoot {
-    orientation?: 'horizontal' | 'vertical';
-}
-
-interface IButtonGroup extends IButtonRoot {
-    children: React.ReactNode[];
-}
-
 const ButtonGroup = ({
     children,
     orientation = 'horizontal',
-}: IButtonGroup) => {
+}: ButtonGroupProps) => {
     if (!Array.isArray(children) || children.length === 0) {
         return null;
     }

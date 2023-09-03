@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 
-type TScroll = number;
+type Scroll = number;
 
 const useScrollDirection = () => {
-    const [progress, setProgress] = useState<TScroll>(0);
+    const [progress, setProgress] = useState<Scroll>(0);
 
     const progressBar = useCallback(() => {
         const docElem = document.documentElement;

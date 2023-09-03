@@ -5,7 +5,6 @@ import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
 import AppBar from '../components/AppBar';
 import Drawer from '../components/Drawer';
 import IconButton from '../components/IconButton';
-import Container from '../components/Container';
 
 export default {
     title: 'Navigation/Drawer',

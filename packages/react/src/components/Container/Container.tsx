@@ -3,12 +3,8 @@ import type { TBreakpointKey } from '@tyger-ui/system';
 import { breakpoint, device } from '@tyger-ui/system';
 import styled from 'styled-components';
 
-import { BoxRoot, IBox } from '../Box';
-
-interface IContainer extends IBox {
-    maxWidth?: TBreakpointKey;
-    className?: string;
-}
+import { BoxRoot } from '../Box';
+import { ContainerProps } from './Container.d';
 
 const ContainerRoot = styled(BoxRoot)<{
     maxWidth?: TBreakpointKey;
@@ -42,7 +38,7 @@ const Container = ({
     tag = 'div',
     className,
     ...props
-}: IContainer) => {
+}: ContainerProps) => {
     return (
         <ContainerRoot
             as={tag}

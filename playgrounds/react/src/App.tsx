@@ -11,12 +11,12 @@ import {
 import { useState } from 'react';
 import { lgTextFixture } from '../../../packages/react/test/fixtures';
 
-interface IApp {
+interface AppProps {
 	isDefaultTheme: boolean;
 	onChangeTheme(value: boolean): void;
 }
 
-const App = ({ isDefaultTheme, onChangeTheme }: IApp) => {
+const App = ({ isDefaultTheme, onChangeTheme }: AppProps) => {
 	const [openModal, setOpenModal] = useState(false);
 	const handleModal = () => {
 		setOpenModal((prevState) => !prevState);

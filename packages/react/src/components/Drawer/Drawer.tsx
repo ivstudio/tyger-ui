@@ -3,18 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import Backdrop from '../Backdrop';
+import { DrawerAnchor, DrawerProps } from './Drawer.d';
 import DrawerHeader from './DrawerHeader';
-
-export type TAnchor = 'top' | 'right' | 'bottom' | 'left';
-interface IDrawerRoot {
-    children: React.ReactNode | React.ReactNode[];
-    open: boolean;
-    onClose: () => void;
-    anchor?: TAnchor;
-}
-interface IDrawer extends IDrawerRoot {
-    title?: string;
-}
 
 const framer = {
     transition: {
@@ -67,7 +57,7 @@ const anchorYBase = {
     height: 300,
 };
 
-const getPosition = (anchor: TAnchor) => {
+const getPosition = (anchor: DrawerAnchor) => {
     switch (anchor) {
         case 'top':
             return {
@@ -98,7 +88,7 @@ const DrawerContent = styled.div`
 `;
 
 const DrawerContainer = styled(motion.div)<{
-    anchor: TAnchor;
+    anchor: DrawerAnchor;
 }>`
     position: fixed;
     box-sizing: border-box;
@@ -114,7 +104,7 @@ const Drawer = ({
     anchor = 'left',
     open = false,
     title,
-}: IDrawer) => {
+}: DrawerProps) => {
     return (
         <>
             <AnimatePresence>

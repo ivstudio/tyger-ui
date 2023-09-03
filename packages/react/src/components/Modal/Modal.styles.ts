@@ -3,7 +3,7 @@ import { breakpoint } from '@tyger-ui/system';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { TScroll } from './Modal';
+import { ModalScroll } from './Modal.d';
 
 export const framerProps = {
     initial: { opacity: 0, scale: 0 },
@@ -38,7 +38,7 @@ export const ModalRoot = styled.div`
     z-index: ${({ theme }) => theme.zIndex.modal};
 `;
 
-export const ModalContainer = styled.div<{ scroll: TScroll }>`
+export const ModalContainer = styled.div<{ scroll: ModalScroll }>`
     height: 100%;
     outline: 0px;
 
@@ -63,7 +63,7 @@ export const ModalContainer = styled.div<{ scroll: TScroll }>`
 export const ModalPaper = styled(motion.div)<{
     fullWidth: boolean;
     maxWidth: TBreakpointKey;
-    scroll: TScroll;
+    scroll: ModalScroll;
 }>`
     display: flex;
     flex-direction: column;

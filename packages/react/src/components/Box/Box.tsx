@@ -1,53 +1,14 @@
 'use client';
-import type { TSpacing } from '@tyger-ui/system';
+
 import styled from 'styled-components';
 
 import {
     flexCenterAll as flexCenterAllMixin,
     flexCenterInline as flexCenterInlineMixin,
 } from '../../styles';
+import { BoxProps } from './Box.d';
 
-export type TBoxElem =
-    | 'div'
-    | 'p'
-    | 'section'
-    | 'span'
-    | 'article'
-    | 'main'
-    | 'ul'
-    | 'ol'
-    | 'li'
-    | 'aside';
-
-export type TBox = {
-    pt?: TSpacing;
-    pr?: TSpacing;
-    pb?: TSpacing;
-    pl?: TSpacing;
-    py?: TSpacing;
-    px?: TSpacing;
-    mt?: TSpacing;
-    mr?: TSpacing;
-    mb?: TSpacing;
-    ml?: TSpacing;
-    my?: TSpacing;
-    mx?: TSpacing;
-    padding?: TSpacing;
-    margin?: TSpacing;
-    border?: boolean;
-    borderRadius?: boolean;
-};
-
-export interface IBox extends TBox {
-    children: React.ReactNode | React.ReactNode[];
-    tag?: TBoxElem;
-    flexCenterAll?: boolean;
-    flexCenterInline?: boolean;
-    flex?: boolean;
-    styles?: React.CSSProperties;
-}
-
-export const BoxRoot = styled.div<IBox>`
+export const BoxRoot = styled.div<BoxProps>`
     padding-top: ${({ theme, pt, py }) =>
         (py && theme.spacing[py]) || (pt && theme.spacing[pt])};
     padding-right: ${({ theme, pr, px }) =>
@@ -73,7 +34,7 @@ export const BoxRoot = styled.div<IBox>`
     border-radius: ${({ borderRadius }) => borderRadius && '4px'};
 `;
 
-const Box = ({ tag, children, styles, ...props }: IBox) => (
+const Box = ({ tag, children, styles, ...props }: BoxProps) => (
     <BoxRoot as={tag} style={styles} {...props}>
         {children}
     </BoxRoot>

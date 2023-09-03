@@ -1,57 +1,22 @@
 'use client';
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
+import React from 'react';
 
-export const AccordionRoot = styled.section`
-    width: 100%;
-`;
+import {
+    AccordionDetailsProps,
+    AccordionItemProps,
+    AccordionProps,
+    AccordionSummaryProps,
+} from './Accordion.d';
+import {
+    AccordionRoot,
+    DetailsContainer,
+    IconContainer,
+    SummaryContainer,
+    SummaryContent,
+} from './Accordion.styles';
 
-export const AccordionItemRoot = styled.div`
-    border-radius: 2px;
-`;
-
-export const SummaryContainer = styled.div<{ expanded: boolean }>`
-    cursor: pointer;
-    display: flex;
-`;
-
-export const SummaryContent = styled.div`
-    font-size: 18px;
-    font-weight: 600;
-    flex: 1;
-`;
-
-export const DetailsContainer = styled(motion.div)`
-    font-size: 18px;
-`;
-
-export const IconContainer = styled.div`
-    padding-top: 3px;
-`;
-
-interface IAccordion {
-    children: JSX.Element | JSX.Element[];
-    expandedId?: string;
-    onClick: (expandedId: string) => void;
-}
-
-interface IAccordionItem {
-    children: JSX.Element | JSX.Element[];
-}
-
-interface IAccordionDetails {
-    children?: ReactNode | ReactNode[];
-}
-
-interface IAccordionSummary {
-    id: string;
-    children?: ReactNode | ReactNode[];
-    toggle?: (id: string) => void;
-    isExpanded?: boolean;
-}
-
-const Accordion = ({ children, expandedId = '', onClick }: IAccordion) => {
+const Accordion = ({ children, expandedId = '', onClick }: AccordionProps) => {
     const toggle = (id: string) => onClick(id);
 
     return (
@@ -80,7 +45,7 @@ const Accordion = ({ children, expandedId = '', onClick }: IAccordion) => {
     );
 };
 
-const AccordionDetails = ({ children }: IAccordionDetails) => (
+const AccordionDetails = ({ children }: AccordionDetailsProps) => (
     <DetailsContainer
         initial="collapsed"
         animate="open"
@@ -100,7 +65,7 @@ const AccordionSummary = ({
     children,
     toggle,
     isExpanded = false,
-}: IAccordionSummary) => (
+}: AccordionSummaryProps) => (
     <SummaryContainer
         onClick={() => toggle && toggle(isExpanded ? '' : id)}
         expanded={isExpanded}
@@ -110,7 +75,7 @@ const AccordionSummary = ({
     </SummaryContainer>
 );
 
-const AccordionItem = ({ children }: IAccordionItem) => <>{children}</>;
+const AccordionItem = ({ children }: AccordionItemProps) => <>{children}</>;
 
 Accordion.Details = AccordionDetails;
 Accordion.Summary = AccordionSummary;

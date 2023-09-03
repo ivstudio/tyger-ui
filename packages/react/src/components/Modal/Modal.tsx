@@ -1,6 +1,5 @@
 'use client';
 import { useClickOutside } from '@tyger-ui/hooks';
-import type { TBreakpointKey } from '@tyger-ui/system';
 import { AnimatePresence } from 'framer-motion';
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -9,6 +8,7 @@ import { MdClose as CloseIcon } from 'react-icons/md';
 import Backdrop from '../Backdrop';
 import IconButton from '../IconButton';
 import Typography from '../Typography';
+import { ModalProps, ModalPropsHeader } from './Modal.d';
 import {
     framerProps,
     ModalBody,
@@ -20,26 +20,7 @@ import {
     ModalRoot,
 } from './Modal.styles';
 
-export type TScroll = 'body' | 'paper';
-interface IModal {
-    children?: JSX.Element | JSX.Element[];
-    parent?: HTMLElement;
-    open: boolean;
-    maxWidth?: TBreakpointKey;
-    fullWidth?: boolean;
-    onClose?: () => void;
-    onBackdropClick?: () => void;
-    scroll?: TScroll;
-    headerBorder?: boolean;
-    footerBorder?: boolean;
-}
-
-interface IModalHeader {
-    title?: string;
-    onClose?: () => void;
-}
-
-const ModalHeader = ({ title, onClose }: IModalHeader) => (
+const ModalHeader = ({ title, onClose }: ModalPropsHeader) => (
     <ModalHeaderRoot>
         <Typography tag="h2" variant="subheading1" weight="600" mb="0">
             {title}
@@ -60,7 +41,7 @@ const Modal = ({
     scroll = 'paper',
     headerBorder = true,
     footerBorder = true,
-}: IModal) => {
+}: ModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
 
