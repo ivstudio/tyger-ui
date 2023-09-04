@@ -3,7 +3,7 @@ import { breakpoint } from '@tyger-ui/system';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import { ModalScroll } from './Modal.d';
+import { ModalScroll } from './Modal.types';
 
 export const framerProps = {
     initial: { opacity: 0, scale: 0 },

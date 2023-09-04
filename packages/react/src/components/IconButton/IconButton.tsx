@@ -10,7 +10,7 @@ import {
     IconButtonProps,
     IconRootProps,
     IconsButtonsSizes,
-} from './IconButton.d';
+} from './IconButton.types';
 
 const getSize = (size: IconsButtonsSizes = 'sm') => {
     const buttonSizes = {

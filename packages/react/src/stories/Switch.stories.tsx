@@ -2,7 +2,7 @@ import React from 'react';
 import { useArgs } from '@storybook/client-api';
 import { Meta, StoryFn } from '@storybook/react';
 import Switch from '../components/Switch';
-import { SwitchSizes } from '../components/Switch/Switch.d';
+import { SwitchSizes } from '../components/Switch/Switch.types';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
 

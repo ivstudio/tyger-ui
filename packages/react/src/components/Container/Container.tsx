@@ -4,7 +4,7 @@ import { breakpoint, device } from '@tyger-ui/system';
 import styled from 'styled-components';
 
 import { BoxRoot } from '../Box';
-import { ContainerProps } from './Container.d';
+import { ContainerProps } from './Container.types';
 
 const ContainerRoot = styled(BoxRoot)<{
     maxWidth?: TBreakpointKey;

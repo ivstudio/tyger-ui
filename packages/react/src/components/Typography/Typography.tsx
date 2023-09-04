@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import { TypographyProps } from './Typography.d';
+import { TypographyProps } from './Typography.types';
 import { typographyVariants as variants } from './TypographyVariants';
 
 const RootTypography = styled.div<TypographyProps>`

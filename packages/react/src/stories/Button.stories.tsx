@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 
 import Button from '../components/Button';
-import { ButtonSizes, ButtonVariant } from '../components/Button/Button.d';
+import { ButtonSizes, ButtonVariant } from '../components/Button/Button.types';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { MdDelete as DeleteIcon, MdSend as SendIcon } from 'react-icons/md';
 import { SBContainer, SBContainerInline } from './sb.styles';

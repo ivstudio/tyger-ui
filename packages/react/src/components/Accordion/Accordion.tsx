@@ -3,18 +3,18 @@ import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 
 import {
-    AccordionDetailsProps,
-    AccordionItemProps,
-    AccordionProps,
-    AccordionSummaryProps,
-} from './Accordion.d';
-import {
     AccordionRoot,
     DetailsContainer,
     IconContainer,
     SummaryContainer,
     SummaryContent,
 } from './Accordion.styles';
+import {
+    AccordionDetailsProps,
+    AccordionItemProps,
+    AccordionProps,
+    AccordionSummaryProps,
+} from './Accordion.types';
 
 const Accordion = ({ children, expandedId = '', onClick }: AccordionProps) => {
     const toggle = (id: string) => onClick(id);

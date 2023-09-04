@@ -1,7 +1,7 @@
 'use client';
 import styled from 'styled-components';
 
-import { SwitchProps, SwitchRootProps, SwitchSizes } from './Switch.d';
+import { SwitchProps, SwitchRootProps, SwitchSizes } from './Switch.types';
 
 const getSize = (size: SwitchSizes) => {
     const buttonSizes = {

@@ -6,7 +6,7 @@ import {
     flexCenterAll as flexCenterAllMixin,
     flexCenterInline as flexCenterInlineMixin,
 } from '../../styles';
-import { BoxProps } from './Box.d';
+import { BoxProps } from './Box.types';
 
 export const BoxRoot = styled.div<BoxProps>`
     padding-top: ${({ theme, pt, py }) =>

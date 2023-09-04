@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import { flexCenterAll } from '../../styles';
-import { BackdropProps } from './Backdrop.d';
+import { BackdropProps } from './Backdrop.types';
 
 const dark65 = 'rgba(0, 0, 0, 0.5)';
 

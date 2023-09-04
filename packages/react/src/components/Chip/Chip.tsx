@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 import { buttonBase, flexCenterInline } from '../../styles';
-import { ChipProps, ChipSizes, ChipVariant } from './Chip.d';
+import { ChipProps, ChipSizes, ChipVariant } from './Chip.types';
 
 const sizes = {
     sm: {

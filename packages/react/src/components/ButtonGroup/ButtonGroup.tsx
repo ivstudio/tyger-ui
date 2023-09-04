@@ -2,7 +2,7 @@
 import { Children, cloneElement, isValidElement } from 'react';
 import styled, { css } from 'styled-components';
 
-import { ButtonGroupProps, ButtonRootProps } from './ButtonGroup.d';
+import { ButtonGroupProps, ButtonRootProps } from './ButtonGroup.types';
 
 const buttonCommonStyles = css`
     text-transform: none;

@@ -8,7 +8,6 @@ import { MdClose as CloseIcon } from 'react-icons/md';
 import Backdrop from '../Backdrop';
 import IconButton from '../IconButton';
 import Typography from '../Typography';
-import { ModalProps, ModalPropsHeader } from './Modal.d';
 import {
     framerProps,
     ModalBody,
@@ -19,6 +18,7 @@ import {
     ModalPaper,
     ModalRoot,
 } from './Modal.styles';
+import { ModalProps, ModalPropsHeader } from './Modal.types';
 
 const ModalHeader = ({ title, onClose }: ModalPropsHeader) => (
     <ModalHeaderRoot>

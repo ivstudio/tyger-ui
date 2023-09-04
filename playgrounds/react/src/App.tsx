@@ -47,6 +47,7 @@ const App = ({ isDefaultTheme, onChangeTheme }: AppProps) => {
 					tag="button"
 					onClick={handleClick}
 				/>
+
 				{[1, 2, 3, 4, 5].map((item) => {
 					return (
 						<Container key={item}>
@@ -58,7 +59,7 @@ const App = ({ isDefaultTheme, onChangeTheme }: AppProps) => {
 					);
 				})}
 
-				<Button variant="outlined" onClick={handleModal}>
+				<Button variant="filled" onClick={handleModal}>
 					Open Modal
 				</Button>
 

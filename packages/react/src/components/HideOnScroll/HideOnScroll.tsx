@@ -1,7 +1,7 @@
 'use client';
 import styled from 'styled-components';
 
-import { AppBarRootProps } from '../AppBar/AppBar.d';
+import { AppBarRootProps } from '../AppBar/AppBar.types';
 import useHideOnScroll from './useHideOnScroll';
 
 interface HideOnScrollRootProps {

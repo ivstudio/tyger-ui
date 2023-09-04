@@ -4,7 +4,7 @@ import { MdOutlineMenu as MenuIcon } from 'react-icons/md';
 import { MdMoreHoriz as MoreIcon } from 'react-icons/md';
 
 import IconButton from '../components/IconButton';
-import { IconsButtonsSizes } from '../components/IconButton/IconButton.d';
+import { IconsButtonsSizes } from '../components/IconButton/IconButton.types';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
 

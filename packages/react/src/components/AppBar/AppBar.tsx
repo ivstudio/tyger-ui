@@ -1,6 +1,6 @@
 'use client';
-import { AppBarRootProps } from './AppBar.d';
 import { AppBarBase } from './AppBar.styles';
+import { AppBarRootProps } from './AppBar.types';
 
 const AppBar = ({
     children,

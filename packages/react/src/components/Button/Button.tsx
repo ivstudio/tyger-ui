@@ -8,7 +8,7 @@ import {
     flexCenterInline,
 } from '../../styles';
 import Box from '../Box';
-import { ButtonProps, ButtonRootProps } from './Button.d';
+import { ButtonProps, ButtonRootProps } from './Button.types';
 
 const buttonSpacing = {
     text: {

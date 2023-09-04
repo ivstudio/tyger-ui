@@ -48,6 +48,6 @@ export interface TypographyRootProps {
     color?: string;
     maxWidth?: number;
 }
-interface TypographyProps extends TypographyRootProps {
+export interface TypographyProps extends TypographyRootProps {
     variant?: TypographyVariantProps;
 }

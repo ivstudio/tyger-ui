@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import Backdrop from '../Backdrop';
-import { DrawerAnchor, DrawerProps } from './Drawer.d';
+import { DrawerAnchor, DrawerProps } from './Drawer.types';
 import DrawerHeader from './DrawerHeader';
 
 const framer = {
