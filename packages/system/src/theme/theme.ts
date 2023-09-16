@@ -125,6 +125,18 @@ export const lightPalette = {
 		border: color.grey[4],
 		color: color.grey[9],
 	},
+	input: {
+		borderColor: color.grey[7],
+		color: color.grey[9],
+		placeholder: color.grey[5],
+		disabled: {
+			backgroundColor: color.grey[5],
+			color: color.grey[5],
+		},
+		error: {
+			color: color.negative[5],
+		},
+	},
 };
 
 export const darkPalette = {
@@ -232,6 +244,18 @@ export const darkPalette = {
 		backgroundColor: color.grey[9],
 		border: color.grey[8],
 		color: color.grey[1],
+	},
+	input: {
+		borderColor: color.grey[6],
+		color: color.grey[3],
+		placeholder: color.grey[7],
+		disabled: {
+			backgroundColor: color.grey[7],
+			color: color.grey[7],
+		},
+		error: {
+			color: color.negative[4],
+		},
 	},
 };
 

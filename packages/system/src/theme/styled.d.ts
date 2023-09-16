@@ -74,6 +74,19 @@ export interface SystemTokens {
 	zIndex: typeof tokens.zIndex;
 }
 
+type InputTheme = {
+	borderColor: string;
+	color: string;
+	placeholder: string;
+	disabled: {
+		backgroundColor: string;
+		color: string;
+	};
+	error: {
+		color: string;
+	};
+};
+
 export interface ITheme extends SystemTokens {
 	name: ThemeMode;
 	primary: string;
@@ -104,6 +117,7 @@ export interface ITheme extends SystemTokens {
 		placeholder: string;
 	};
 	drawer: Drawer;
+	input: InputTheme;
 }
 
 declare module 'styled-components' {
