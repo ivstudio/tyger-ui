@@ -9,6 +9,7 @@ export { default as Container } from './components/Container';
 export { default as Drawer } from './components/Drawer';
 export { default as HideOnScroll } from './components/HideOnScroll';
 export { default as IconButton } from './components/IconButton';
+export { default as Input } from './components/Input';
 export { default as Modal } from './components/Modal';
 export { default as ScrollIndicator } from './components/ScrollIndicator';
 export { default as Switch } from './components/Switch';
