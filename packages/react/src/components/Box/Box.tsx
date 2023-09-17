@@ -9,6 +9,7 @@ import {
 import { BoxProps } from './Box.types';
 
 export const BoxRoot = styled.div<BoxProps>`
+    /* Set margin and padding based on spacing scale */
     padding-top: ${({ theme, pt, py }) =>
         (py && theme.spacing[py]) || (pt && theme.spacing[pt])};
     padding-right: ${({ theme, pr, px }) =>
@@ -25,12 +26,18 @@ export const BoxRoot = styled.div<BoxProps>`
         (my && theme.spacing[my]) || (mb && theme.spacing[mb])};
     margin-left: ${({ theme, ml, mx }) =>
         (mx && theme.spacing[mx]) || (ml && theme.spacing[ml])};
+
+    /* Set display and flex properties */
     display: ${({ flex }) => flex && 'flex'};
+
+    /* Set flex center properties */
     ${({ flexCenterInline }) => flexCenterInline && flexCenterInlineMixin};
     ${({ flexCenterAll }) => flexCenterAll && flexCenterAllMixin}
     padding: ${({ theme, padding }) => padding && theme.spacing[padding]};
     margin: ${({ theme, margin }) => margin && theme.spacing[margin]};
-    border: ${({ theme, border }) => border && `1px solid ${theme.border}`};
+
+    /* Set border and border radius properties */
+    border: ${({ theme }) => `1px solid ${theme.border}`};
     border-radius: ${({ borderRadius }) => borderRadius && '4px'};
 `;
 

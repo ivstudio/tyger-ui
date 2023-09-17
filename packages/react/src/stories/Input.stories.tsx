@@ -26,6 +26,12 @@ export default {
             control: { type: 'boolean' },
             defaultValue: false,
         },
+        label: {
+            control: { type: 'text' },
+        },
+        helperText: {
+            control: { type: 'text' },
+        },
         id: {
             control: { type: 'text' },
             defaultValue: 'yourId',
@@ -33,8 +39,8 @@ export default {
         },
         placeholder: {
             control: { type: 'text' },
-            defaultValue: 'First Name',
         },
+        required: { control: { type: 'boolean' } },
     },
 } as Meta<typeof Input>;
 
@@ -45,4 +51,18 @@ const Template: StoryFn<typeof Input> = args => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    label: 'First Name',
+    placeholder: 'First Name',
+    id: 'firstName',
+};
+
+export const Validation = Template.bind({});
+Validation.args = {
+    label: 'Password',
+    placeholder: 'Password',
+    error: true,
+    required: true,
+    id: 'password',
+    helperText: 'The password must have a minimum length of 8 characters.',
+};

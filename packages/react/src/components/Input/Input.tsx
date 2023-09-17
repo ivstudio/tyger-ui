@@ -2,19 +2,43 @@
 
 import { forwardRef } from 'react';
 
-import { InputComponent } from './Input.styles';
+import { Fieldset, HelperText, InputComponent, Label } from './Input.styles';
 import { InputProps } from './Input.types';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
     (props, forwardedRef) => {
-        const { size = 'md', ...baseProps } = props;
+        const {
+            size = 'md',
+            id,
+            error,
+            helperText,
+            label,
+            required = false,
+            ...baseProps
+        } = props;
 
         return (
-            <InputComponent
-                {...baseProps}
-                ref={forwardedRef}
-                sizeInput={size}
-            />
+            <Fieldset tag="fieldset" border={false}>
+                {label && (
+                    <Label htmlFor={id} required={required}>
+                        {label}
+                    </Label>
+                )}
+                <InputComponent
+                    {...baseProps}
+                    ref={forwardedRef}
+                    id={id}
+                    error={error}
+                    aria-required={required}
+                    aria-invalid={error}
+                    sizeInput={size}
+                />
+                {error && (
+                    <HelperText mt="4" mb="0">
+                        {helperText}
+                    </HelperText>
+                )}
+            </Fieldset>
         );
     }
 );

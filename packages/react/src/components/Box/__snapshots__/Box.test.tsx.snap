@@ -2,7 +2,7 @@
 
 exports[`Box renders Box correctly 1`] = `
 <div
-  class="sc-aXZVg ktvuMC"
+  class="sc-aXZVg bvwTUi"
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 </div>

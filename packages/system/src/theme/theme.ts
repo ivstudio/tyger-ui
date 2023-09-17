@@ -133,6 +133,9 @@ export const lightPalette = {
 			backgroundColor: color.grey[5],
 			color: color.grey[5],
 		},
+		focus: {
+			borderColor: color.grey[9],
+		},
 		error: {
 			color: color.negative[5],
 		},
@@ -252,6 +255,9 @@ export const darkPalette = {
 		disabled: {
 			backgroundColor: color.grey[7],
 			color: color.grey[7],
+		},
+		focus: {
+			borderColor: color.grey[4],
 		},
 		error: {
 			color: color.negative[4],

@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
 import { spacing } from '../../../../system';
+import Box from '../Box';
+import Typography from '../Typography';
 import { InputComponentProps } from './Input.types';
 
 const inputSpacing = {
@@ -29,7 +31,9 @@ const TextFieldBase = css`
     background: none;
 `;
 
-export const InputComponent = styled.input<InputComponentProps>`
+export const InputComponent = styled.input.attrs({
+    novalidate: true,
+})<InputComponentProps>`
     /* Base styles for all text fields */
     ${TextFieldBase};
 
@@ -53,11 +57,22 @@ export const InputComponent = styled.input<InputComponentProps>`
         color: ${({ theme: { input } }) => `${input.placeholder}`};
     }
 
+    &:focus {
+        outline: ${({ theme: { input } }) =>
+            `1px solid ${input.focus.borderColor}`};
+        border-color: ${({ theme: { input } }) => `${input.focus.borderColor}`};
+    }
+
     /* Set styles for inputs with errors */
     ${({ error, theme: { input } }) => {
         if (error) {
             return css`
                 border-color: ${input.error.color};
+
+                &:focus {
+                    outline: 1px solid ${input.error.color};
+                    border-color: ${input.error.color};
+                }
             `;
         }
     }}
@@ -71,6 +86,32 @@ export const InputComponent = styled.input<InputComponentProps>`
             `;
         }
     }}
+`;
+
+// Define the Input Label
+export const Label = styled.label<{ required?: boolean }>`
+    display: block;
+    font-size: ${({ theme: { fontSize } }) => `${fontSize[-1]}`};
+    margin: ${({ theme: { spacing } }) => `0 0 ${spacing[4]}`};
+
+    // after
+    &::after {
+        content: ${({ required }) => (required ? "'*'" : "''")};
+        padding-left: ${({ theme: { spacing } }) => spacing[4]};
+    }
+`;
+
+// Define the Input HelperText
+export const HelperText = styled(Typography)`
+    color: ${({ theme: { input } }) => `${input.error.color}`};
+    font-size: ${({ theme: { fontSize } }) => `${fontSize[-1]}`};
+`;
+
+// Define the fieldset
+export const Fieldset = styled(Box)`
+    border: none;
+    padding: 0;
+    margin: 0;
 `;
 
 InputComponent.defaultProps = {

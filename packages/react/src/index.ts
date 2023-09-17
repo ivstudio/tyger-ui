@@ -1,3 +1,4 @@
+// Export all components from the components directory
 export { default as Accordion } from './components/Accordion';
 export { default as AppBar } from './components/AppBar';
 export { default as Backdrop } from './components/Backdrop';
@@ -14,8 +15,11 @@ export { default as Modal } from './components/Modal';
 export { default as ScrollIndicator } from './components/ScrollIndicator';
 export { default as Switch } from './components/Switch';
 export { default as Typography } from './components/Typography';
-/* system */
+
+// Export the GlobalStyles component from the system directory
 export { default as GlobalStyles } from '@tyger-ui/system/src/GlobalStyles';
+
+// Export utility functions and variables from the system directory
 export {
     breakpoint,
     color,

@@ -10,7 +10,8 @@ export type BoxTags =
     | 'ul'
     | 'ol'
     | 'li'
-    | 'aside';
+    | 'aside'
+    | 'fieldset';
 
 export type BoxRootProps = {
     pt?: SpacingProps;

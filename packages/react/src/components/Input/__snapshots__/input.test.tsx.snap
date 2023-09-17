@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input renders correctly 1`] = `
-<input
-  class="sc-aXZVg jfTHWc"
-/>
+<fieldset
+  class="sc-aXZVg jPIaFe sc-iGgWBj dIjyVK"
+>
+  <input
+    aria-required="false"
+    class="sc-eqUAAy jvnwEb"
+  />
+</fieldset>
 `;

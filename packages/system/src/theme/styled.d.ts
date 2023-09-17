@@ -82,6 +82,9 @@ type InputTheme = {
 		backgroundColor: string;
 		color: string;
 	};
+	focus: {
+		borderColor: string;
+	};
 	error: {
 		color: string;
 	};
