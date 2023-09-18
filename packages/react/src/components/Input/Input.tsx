@@ -14,13 +14,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             helperText,
             label,
             required = false,
+            disabled = false,
             ...baseProps
         } = props;
 
         return (
             <Fieldset tag="fieldset" border={false}>
                 {label && (
-                    <Label htmlFor={id} required={required}>
+                    <Label htmlFor={id} required={required} disabled={disabled}>
                         {label}
                     </Label>
                 )}
@@ -32,6 +33,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     aria-required={required}
                     aria-invalid={error}
                     sizeInput={size}
+                    disabled={disabled}
                 />
                 {error && (
                     <HelperText mt="4" mb="0">
