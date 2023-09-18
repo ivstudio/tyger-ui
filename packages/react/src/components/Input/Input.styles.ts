@@ -88,26 +88,6 @@ export const InputComponent = styled.input.attrs({
     }}
 `;
 
-// Define the Input Label
-export const Label = styled.label<{ required?: boolean; disabled?: boolean }>`
-    display: block;
-    font-size: ${({ theme: { fontSize } }) => `${fontSize[-1]}`};
-    margin: ${({ theme: { spacing } }) => `0 0 ${spacing[4]}`};
-
-    &::after {
-        content: ${({ required }) => (required ? "'*'" : "''")};
-        padding-left: ${({ theme: { spacing } }) => spacing[4]};
-    }
-
-    ${({ disabled, theme: { input } }) => {
-        if (disabled) {
-            return css`
-                color: ${input.disabled.color};
-            `;
-        }
-    }}
-`;
-
 // Define the Input HelperText
 export const HelperText = styled(Typography)`
     color: ${({ theme: { input } }) => `${input.error.color}`};

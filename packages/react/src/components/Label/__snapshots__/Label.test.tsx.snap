@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label renders correctly 1`] = `
+<label
+  class="sc-aXZVg izzKfH"
+  for="firstName"
+  required=""
+>
+  Jon Doe
+</label>
+`;

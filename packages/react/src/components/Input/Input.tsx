@@ -2,7 +2,8 @@
 
 import { forwardRef } from 'react';
 
-import { Fieldset, HelperText, InputComponent, Label } from './Input.styles';
+import Label from '../Label';
+import { Fieldset, HelperText, InputComponent } from './Input.styles';
 import { InputProps } from './Input.types';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
