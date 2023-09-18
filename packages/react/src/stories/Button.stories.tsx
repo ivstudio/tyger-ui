@@ -37,7 +37,7 @@ export default {
         },
         disabled: { control: 'boolean', defaultValue: false },
         fullWidth: { control: 'boolean', defaultValue: false },
-        rounded: { control: 'boolean', defaultValue: true },
+        rounded: { control: 'boolean', defaultValue: false },
         className: { control: false },
         startIcon: { control: false },
         endIcon: { control: false },

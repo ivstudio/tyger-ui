@@ -2,7 +2,7 @@
 
 exports[`Input renders correctly 1`] = `
 <fieldset
-  class="sc-aXZVg jPIaFe sc-iGgWBj dIjyVK"
+  class="sc-aXZVg jsAQMJ sc-iGgWBj dIjyVK"
 >
   <input
     aria-required="false"

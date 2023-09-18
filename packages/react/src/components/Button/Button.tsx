@@ -177,7 +177,7 @@ const Button = ({
     size = 'md',
     className,
     fullWidth = false,
-    rounded = true,
+    rounded = false,
     variant = 'filled',
     startIcon = null,
     endIcon = null,

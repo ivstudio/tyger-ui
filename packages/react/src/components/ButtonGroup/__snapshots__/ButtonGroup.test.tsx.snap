@@ -6,19 +6,19 @@ exports[`ButtonGroup renders ButtonGroup correctly 1`] = `
   orientation="horizontal"
 >
   <button
-    class="sc-gEvEer gUtnSY first"
+    class="sc-gEvEer jVWEZt first"
     type="button"
   >
     Button
   </button>
   <button
-    class="sc-gEvEer gUtnSY center"
+    class="sc-gEvEer jVWEZt center"
     type="button"
   >
     Button
   </button>
   <button
-    class="sc-gEvEer gUtnSY last"
+    class="sc-gEvEer jVWEZt last"
     type="button"
   >
     Button

@@ -37,7 +37,7 @@ export const BoxRoot = styled.div<BoxProps>`
     margin: ${({ theme, margin }) => margin && theme.spacing[margin]};
 
     /* Set border and border radius properties */
-    border: ${({ theme }) => `1px solid ${theme.border}`};
+    border: ${({ theme, border }) => border && `1px solid ${theme.border}`};
     border-radius: ${({ borderRadius }) => borderRadius && '4px'};
 `;
 
