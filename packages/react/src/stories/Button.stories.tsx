@@ -157,7 +157,7 @@ export const Docs = () => (
         </SBContainerInline>
 
         <StoryTitleSection title="Rounded Button" />
-        <SBContainerInline flex mb="24">
+        <SBContainerInline flex padding="24" mb="48" border borderRadius>
             {['sm', 'md', 'lg'].map(size => (
                 <Box key={size} mr="16">
                     <Button
