@@ -6,7 +6,9 @@ import { MdMoreHoriz as MoreIcon } from 'react-icons/md';
 import IconButton from '../components/IconButton';
 import { IconsButtonsSizes } from '../components/IconButton/IconButton.types';
 import { StoryHeadline, StoryTitleSection } from './components';
-import { SBContainer, SBContainerInline } from './sb.styles';
+import { SBContainerInline } from './sb.styles';
+import Container from '../components/Container';
+import Box from '../components/Box';
 
 export default {
     title: 'Components/IconButton',
@@ -31,16 +33,15 @@ export default {
 } as Meta<typeof IconButton>;
 
 const Template: StoryFn<typeof IconButton> = args => (
-    <IconButton {...args}>
-        <MoreIcon />
-    </IconButton>
+    <Container maxWidth="xs" mt="32">
+        <IconButton {...args}>
+            <MoreIcon />
+        </IconButton>
+    </Container>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const AllIconButtonsSizes = () => (
-    <SBContainer>
+export const Docs = () => (
+    <Container maxWidth="md" mt="32">
         <StoryHeadline
             title="Icon Button"
             subTitle="Icon Buttons represent their behavior with an icon."
@@ -59,7 +60,7 @@ export const AllIconButtonsSizes = () => (
             flex
         >
             {['sm', 'md', 'lg'].map(item => (
-                <li key={item}>
+                <Box key={item} mr="16">
                     <IconButton
                         filled
                         size={item as IconsButtonsSizes}
@@ -67,15 +68,18 @@ export const AllIconButtonsSizes = () => (
                     >
                         <MenuIcon />
                     </IconButton>
-                </li>
+                </Box>
             ))}
         </SBContainerInline>
-    </SBContainer>
+    </Container>
 );
 
-AllIconButtonsSizes.story = {
+Docs.story = {
     name: 'All IconButton Sizes',
     parameters: {
         options: { showPanel: false },
     },
 };
+
+export const Default = Template.bind({});
+Default.args = {};

@@ -5,6 +5,8 @@ import Switch from '../components/Switch';
 import { SwitchSizes } from '../components/Switch/Switch.types';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
+import Container from '../components/Container';
+import Box from '../components/Box';
 
 export default {
     title: 'Components/Switch',
@@ -36,54 +38,52 @@ const Template: StoryFn<typeof Switch> = args => {
     const [{ checked }, updateArgs] = useArgs();
 
     return (
-        <Switch
-            {...args}
-            checked={checked}
-            onChange={() => updateArgs({ checked: !checked })}
-        />
+        <Container maxWidth="xs" mt="32">
+            <Switch
+                {...args}
+                checked={checked}
+                onChange={() => updateArgs({ checked: !checked })}
+            />
+        </Container>
     );
 };
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const SwitchVariants = () => {
+export const Docs = () => {
     return (
-        <SBContainer>
-            <StoryHeadline
-                title="Switch"
-                subTitle="Switches toggle the state of a single setting on or off."
-            />
+        <Container maxWidth="md" mt="32">
+            <SBContainer>
+                <StoryHeadline
+                    title="Switch"
+                    subTitle="Switches toggle the state of a single setting on or off."
+                />
 
-            <StoryTitleSection
-                title="Size"
-                description="For larger or smaller buttons, use the size prop."
-            />
-            <SBContainerInline
-                padding="16"
-                mb="48"
-                border
-                borderRadius
-                tag="ul"
-            >
-                {['sm', 'md', 'lg'].map(item => (
-                    <li>
-                        <Switch
-                            key={item}
-                            size={item as SwitchSizes}
-                            checked={true}
-                            onChange={() => console.log('click')}
-                        />
-                    </li>
-                ))}
-            </SBContainerInline>
-        </SBContainer>
+                <StoryTitleSection
+                    title="Size"
+                    description="For larger or smaller buttons, use the size prop."
+                />
+                <SBContainerInline padding="24" mb="48" border borderRadius>
+                    {['sm', 'md', 'lg'].map(item => (
+                        <Box key={item} mb="32">
+                            <Switch
+                                key={item}
+                                size={item as SwitchSizes}
+                                checked={true}
+                                onChange={() => console.log('click')}
+                            />
+                        </Box>
+                    ))}
+                </SBContainerInline>
+            </SBContainer>
+        </Container>
     );
 };
 
-SwitchVariants.story = {
+Docs.story = {
     name: 'Switch Variants',
     parameters: {
         options: { showPanel: false },
     },
 };
+
+export const BasicSwitch = Template.bind({});
+BasicSwitch.args = {};

@@ -1,6 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import { useArgs } from '@storybook/client-api';
+import Container from '../components/Container';
 
 import Accordion from '../components/Accordion';
 
@@ -46,7 +47,7 @@ const Template: StoryFn<typeof Accordion> = args => {
     const [{ expandedId }, updateArgs] = useArgs();
 
     return (
-        <>
+        <Container maxWidth="md" mt="32">
             <Accordion
                 {...args}
                 expandedId={expandedId}
@@ -73,7 +74,7 @@ const Template: StoryFn<typeof Accordion> = args => {
                     <Accordion.Details>{items[2].details}</Accordion.Details>
                 </Accordion.Item>
             </Accordion>
-        </>
+        </Container>
     );
 };
 

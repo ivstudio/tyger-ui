@@ -3,6 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 
 import Button from '../components/Button';
 import ButtonGroup from '../components/ButtonGroup';
+import Container from '../components/Container';
 
 export default {
     title: 'Components/ButtonGroup',
@@ -25,11 +26,13 @@ export default {
 } as Meta<typeof ButtonGroup>;
 
 const Template: StoryFn<typeof ButtonGroup> = args => (
-    <ButtonGroup {...args}>
-        <Button onClick={() => alert('Button 0')}>Button</Button>
-        <Button onClick={() => alert('Button 1')}>Button</Button>
-        <Button onClick={() => alert('Button 2')}>Button</Button>
-    </ButtonGroup>
+    <Container maxWidth="xs" mt="32">
+        <ButtonGroup {...args}>
+            <Button onClick={() => alert('Button 0')}>Button</Button>
+            <Button onClick={() => alert('Button 1')}>Button</Button>
+            <Button onClick={() => alert('Button 2')}>Button</Button>
+        </ButtonGroup>
+    </Container>
 );
 
 export const Primary = Template.bind({});

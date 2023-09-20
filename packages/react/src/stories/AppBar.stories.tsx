@@ -5,6 +5,8 @@ import AppBar from '../components/AppBar';
 import HideOnScrollComponent from '../components/HideOnScroll';
 import Container from '../components/Container';
 import { xlTextFixture } from '../../test/fixtures';
+const tygerLogo =
+    'https://tyger.s3.us-west-2.amazonaws.com/assets/tyger-logo.svg';
 
 export default {
     title: 'Surfaces/AppBar',
@@ -29,7 +31,7 @@ export default {
 const Content = ({ top }) => (
     <Container mt={top}>
         {[1, 2, 3, 4, 5].map(i => (
-            <Container key={i} mb="16" maxWidth="xs">
+            <Container key={i} mb="16" maxWidth="sm">
                 {xlTextFixture}
             </Container>
         ))}
@@ -40,7 +42,9 @@ const Template: StoryFn<typeof AppBar> = args => {
     const top = args.position === 'fixed' ? '64' : '16';
     return (
         <>
-            <AppBar {...args}>{args.children}</AppBar>
+            <AppBar {...args}>
+                <img src={tygerLogo} width={70} />
+            </AppBar>
             <Content top={top} />
         </>
     );
@@ -51,7 +55,9 @@ const TemplateHideOnScroll: StoryFn<typeof AppBar> = args => {
     return (
         <>
             <HideOnScrollComponent>
-                <AppBar {...args}>{args.children}</AppBar>
+                <AppBar {...args}>
+                    <img src={tygerLogo} width={70} />
+                </AppBar>
             </HideOnScrollComponent>
             <Content top={top} />
         </>
@@ -60,17 +66,13 @@ const TemplateHideOnScroll: StoryFn<typeof AppBar> = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-    children: 'Logo',
     position: 'static',
 };
 
 export const PositionFixed = Template.bind({});
 PositionFixed.args = {
-    children: 'Logo',
     position: 'fixed',
 };
 
 export const HideOnScroll = TemplateHideOnScroll.bind({});
-HideOnScroll.args = {
-    children: 'Logo',
-};
+HideOnScroll.args = {};

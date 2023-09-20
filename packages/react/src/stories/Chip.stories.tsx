@@ -4,6 +4,8 @@ import { Meta, StoryFn } from '@storybook/react';
 import Chip from '../components/Chip';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
+import Container from '../components/Container';
+import Box from '../components/Box';
 
 export default {
     title: 'Data Display/Chip',
@@ -36,21 +38,13 @@ export default {
 } as Meta<typeof Chip>;
 
 const Template: StoryFn<typeof Chip> = args => (
-    <Chip {...args} label={`Chip ${args.variant}`} />
+    <Container maxWidth="md" mt="32">
+        <Chip {...args} label={`Chip ${args.variant}`} />
+    </Container>
 );
 
-export const Filled = Template.bind({});
-Filled.args = {
-    variant: 'filled',
-};
-
-export const Outlined = Template.bind({});
-Outlined.args = {
-    variant: 'outlined',
-};
-
-export const ChipVariants = () => (
-    <SBContainer>
+export const Docs = () => (
+    <Container maxWidth="md" mt="32">
         <StoryHeadline
             title="Chip"
             subTitle="Chips are used to make selections, filter content, or trigger
@@ -61,25 +55,43 @@ export const ChipVariants = () => (
             title="Variants"
             description="The Chip component provides outlined and filled variants."
         />
-        <SBContainerInline padding="16" mb="48" border borderRadius>
-            <Chip variant="filled" label="Chip filled" />
-            <Chip variant="outlined" label="Chip filled" />
+        <SBContainerInline padding="16" mb="48" flex border borderRadius>
+            <Box mr="16">
+                <Chip variant="filled" label="Chip filled" />
+            </Box>
+            <Box mr="16">
+                <Chip variant="outlined" label="Chip filled" />
+            </Box>
         </SBContainerInline>
 
         <StoryTitleSection
             title="Size"
             description="You can use the size prop to define a small size."
         />
-        <SBContainerInline padding="16" mb="48" border borderRadius>
-            <Chip size="sm" label="Chip filled" />
-            <Chip label="Chip filled" />
+        <SBContainerInline padding="16" mb="48" flex border borderRadius>
+            <Box mr="16">
+                <Chip size="sm" label="Chip filled" />
+            </Box>
+            <Box mr="16">
+                <Chip label="Chip filled" />
+            </Box>
         </SBContainerInline>
-    </SBContainer>
+    </Container>
 );
 
-ChipVariants.story = {
+Docs.story = {
     name: 'Chip Variants',
     parameters: {
         options: { showPanel: false },
     },
+};
+
+export const Filled = Template.bind({});
+Filled.args = {
+    variant: 'filled',
+};
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+    variant: 'outlined',
 };

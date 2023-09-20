@@ -41,11 +41,7 @@ export default {
 } as Meta<typeof Container>;
 
 const Template: StoryFn<typeof Container> = args => {
-    return (
-        <div>
-            <Container {...args}>{args.children}</Container>
-        </div>
-    );
+    return <Container {...args}>{args.children}</Container>;
 };
 
 export const Component = Template.bind({});
