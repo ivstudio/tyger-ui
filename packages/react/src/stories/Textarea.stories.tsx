@@ -61,7 +61,7 @@ const Template: StoryFn<typeof Textarea> = args => {
 };
 
 export const Docs = () => (
-    <Container mt={top} maxWidth="sm" paper padding="32" borderRadius>
+    <Container maxWidth="md" mt="32">
         <StoryHeadline
             title="Textarea"
             subTitle="A text area lets users enter long form text which spans over multiple lines."

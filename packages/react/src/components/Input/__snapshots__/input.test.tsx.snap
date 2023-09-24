@@ -6,7 +6,7 @@ exports[`Input renders correctly 1`] = `
 >
   <input
     aria-required="false"
-    class="sc-dcJsrY ia-dNOT"
+    class="sc-dcJsrY jNdCJE"
   />
 </fieldset>
 `;
