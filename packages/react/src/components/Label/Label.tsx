@@ -2,19 +2,48 @@
 import { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 
+import { spacing } from '../../../../system';
+
+type LabelAnchor = 'top' | 'left';
+type LabelSize = 'sm' | 'md' | 'lg';
+
 type LabelProps = {
     required?: boolean;
     disabled?: boolean;
     htmlFor?: string;
     children: React.ReactNode | React.ReactNode[];
+    anchor?: LabelAnchor;
+    size?: LabelSize;
+};
+
+interface LabelRootProps extends LabelProps {
+    size: LabelSize;
+}
+
+const labelSpacing = {
+    sm: {
+        margin: `0 0 ${spacing[4]}`,
+    },
+
+    md: {
+        margin: `0 0 ${spacing[8]}`,
+    },
+
+    lg: {
+        margin: `0 0 ${spacing[8]}`,
+    },
 };
 
 // Define the LabelRoot styled component
-const LabelRoot = styled.label<LabelProps>`
+const LabelRoot = styled.label<LabelRootProps>`
     /* Set base styles for all labels */
     display: block;
-    font-size: ${({ theme: { fontSize } }) => `${fontSize[-1]}`};
-    margin: ${({ theme: { spacing } }) => `0 0 ${spacing[4]}`};
+    font-size: ${({ theme: { fontSize } }) => `${fontSize[-2]}`};
+    color: ${({ theme: { text } }) => text.label};
+    line-height: ${({ theme: { lineHeight } }) => lineHeight['sm']};
+
+    /* Set spacing based on label size */
+    ${({ size }) => labelSpacing[size]};
 
     /* Add asterisk to required labels */
     &::after {
@@ -23,10 +52,10 @@ const LabelRoot = styled.label<LabelProps>`
     }
 
     /* Set styles for disabled labels */
-    ${({ disabled, theme: { input } }) => {
+    ${({ disabled, theme: { text } }) => {
         if (disabled) {
             return css`
-                color: ${input.disabled.color};
+                color: ${text.disabled};
             `;
         }
     }}
@@ -35,7 +64,15 @@ const LabelRoot = styled.label<LabelProps>`
 // Define the Label component
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
     (props, forwardedRef) => {
-        const { required, disabled, htmlFor, children, ...baseProps } = props;
+        const {
+            required,
+            disabled,
+            htmlFor,
+            children,
+            anchor = 'left',
+            size = 'md',
+            ...baseProps
+        } = props;
         return (
             <LabelRoot
                 {...baseProps}
@@ -43,6 +80,8 @@ const Label = forwardRef<HTMLLabelElement, LabelProps>(
                 htmlFor={htmlFor}
                 required={required}
                 disabled={disabled}
+                anchor={anchor}
+                size={size}
             >
                 {children}
             </LabelRoot>

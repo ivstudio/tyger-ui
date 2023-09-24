@@ -47,7 +47,7 @@ const Template: StoryFn<typeof Accordion> = args => {
     const [{ expandedId }, updateArgs] = useArgs();
 
     return (
-        <Container maxWidth="md" mt="32">
+        <Container maxWidth="md" my="32" paper padding="32" borderRadius>
             <Accordion
                 {...args}
                 expandedId={expandedId}

@@ -1,16 +1,15 @@
 import React from 'react';
 import { useArgs } from '@storybook/client-api';
 import { Meta, StoryFn } from '@storybook/react';
-import Input from '../components/Input';
+import Textarea from '../components/Textarea';
 import Container from '../components/Container';
 import Box from '../components/Box';
-import { StoryHeadline } from './components';
-import { SBContainerInline } from './sb.styles';
-import { MdDone } from 'react-icons/md';
+import { StoryHeadline, StoryTitleSection } from './components';
+import { SBContainer, SBContainerInline } from './sb.styles';
 
 export default {
-    title: 'Components/Input',
-    component: Input,
+    title: 'Components/Textarea',
+    component: Textarea,
     parameters: {
         options: { showPanel: true },
         controls: { sort: 'none' },
@@ -50,80 +49,61 @@ export default {
         required: { control: { type: 'boolean' } },
         className: { control: false },
     },
-} as Meta<typeof Input>;
+} as Meta<typeof Textarea>;
 
-const Template: StoryFn<typeof Input> = args => {
+const Template: StoryFn<typeof Textarea> = args => {
     const [{ checked }, updateArgs] = useArgs();
     return (
         <Container maxWidth="xs" mt="32">
-            <Input {...args} autoComplete="off" />
+            <Textarea {...args} autoComplete="off" />
         </Container>
     );
 };
 
 export const Docs = () => (
-    <Container maxWidth="md" mt="32">
+    <Container mt={top} maxWidth="sm" paper padding="32" borderRadius>
         <StoryHeadline
-            title="Input"
-            subTitle="Input fields are commonly used in forms, search bars, and various types of user input areas to collect text, numbers, or other types of data from the user."
+            title="Textarea"
+            subTitle="A text area lets users enter long form text which spans over multiple lines."
         />
 
         <Container maxWidth="md" mt="32">
             <SBContainerInline padding="32" mb="48" border borderRadius>
                 <Box mb="16">
-                    <Input
-                        required
-                        label="First Name"
-                        placeholder="First Name"
-                        id="firstName"
+                    <Textarea
+                        label="Share your feedback"
+                        placeholder="Add a message here"
+                        id="feedback"
                         autoComplete="off"
                         tabIndex={1}
                         size="lg"
                     />
                 </Box>
-                <Input
-                    label="Last Name"
-                    placeholder="Last Name"
-                    id="lastName"
-                    autoComplete="off"
-                    tabIndex={2}
-                    size="lg"
-                />
             </SBContainerInline>
         </Container>
     </Container>
 );
 
 Docs.story = {
-    name: 'Button Variants',
+    name: 'Textarea Variants',
     parameters: {
         options: { showPanel: false },
     },
 };
 
-export const BasicInput = Template.bind({});
-BasicInput.args = {
-    label: 'First Name',
-    placeholder: 'First Name',
-    id: 'firstName',
+export const BasicTextarea = Template.bind({});
+BasicTextarea.args = {
+    label: 'Share your feedback',
+    placeholder: 'Add a message here',
+    id: 'feedback',
 };
 
 export const Validation = Template.bind({});
 Validation.args = {
-    label: 'Password',
-    placeholder: 'Password',
+    label: 'Share your feedback',
+    placeholder: 'Add a message here',
     error: true,
     required: true,
-    id: 'password',
-    helperText: 'The password must have a minimum length of 8 characters.',
-};
-
-export const Adornment = Template.bind({});
-Adornment.args = {
-    label: 'Password',
-    placeholder: 'Password',
-    required: true,
-    id: 'password',
-    helperText: 'The password must have a minimum length of 8 characters.',
-    startAdornment: <MdDone />,
+    id: 'feedback',
+    helperText: 'Please enter a message',
 };

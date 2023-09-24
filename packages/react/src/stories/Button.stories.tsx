@@ -47,13 +47,13 @@ export default {
 } as Meta<typeof Button>;
 
 const Template: StoryFn<typeof Button> = args => (
-    <Container maxWidth="md" mt="32">
+    <Container maxWidth="md" my="32" paper padding="32" borderRadius>
         <Button {...args}>Button</Button>
     </Container>
 );
 
 export const Docs = () => (
-    <Container maxWidth="md" mt="32">
+    <Container maxWidth="md" my="32" paper padding="32" borderRadius>
         <StoryHeadline
             title="Button"
             subTitle="A control that executes your custom code in response to user interactions."

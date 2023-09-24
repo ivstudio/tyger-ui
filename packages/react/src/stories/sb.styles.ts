@@ -7,6 +7,7 @@ export const SBContainer = styled(Box)`
 `;
 
 export const SBContainerInline = styled(Box)`
+    background: ${({ theme }) => theme.paper};
     /* > * {
         margin-right: 8px;
     } */

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { shortTextFixture } from '../../../test/fixtures';
+import { sentence } from '../../../test/fixtures';
 import { fireEvent, render, screen } from '../../../test/utils/mockProvider';
 import Backdrop from './Backdrop';
 
@@ -15,10 +15,10 @@ describe('Backdrop', () => {
     it('handles click event', () => {
         render(
             <Backdrop onClick={clickHandler} open={true}>
-                <p>{shortTextFixture}</p>
+                <p>{sentence}</p>
             </Backdrop>
         );
-        const content = screen.getByText(shortTextFixture);
+        const content = screen.getByText(sentence);
         expect(content).toBeInTheDocument();
 
         fireEvent.click(screen.getByTestId('backdrop'));
@@ -28,11 +28,11 @@ describe('Backdrop', () => {
     it('hides child component', () => {
         render(
             <Backdrop onClick={clickHandler} open={false}>
-                <p>{shortTextFixture}</p>
+                <p>{sentence}</p>
             </Backdrop>
         );
 
-        const content = screen.queryByText(shortTextFixture);
+        const content = screen.queryByText(sentence);
         expect(content).not.toBeInTheDocument();
     });
 });

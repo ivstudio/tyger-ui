@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 
 import Container from '../components/Container';
-import { lgTextFixture } from '../../test/fixtures';
+import { longParagraph } from '../../test/fixtures';
 
 export default {
     title: 'Components/Container',
@@ -41,16 +41,19 @@ export default {
 } as Meta<typeof Container>;
 
 const Template: StoryFn<typeof Container> = args => {
-    return <Container {...args}>{args.children}</Container>;
+    return (
+        <Container mt="32" paper padding="32" borderRadius>
+            <Container {...args}>{args.children}</Container>
+        </Container>
+    );
 };
 
 export const Component = Template.bind({});
 Component.args = {
-    children: lgTextFixture,
+    children: longParagraph,
     maxWidth: 'sm',
-    mt: '32',
     tag: 'section',
-    padding: '12',
+    padding: '32',
     border: true,
     borderRadius: true,
 };

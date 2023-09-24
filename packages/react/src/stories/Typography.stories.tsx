@@ -29,7 +29,7 @@ const Template: StoryFn<typeof Typography> = args => (
 );
 
 export const Docs = () => (
-    <Container maxWidth="md" mt="32">
+    <Container maxWidth="md" paper mt="32" padding="32" borderRadius>
         <Box px="16">
             <StoryHeadline
                 title="Typography"

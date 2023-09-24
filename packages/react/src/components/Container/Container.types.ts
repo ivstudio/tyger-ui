@@ -5,4 +5,5 @@ import type { BoxProps } from '../Box/Box.types';
 export interface ContainerProps extends BoxProps {
     maxWidth?: TBreakpointKey;
     className?: string;
+    paper?: boolean;
 }

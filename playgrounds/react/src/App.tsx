@@ -9,7 +9,7 @@ import {
 	Chip,
 } from '@tyger-ui/react';
 import { useState } from 'react';
-import { lgTextFixture } from '../../../packages/react/test/fixtures';
+import { longParagraph } from '../../../packages/react/test/fixtures';
 
 interface AppProps {
 	isDefaultTheme: boolean;
@@ -52,9 +52,9 @@ const App = ({ isDefaultTheme, onChangeTheme }: AppProps) => {
 					return (
 						<Container key={item}>
 							<Typography align="left">
-								{lgTextFixture}
+								{longParagraph}
 							</Typography>
-							<Typography>{lgTextFixture}</Typography>
+							<Typography>{longParagraph}</Typography>
 						</Container>
 					);
 				})}

@@ -26,7 +26,14 @@ export default {
 } as Meta<typeof ButtonGroup>;
 
 const Template: StoryFn<typeof ButtonGroup> = args => (
-    <Container maxWidth="xs" mt="32">
+    <Container
+        maxWidth="sm"
+        my="32"
+        paper
+        padding="32"
+        borderRadius
+        flexCenterAll
+    >
         <ButtonGroup {...args}>
             <Button onClick={() => alert('Button 0')}>Button</Button>
             <Button onClick={() => alert('Button 1')}>Button</Button>

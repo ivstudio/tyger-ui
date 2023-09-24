@@ -74,19 +74,11 @@ export interface SystemTokens {
 	zIndex: typeof tokens.zIndex;
 }
 
-type InputTheme = {
+type TextfieldTheme = {
 	borderColor: string;
-	color: string;
-	placeholder: string;
-	disabled: {
-		backgroundColor: string;
-		color: string;
-	};
+	backgroundColor: string;
 	focus: {
 		borderColor: string;
-	};
-	error: {
-		color: string;
 	};
 };
 
@@ -108,19 +100,18 @@ export interface ITheme extends SystemTokens {
 		button: ChipButtonTheme;
 	};
 	switch: SwitchTheme;
-	appBar: {
-		backgroundColor: string;
-		color: string;
-	};
 	text: {
 		primary: string;
 		secondary: string;
 		tertiary: string;
 		quarternary: string;
 		placeholder: string;
+		error: string;
+		disabled: string;
+		label: string;
 	};
 	drawer: Drawer;
-	input: InputTheme;
+	textfield: TextfieldTheme;
 }
 
 declare module 'styled-components' {

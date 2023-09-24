@@ -1,20 +1,21 @@
 'use client';
-import type { TBreakpointKey } from '@tyger-ui/system';
+
 import { breakpoint, device } from '@tyger-ui/system';
 import styled from 'styled-components';
 
 import { BoxRoot } from '../Box';
 import { ContainerProps } from './Container.types';
 
-const ContainerRoot = styled(BoxRoot)<{
-    maxWidth?: TBreakpointKey;
-}>`
+const ContainerRoot = styled(BoxRoot)<ContainerProps>`
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     max-width: ${({ maxWidth }) =>
         maxWidth && `${breakpoint[maxWidth]} !important`};
-    color: ${({ theme }) => theme && theme.text?.primary};
+    color: ${({ theme: { text } }) => text.primary};
+    background-color: ${({ paper, theme }) => paper && theme.paper};
+    box-sizing: border-box;
+
     @media ${device.sm} {
         max-width: ${breakpoint.sm};
     }
@@ -37,6 +38,7 @@ const Container = ({
     maxWidth,
     tag = 'div',
     className,
+    paper = false,
     ...props
 }: ContainerProps) => {
     return (
@@ -44,6 +46,7 @@ const Container = ({
             as={tag}
             maxWidth={maxWidth}
             className={className}
+            paper={paper}
             {...props}
         >
             {children}

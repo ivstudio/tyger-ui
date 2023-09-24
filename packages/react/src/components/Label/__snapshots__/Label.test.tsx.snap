@@ -2,7 +2,7 @@
 
 exports[`Label renders correctly 1`] = `
 <label
-  class="sc-aXZVg izzKfH"
+  class="sc-aXZVg ljUagB"
   for="firstName"
   required=""
 >

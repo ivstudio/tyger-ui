@@ -1,109 +1,66 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { spacing } from '../../../../system';
-import Box from '../Box';
-import Typography from '../Typography';
+import { textFieldBase, textFieldSpacing } from '../TextField/TextField.styles';
 import { InputComponentProps } from './Input.types';
 
-const inputSpacing = {
-    sm: {
-        padding: `${spacing[4]} ${spacing[12]}`,
-    },
-
-    md: {
-        padding: `${spacing[8]} ${spacing[12]}`,
-    },
-
-    lg: {
-        padding: `${spacing[12]} ${spacing[16]}`,
-    },
+export const textFieldHeight = {
+    sm: 32,
+    md: 40,
+    lg: 48,
 };
-
-const TextFieldBase = css`
-    border-radius: 4px;
-    letter-spacing: inherit;
-    box-sizing: border-box;
-    border: none;
-    display: block;
-    outline: none;
-    margin: 0;
-    width: 100%;
-    background: none;
-`;
 
 export const InputComponent = styled.input.attrs({
     novalidate: true,
 })<InputComponentProps>`
     /* Base styles for all text fields */
-    ${TextFieldBase};
+    ${textFieldBase};
 
     /* Fix for number inputs in Firefox */
     &[type='number'] {
         -moz-appearance: textfield;
     }
 
-    /* Disable pointer events for read-only inputs */
-    ${({ readOnly }) => readOnly && 'pointer-events: none'};
+    /* Set spacing based on input size */
+    padding: ${({ sizeInput, startAdornment, endAdornment }) => {
+        // if (startAdornment) {
+        //     return `0 ${textFieldSpacing[sizeInput]} 0 ${textFieldSpacing[sizeInput]}`;
+        // }
 
-    /* Set padding based on input size */
-    ${({ sizeInput }) => inputSpacing[sizeInput]};
+        // if (endAdornment) {
+        //     return `0 ${textFieldSpacing[sizeInput]} 0 ${textFieldSpacing[sizeInput]}`;
+        // }
 
-    /* Set border color and text color based on theme */
-    border: ${({ theme: { input } }) => `1px solid ${input.borderColor}`};
-    color: ${({ theme: { input } }) => `${input.color}`};
-
-    /* Set placeholder color based on theme */
-    &::placeholder {
-        color: ${({ theme: { input } }) => `${input.placeholder}`};
-    }
-
-    &:focus {
-        outline: ${({ theme: { input } }) =>
-            `1px solid ${input.focus.borderColor}`};
-        border-color: ${({ theme: { input } }) => `${input.focus.borderColor}`};
-    }
-
-    /* Set styles for inputs with errors */
-    ${({ error, theme: { input } }) => {
-        if (error) {
-            return css`
-                border-color: ${input.error.color};
-
-                &:focus {
-                    outline: 1px solid ${input.error.color};
-                    border-color: ${input.error.color};
-                }
-            `;
-        }
-    }}
-
-    /* Set styles for disabled inputs */
-    ${({ disabled, theme: { input } }) => {
-        if (disabled) {
-            return css`
-                border-color: ${input.disabled.backgroundColor};
-                color: ${input.disabled.color};
-            `;
-        }
-    }}
-`;
-
-// Define the Input HelperText
-export const HelperText = styled(Typography)`
-    color: ${({ theme: { input } }) => `${input.error.color}`};
-    font-size: ${({ theme: { fontSize } }) => `${fontSize[-1]}`};
+        return textFieldSpacing[sizeInput];
+    }};
+    height: ${({ sizeInput }) => textFieldHeight[sizeInput]};
 `;
 
 // Define the fieldset
-export const Fieldset = styled(Box)`
+export const Fieldset = styled.fieldset`
     border: none;
     padding: 0;
     margin: 0;
 `;
 
-InputComponent.defaultProps = {
-    sizeInput: 'md',
-    readOnly: false,
-    disabled: false,
-    error: false,
-};
+export const InputContainerComponent = styled.div`
+    position: relative;
+    height: 100%;
+`;
+
+export const Adornment = styled.div<{ start?: boolean; end?: boolean }>`
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    ${({ start }) =>
+        start && {
+            left: 0,
+        }};
+
+    ${({ end }) =>
+        end && {
+            right: 0,
+        }};
+`;

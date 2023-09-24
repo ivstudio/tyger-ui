@@ -4,7 +4,10 @@ import { Meta, StoryFn } from '@storybook/react';
 import AppBar from '../components/AppBar';
 import HideOnScrollComponent from '../components/HideOnScroll';
 import Container from '../components/Container';
-import { xlTextFixture } from '../../test/fixtures';
+import Box from '../components/Box';
+import { longParagraph, sentence, title } from '../../test/fixtures';
+import Typography from '../components/Typography';
+import { SubscribeForm } from './components';
 const tygerLogo =
     'https://tyger.s3.us-west-2.amazonaws.com/assets/tyger-logo.svg';
 
@@ -29,17 +32,25 @@ export default {
 } as Meta<typeof AppBar>;
 
 const Content = ({ top }) => (
-    <Container mt={top}>
+    <Container mt={top} maxWidth="md" paper padding="32" borderRadius>
+        <Typography tag="h1" variant="h1" mb="0">
+            {title}
+        </Typography>
+        <Typography variant="subheading" mb="24">
+            {sentence}
+        </Typography>
+        <Box mb="16">{longParagraph}</Box>
+        <SubscribeForm />
         {[1, 2, 3, 4, 5].map(i => (
-            <Container key={i} mb="16" maxWidth="sm">
-                {xlTextFixture}
-            </Container>
+            <Box key={i} mb="16">
+                {longParagraph}
+            </Box>
         ))}
     </Container>
 );
 
 const Template: StoryFn<typeof AppBar> = args => {
-    const top = args.position === 'fixed' ? '64' : '16';
+    const top = args.position === 'fixed' ? '80' : '32';
     return (
         <>
             <AppBar {...args}>
@@ -51,7 +62,7 @@ const Template: StoryFn<typeof AppBar> = args => {
 };
 
 const TemplateHideOnScroll: StoryFn<typeof AppBar> = args => {
-    const top = args.position === 'fixed' ? '64' : '16';
+    const top = args.position === 'fixed' ? '64' : '32';
     return (
         <>
             <HideOnScrollComponent>
