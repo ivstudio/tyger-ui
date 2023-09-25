@@ -15,7 +15,6 @@ export { default as Modal } from './components/Modal';
 export { default as ScrollIndicator } from './components/ScrollIndicator';
 export { default as Switch } from './components/Switch';
 export { default as Textarea } from './components/Textarea';
-export { default as TextareaAutosize } from './components/TextareaAutosize';
 export { default as Typography } from './components/Typography';
 
 // Export the GlobalStyles component from the system directory
