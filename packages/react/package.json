@@ -1,6 +1,6 @@
 {
     "name": "@tyger-ui/react",
-    "version": "0.3.9",
+    "version": "0.3.10",
     "author": "Iggy Villamar <iggy@ivstudio.com>",
     "license": "MIT",
     "description": "tyger-ui themeable react components",
@@ -96,7 +96,7 @@
     },
     "dependencies": {
         "@tyger-ui/hooks": "^0.3.1",
-        "@tyger-ui/system": "^0.3.9",
+        "@tyger-ui/system": "^0.3.10",
         "react-textarea-autosize": "^8.5.3"
     },
     "publishConfig": {
