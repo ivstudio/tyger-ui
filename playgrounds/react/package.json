@@ -1,6 +1,6 @@
 {
 	"name": "@playgrounds/react",
-	"version": "0.3.9",
+	"version": "0.3.12",
 	"main": "index.js",
 	"license": "MIT",
 	"private": "true",
