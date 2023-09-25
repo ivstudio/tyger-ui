@@ -3,9 +3,6 @@ import { useArgs } from '@storybook/client-api';
 import { Meta, StoryFn } from '@storybook/react';
 import TextareaAutosize from '../components/TextareaAutosize';
 import Container from '../components/Container';
-import Box from '../components/Box';
-import { StoryHeadline } from './components';
-import { SBContainerInline } from './sb.styles';
 
 export default {
     title: 'Components/Textarea/TextareaAutosize',
