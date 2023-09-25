@@ -40,7 +40,7 @@ const Content = ({ top }) => (
             {sentence}
         </Typography>
         <Box mb="16">{longParagraph}</Box>
-        <SubscribeForm />
+        <SubscribeForm includeFeedback />
         {[1, 2, 3, 4, 5].map(i => (
             <Box key={i} mb="16">
                 {longParagraph}

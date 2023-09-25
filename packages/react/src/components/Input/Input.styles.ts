@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-import { textFieldBase, textFieldSpacing } from '../TextField/TextField.styles';
-import { InputComponentProps } from './Input.types';
+import {
+    adornmentSize,
+    adornmentSpacing,
+    textFieldBase,
+    textFieldSpacing,
+} from '../TextField/TextField.styles';
+import { AdornmentProps, InputComponentProps } from './Input.types';
 
 export const textFieldHeight = {
     sm: 32,
@@ -22,13 +27,13 @@ export const InputComponent = styled.input.attrs({
 
     /* Set spacing based on input size */
     padding: ${({ sizeInput, startAdornment, endAdornment }) => {
-        // if (startAdornment) {
-        //     return `0 ${textFieldSpacing[sizeInput]} 0 ${textFieldSpacing[sizeInput]}`;
-        // }
+        if (startAdornment) {
+            return adornmentSpacing.start[sizeInput];
+        }
 
-        // if (endAdornment) {
-        //     return `0 ${textFieldSpacing[sizeInput]} 0 ${textFieldSpacing[sizeInput]}`;
-        // }
+        if (endAdornment) {
+            return adornmentSpacing.end[sizeInput];
+        }
 
         return textFieldSpacing[sizeInput];
     }};
@@ -40,6 +45,7 @@ export const Fieldset = styled.fieldset`
     border: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 `;
 
 export const InputContainerComponent = styled.div`
@@ -47,20 +53,17 @@ export const InputContainerComponent = styled.div`
     height: 100%;
 `;
 
-export const Adornment = styled.div<{ start?: boolean; end?: boolean }>`
+export const Adornment = styled.div<AdornmentProps>`
     position: absolute;
-    left: 0;
+    top: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
-
-    ${({ start }) =>
-        start && {
-            left: 0,
-        }};
-
-    ${({ end }) =>
-        end && {
-            right: 0,
-        }};
+    width: ${({ size = 'lg' }) => size && adornmentSize[size]};
+    left: ${({ start, theme: { spacing } }) => start && spacing['8']};
+    right: ${({ end, theme: { spacing } }) => end && spacing['8']};
+    > svg {
+        color: ${({ theme: { text } }) => `${text.label}`};
+    }
 `;

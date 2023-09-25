@@ -11,7 +11,7 @@ type HelperTextProps = {
 
 const HelperTextComponent = styled(Typography)<HelperTextProps>`
     color: ${({ theme: { text }, error }) => {
-        return error ? text.error : text.secondary;
+        return error ? text.error : text.label;
     }};
     margin-top: ${({ theme: { spacing }, anchor }) =>
         anchor === 'bottom' ? spacing[8] : '0'};

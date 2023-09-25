@@ -8,5 +8,6 @@ export const TextareaComponentAutosize = styled(
     TextareaAutosize
 )<TextareaProps>`
     ${textFieldBase};
+    resize: none;
     padding: ${({ size = 'lg' }) => textFieldSpacing[size]};
 `;

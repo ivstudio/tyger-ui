@@ -10,6 +10,27 @@ export const textFieldSpacing = {
     lg: `${spacing[12]} ${spacing[16]}`,
 };
 
+// Define the spacing of the textfield adornments
+export const adornmentSpacing = {
+    start: {
+        sm: `${spacing[4]} ${spacing[12]} ${spacing[4]} ${spacing[24]}`,
+        md: `${spacing[8]} ${spacing[12]} ${spacing[8]} ${spacing[24]}`,
+        lg: `${spacing[12]} ${spacing[16]} ${spacing[12]} ${spacing[40]}`,
+    },
+    end: {
+        sm: `${spacing[4]} ${spacing[24]} ${spacing[4]} ${spacing[12]}`,
+        md: `${spacing[8]} ${spacing[24]} ${spacing[8]} ${spacing[12]}`,
+        lg: `${spacing[12]} ${spacing[40]} ${spacing[12]} ${spacing[16]}`,
+    },
+};
+
+// Define the size of the textfield adornments
+export const adornmentSize = {
+    sm: spacing[24],
+    md: spacing[24],
+    lg: spacing[32],
+};
+
 // Define the base styles for inputs and textareas
 export const textFieldBase = css<TextFieldBaseProps>`
     border-radius: 4px;
@@ -20,6 +41,8 @@ export const textFieldBase = css<TextFieldBaseProps>`
     margin: 0;
     width: 100%;
     background: ${({ theme: { textfield } }) => `${textfield.backgroundColor}`};
+    font-size: ${({ theme: { fontSize } }) => `${fontSize[1]}`};
+    line-height: ${({ theme }) => theme.lineHeight.lg};
 
     // Disable pointer events for read-only textfields
     ${({ readOnly }) => readOnly && 'pointer-events: none'};

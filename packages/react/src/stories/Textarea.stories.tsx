@@ -6,6 +6,8 @@ import Container from '../components/Container';
 import Box from '../components/Box';
 import { StoryHeadline, StoryTitleSection } from './components';
 import { SBContainer, SBContainerInline } from './sb.styles';
+import TextareaAutosize from '../components/TextareaAutosize';
+import { longParagraph } from '../../test/fixtures';
 
 export default {
     title: 'Components/Textarea',
@@ -61,25 +63,58 @@ const Template: StoryFn<typeof Textarea> = args => {
 };
 
 export const Docs = () => (
-    <Container maxWidth="md" mt="32">
+    <Container mt="32" maxWidth="md" paper padding="32" borderRadius>
         <StoryHeadline
             title="Textarea"
             subTitle="A text area lets users enter long form text which spans over multiple lines."
         />
 
-        <Container maxWidth="md" mt="32">
-            <SBContainerInline padding="32" mb="48" border borderRadius>
-                <Box mb="16">
-                    <Textarea
-                        label="Share your feedback"
-                        placeholder="Add a message here"
-                        id="feedback"
-                        autoComplete="off"
-                        tabIndex={1}
-                        size="lg"
-                    />
-                </Box>
-            </SBContainerInline>
+        <StoryTitleSection title="Basic Textarea" />
+        <Container padding="24" mb="48" border borderRadius>
+            <Container maxWidth="xs" mb="16">
+                <Textarea
+                    label="Share your feedback"
+                    placeholder="Add a message here"
+                    id="feedback"
+                    autoComplete="off"
+                    tabIndex={1}
+                    rows={3}
+                    size="lg"
+                />
+            </Container>
+        </Container>
+
+        <StoryTitleSection
+            title="Textarea Autosize"
+            description="The Textarea Autosize component provides you with a textarea HTML element that seamlessly adapts its height to precisely match the length of the content contained within it."
+        />
+        <Container padding="24" mb="48" border borderRadius>
+            <Container maxWidth="xs" mb="16">
+                <TextareaAutosize
+                    id="feedbackAutosize"
+                    label="Share your feedback"
+                    placeholder="Add a message here"
+                    required
+                    spellCheck={false}
+                    minRows={1}
+                />
+            </Container>
+        </Container>
+
+        <StoryTitleSection title="Validation" />
+        <Container padding="24" mb="48" border borderRadius>
+            <Container maxWidth="xs" mb="16">
+                <TextareaAutosize
+                    id="feedbackAutosize"
+                    label="Share your feedback"
+                    placeholder="Add a message here"
+                    required
+                    error
+                    spellCheck={false}
+                    minRows={3}
+                    helperText="Please enter a message."
+                />
+            </Container>
         </Container>
     </Container>
 );

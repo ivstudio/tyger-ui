@@ -2,11 +2,11 @@
 
 exports[`Input renders correctly 1`] = `
 <fieldset
-  class="sc-iGgWBj dIjyVK"
+  class="sc-iGgWBj ePgiLf"
 >
   <input
     aria-required="false"
-    class="sc-dcJsrY jNdCJE"
+    class="sc-dcJsrY dfEsUQ"
   />
 </fieldset>
 `;

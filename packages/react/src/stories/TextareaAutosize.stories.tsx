@@ -60,53 +60,11 @@ const Template: StoryFn<typeof TextareaAutosize> = args => {
     );
 };
 
-export const Docs = () => (
-    <Container maxWidth="md" mt="32">
-        <StoryHeadline
-            title="Textarea"
-            subTitle="A text area lets users enter long form text which spans over multiple lines."
-        />
-
-        <Container maxWidth="md" mt="32">
-            <SBContainerInline padding="32" mb="48" border borderRadius>
-                <Box mb="16">
-                    <TextareaAutosize
-                        label="Share your feedback"
-                        placeholder="Add a message here"
-                        id="feedback"
-                        autoComplete="off"
-                        tabIndex={1}
-                        size="lg"
-                    />
-                </Box>
-            </SBContainerInline>
-        </Container>
-    </Container>
-);
-
-Docs.story = {
-    name: 'Textarea Variants',
-    parameters: {
-        options: { showPanel: false },
-    },
-};
-
-export const BasicTextarea = Template.bind({});
-BasicTextarea.args = {
+export const Autosize = Template.bind({});
+Autosize.args = {
     label: 'Share your feedback',
     placeholder: 'Add a message here',
     id: 'feedback',
     minRows: 3,
-};
-
-export const Validation = Template.bind({});
-Validation.args = {
-    label: 'Share your feedback',
-    placeholder: 'Add a message here',
-    error: true,
-    required: true,
-    id: 'feedback',
-    helperText: 'Please enter a message',
-    minRows: 3,
-    maxRows: 6,
+    maxRows: 8,
 };

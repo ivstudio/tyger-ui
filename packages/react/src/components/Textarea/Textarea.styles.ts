@@ -11,6 +11,8 @@ export const TextareaComponent = styled.textarea.attrs({
 
     /* Set spacing based on textarea */
     padding: ${({ size = 'lg' }) => textFieldSpacing[size]};
+
+    resize: none;
 `;
 
 // Define the fieldset

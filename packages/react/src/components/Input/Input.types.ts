@@ -19,8 +19,15 @@ export interface InputComponentProps extends TextFieldBaseProps {
 }
 
 export type ContainerProps = {
+    size?: TextFieldSizes;
     hasAdornment: boolean;
     children: React.ReactNode;
     startAdornment?: React.ReactNode;
     endAdornment?: React.ReactNode;
+};
+
+export type AdornmentProps = {
+    size?: TextFieldSizes;
+    start?: boolean;
+    end?: boolean;
 };

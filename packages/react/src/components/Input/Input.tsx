@@ -36,6 +36,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     </Label>
                 )}
                 <InputContainer
+                    size={size}
                     hasAdornment={!!startAdornment || !!endAdornment}
                     startAdornment={startAdornment}
                     endAdornment={endAdornment}
