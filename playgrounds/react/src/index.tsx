@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, GlobalStyles, darkTheme } from '@tyger-ui/react';
-import React from 'react';
 
 const rootElement = document.getElementById('root');
 

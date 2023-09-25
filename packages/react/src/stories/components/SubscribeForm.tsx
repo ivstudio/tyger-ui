@@ -6,7 +6,7 @@ import Button from '../../components/Button';
 import Typography from '../../components/Typography';
 import TextareaAutosize from '../../components/TextareaAutosize';
 import styled from 'styled-components';
-import { device, spacing } from '@tyger-ui/react';
+import { device, spacing } from '../../../../system';
 import { sentence } from '../../../test/fixtures';
 
 const Row = styled.div<{

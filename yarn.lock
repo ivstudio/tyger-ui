@@ -13452,9 +13452,9 @@ param-case@^3.0.4:
     dot-case "^3.0.4"
     tslib "^2.0.3"
 
-parcel@^2.0.0:
+parcel@^2.9.3:
   version "2.9.3"
-  resolved "https://registry.npmjs.org/parcel/-/parcel-2.9.3.tgz"
+  resolved "https://registry.yarnpkg.com/parcel/-/parcel-2.9.3.tgz#315660ccbaa5a830cf71280ab0cfbd3079247cc5"
   integrity sha512-2GTVocFkwblV/TIg9AmT7TI2fO4xdWkyN8aFUEVtiVNWt96GTR3FgQyHFValfCbcj1k9Xf962Ws2hYXYUr9k1Q==
   dependencies:
     "@parcel/config-default" "2.9.3"

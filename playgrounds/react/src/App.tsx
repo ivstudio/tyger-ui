@@ -9,7 +9,6 @@ import {
 	Chip,
 } from '@tyger-ui/react';
 import { useState } from 'react';
-import { longParagraph } from '../../../packages/react/test/fixtures';
 
 interface AppProps {
 	isDefaultTheme: boolean;
@@ -51,10 +50,8 @@ const App = ({ isDefaultTheme, onChangeTheme }: AppProps) => {
 				{[1, 2, 3, 4, 5].map((item) => {
 					return (
 						<Container key={item}>
-							<Typography align="left">
-								{longParagraph}
-							</Typography>
-							<Typography>{longParagraph}</Typography>
+							<Typography align="left">hello world</Typography>
+							<Typography> hello world</Typography>
 						</Container>
 					);
 				})}
