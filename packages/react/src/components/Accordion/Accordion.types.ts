@@ -11,7 +11,7 @@ export type AccordionItemProps = {
 };
 
 export type AccordionDetailsProps = {
-    children?: ReactNode | ReactNode[];
+    children?: ReactNode;
 };
 
 export type AccordionSummaryProps = {

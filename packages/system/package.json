@@ -43,7 +43,7 @@
 		"access": "public"
 	},
 	"engines": {
-		"node": ">=16.14.0"
+		"node": ">=20.9.0"
 	},
 	"gitHead": "34c524a529cda12786502232e03951abac896947"
 }
