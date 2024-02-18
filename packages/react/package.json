@@ -55,7 +55,6 @@
         "@types/jest": "^28.1.6",
         "@types/react": "^17.0.39",
         "@types/rollup-plugin-peer-deps-external": "^2.2.1",
-        "@types/styled-components": "^5.1.26",
         "@typescript-eslint/eslint-plugin": "^5.30.3",
         "@typescript-eslint/parser": "^5.30.3",
         "babel-loader": "^9.1.2",
@@ -97,7 +96,9 @@
     "dependencies": {
         "@tyger-ui/hooks": "^0.3.1",
         "@tyger-ui/system": "^0.3.13",
-        "react-textarea-autosize": "^8.5.3"
+        "react-textarea-autosize": "^8.5.3",
+        "styled-components": "^6.0.0",
+        "stylis": "^4.0.0"
     },
     "publishConfig": {
         "access": "public"
